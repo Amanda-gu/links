@@ -57,7 +57,7 @@ hgroup, main, footer{
 
 
 hgroup{
-    height: max-content;
+    height: 3rem;
     display: flex;
     justify-content:space-between;
     column-gap: var(--space-bar-1);
@@ -76,7 +76,32 @@ hgroup{
         font-size: 120%;
     }
 
+    a{
+        max-width: 15rem;
+        white-space: nowrap;
+    }
+    /* i want the info to appear on hover. this is my reference: https://codepen.io/jimbennett/pen/OMPrjL */
+
+    /* I referenced the selector such as .textanim-container:hover .textanim-hidden */
+    #info{
+        height: 100%;
+        
+        #hide{
+            display: block;
+            white-space: wrap;
+            width: 60ch;
+            position:relative;
+            top: var(--space-bar-1);
+            opacity: 0;
+            font-family: "VT323", monospace;
+        }
+    }
+
+    #info:hover #hide {
+        opacity: 1;
+        }
 }
+
 
 footer{
     font-size: var(--caption-copy);
@@ -109,7 +134,7 @@ a:hover{
 }
 
 .card {
-    
+    width: 15vw;
     position: relative;
     border-radius: var(--space-bar-3);
     align-items: left;
