@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap');
+
+:root{
+    --color: rgb(17, 17, 17);
+    --link-color: rgb(86, 86, 86);
+    --background: rgb(244, 244, 242);
+    --grey: #414141;
+
+    --background-opacity: rgba(0, 0, 0, 0.06);
+
+    --card-height:1rem;
+    --card-width: auto;
+
+    --body-copy: 1.2rem;
+    --caption-copy: calc(var(--body-copy) * 0.8);
+
+    --space-bar-0: 0.8rem;
+    --space-bar-1: 1rem;
+    --space-bar-2: calc(var(--space-bar-1) * 1.8);
+    --space-bar-3: 4rem;
+    --space-page-margin: 10rem;
+}
+
+body{
+    color: var(--color);
+    background-color: var(--background);
+    font-family: "Jacquard 24", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--body-copy);
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    align-items: center;
+}
+
+
+@media(width<1000px){
+    :root{
+         --space-page-margin: 4rem;
+    }
+}
+@media(width<800px){
+    :root{
+        --body-copy: 1rem;
+        --space-bar-0: 0.6rem;
+        --space-bar-1: 0.8rem;
+        --space-bar-2: calc(var(--space-bar-1) * 1.8);
+        --space-bar-3: 2rem;
+        --space-page-margin: 2rem;
+    }
+}
+
+hgroup, main, footer{
+    margin-inline: var(--space-page-margin);
+    margin-block: var(--space-bar-2);
+}
+
+
+
+
+hgroup{
+    display: flex;
+    justify-content:space-between;
+    column-gap: var(--space-bar-1);
+    align-items: center;
+    font-size: var(--body-copy);
+    position: sticky;
+    inset-block-start: var(--space-bar-2);
+    z-index: 1;
+    background-blend-mode: difference;
+
+    section:first-child{
+        backdrop-filter: blur(2rem);
+        overflow: hidden;
+    }
+    section{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    
+        ul{
+            display: flex;
+            column-gap: var(--space-bar-1); 
+         }
+        svg{
+                width: 1rem;
+                height: 1rem;
+                fill: var(--color);
+            }
+    }
+
+    h1{
+        animation-name: fontchange;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+
+}
+
+footer{
+    font-size: var(--caption-copy);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    color: var(--color);
+    p{
+        padding-block: 0.2rem;
+        opacity: 0.8;
+    }
+    p:nth-child(2){
+        opacity: 0.6;
+    }
+
+    @media(width<1200px){
+        display: block;
+    }
+}
+
+
+#project{
+    display: grid;
+    gap: var(--space-bar-2);
+    grid-template-columns: repeat(7, 1fr); 
+
+    li{
+        @media(width<600px){
+            grid-column: 1 /span 7;
+            }
+    }
+}
+.card {
+    
+    position: relative;
+    border-radius: var(--space-bar-3);
+    align-items: left;
+    gap: var(--space-bar-0);
+    display: flex;
+    flex-direction: column;
+    font-size: var(--body-copy);
+    color: var(--color);
+    /* background-color: var(--background-opacity); */
+
+}
+
+img{
+    border-radius: var(--space-bar-2);
+    overflow: hidden;
+}
+
+#binding{
+    grid-column: 1 /span 3;
+}
+#spread{
+    grid-column: 3 /span 5;
+}
+#manuscript{
+    grid-column: 1 /span 3;
+}
+#links{
+    grid-column: 3 /span 5;
+
+}
+#functions{
+    grid-column: 1 /span 3;
+}
+
+
+
+@keyframes fontchange {
+  0% {
+    font-family: 'Major Mono Display', monospace;
+  }
+  20% {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  40% {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  60% {
+    font-family: "Jacquard 24", system-ui;
+  }
+  80% {
+    font-family: 'Bitter', serif;
+  }
+  100% {
+    font-family: "Jacquard 24", system-ui;
+  }
+}
