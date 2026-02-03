@@ -2,6 +2,7 @@
 
 :root{
     --color: rgb(17, 17, 17);
+    --highlight: rgb(0, 42, 255);
     --secondary-color: rgb(191, 191, 191);
     --background: rgb(244, 244, 242);
 
@@ -119,7 +120,7 @@ footer{
 
 a:hover{
     font-family: "Jacquard 24", system-ui;
-    color: var(--color);
+    color: var(--highlight);
 }
 
 #card {
@@ -147,7 +148,7 @@ a:hover{
         color: var(--secondary-color);
         }
     #card:hover{
-        color: var(--color);
+        color: var(--highlight);
     }
 }
 
