@@ -79,6 +79,7 @@ hgroup{
     a{
         max-width: 12rem;
         height: 100%;
+        opacity: 0.1;
     }
     #info{       
         #hide{
@@ -100,6 +101,10 @@ hgroup{
         }
 }
 
+a:hover{
+    font-family: "Jacquard 24", system-ui;
+    color: var(--color);
+}
 
 footer{
     font-family: "PT Sans", sans-serif;
@@ -124,11 +129,8 @@ footer{
     }
 }
 
-
-
-a:hover{
-    font-family: "Jacquard 24", system-ui;
-    color: var(--color);
+hgroup:hover a{
+    opacity: 1;
 }
 
 
