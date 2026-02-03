@@ -2,10 +2,8 @@
 
 :root{
     --color: rgb(17, 17, 17);
-    --secondary-color: rgb(139, 139, 139);
-    --link-color: rgb(86, 86, 86);
+    --secondary-color: rgb(191, 191, 191);
     --background: rgb(244, 244, 242);
-    --grey: #414141;
 
     --card-height:1rem;
     --card-width: auto;
