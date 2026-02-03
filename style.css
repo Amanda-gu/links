@@ -135,6 +135,10 @@ a:hover{
 }
 
 #images{
+    display: flex;
+    flex-direction: row;
+    column-gap: var(--space-bar-1);
+    justify-content: center;
     #description{
         opacity: 0;
         font-size: var(--caption-copy);
