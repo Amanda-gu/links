@@ -2,11 +2,10 @@
 
 :root{
     --color: rgb(17, 17, 17);
+    --secondary-color: rgb(139, 139, 139);
     --link-color: rgb(86, 86, 86);
     --background: rgb(244, 244, 242);
     --grey: #414141;
-
-    --background-opacity: rgba(0, 0, 0, 0.06);
 
     --card-height:1rem;
     --card-width: auto;
@@ -18,7 +17,7 @@
     --space-bar-1: 1rem;
     --space-bar-2: calc(var(--space-bar-1) * 1.8);
     --space-bar-3: 4rem;
-    --space-page-margin: 5rem;
+    --space-page-margin: 2rem;
 }
 
 body{
@@ -29,6 +28,8 @@ body{
     font-weight: 400;
     font-style: normal;
     font-size: var(--body-copy);
+    color: var(--secondary-color);
+
     display: grid;
     grid-template-rows: min-content 1fr min-content;
     align-items: center;
@@ -37,7 +38,7 @@ body{
 
 @media(width<1000px){
     :root{
-         --space-page-margin: 4rem;
+         --space-page-margin: 1rem;
     }
 }
 @media(width<800px){
@@ -47,30 +48,27 @@ body{
         --space-bar-1: 0.8rem;
         --space-bar-2: calc(var(--space-bar-1) * 1.8);
         --space-bar-3: 2rem;
-        --space-page-margin: 2rem;
     }
 }
 
 hgroup, main, footer{
-    margin-inline: var(--space-page-margin);
-    margin-block: var(--space-bar-2);
+    padding: var(--space-page-margin);
 }
 
 
 hgroup{
-    height: 3rem;
+    height: max-content;
     display: flex;
     justify-content:space-between;
     column-gap: var(--space-bar-1);
     align-items: center;
     font-size: var(--body-copy);
     position: sticky;
-    inset-block-start: var(--space-bar-2);
     z-index: 1;
-    background-blend-mode: difference;
-
-
+    
+    
     h1{
+        color: var(--color);
         animation-name: fontchange;
         animation-duration: 1s;
         animation-iteration-count: infinite;
@@ -85,14 +83,7 @@ footer{
     display: flex;
     justify-content:space-between;
     align-items: center;
-    color: var(--color);
-    p{
-        padding-block: 0.2rem;
-        opacity: 0.8;
-    }
-    p:nth-child(2){
-        opacity: 0.6;
-    }
+  
 
     @media(width<1200px){
         display: block;
@@ -111,6 +102,12 @@ footer{
             }
     }
 }
+
+
+a:hover{
+    font-family: "Jacquard 24", system-ui;
+}
+
 .card {
     
     position: relative;
