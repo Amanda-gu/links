@@ -51,6 +51,7 @@ body{
 
 hgroup, main, footer{
     padding: var(--space-page-margin);
+
 }
 
 
@@ -64,6 +65,7 @@ hgroup{
     position: sticky;
     inset-block-start: 0rem;
     z-index: 1;
+    white-space: nowrap;
     h1{
         color: var(--color);
         animation-name: fontchange;
@@ -76,8 +78,7 @@ hgroup{
 
     a{
         max-width: 12rem;
-        height: 100%; 
-        white-space: nowrap;
+        height: 100%;
     }
     #info{       
         #hide{
@@ -86,6 +87,7 @@ hgroup{
             width: 60ch;
             position:relative;
             top: var(--space-bar-1);
+            color: var(--secondary-color);
             opacity: 0;
             font-family: "VT323", monospace;
         }
@@ -97,9 +99,7 @@ hgroup{
         opacity: 1;
         }
 }
-main{
 
-}
 
 footer{
     font-size: var(--caption-copy);
