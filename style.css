@@ -135,13 +135,15 @@ hgroup:hover a{
 
 
 #card {
-    width: 18vw;
     align-items: left;
     gap: var(--space-bar-0);
     display: flex;
     flex-direction: column;
     font-size: var(--body-copy);
+}
 
+.text, .images{
+    width: 18vw;
 }
 
 #content{
@@ -180,6 +182,10 @@ hgroup:hover a{
             opacity: 50%;
         }
     }
+}
+
+.documents{
+
 }
 
 
