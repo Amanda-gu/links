@@ -65,27 +65,22 @@ hgroup{
     font-size: var(--body-copy);
     position: sticky;
     z-index: 1;
-    
-    
     h1{
         color: var(--color);
         animation-name: fontchange;
         animation-duration: 1s;
         animation-iteration-count: infinite;
         animation-timing-function: steps(5, end);
-        font-size: 120%;
+        font-size: 120%; 
+        height: 100%;  
     }
 
     a{
-        max-width: 15rem;
+        max-width: 12rem;
+        height: 100%; 
         white-space: nowrap;
     }
-    /* i want the info to appear on hover. this is my reference: https://codepen.io/jimbennett/pen/OMPrjL */
-
-    /* I referenced the selector such as .textanim-container:hover .textanim-hidden */
-    #info{
-        height: 100%;
-        
+    #info{       
         #hide{
             display: block;
             white-space: wrap;
@@ -96,7 +91,9 @@ hgroup{
             font-family: "VT323", monospace;
         }
     }
+    /* i want the info to appear on hover. this is my reference: https://codepen.io/jimbennett/pen/OMPrjL */
 
+    /* I referenced how the selector were written such as .textanim-container:hover .textanim-hidden */
     #info:hover #hide {
         opacity: 1;
         }
@@ -131,6 +128,7 @@ footer{
 
 a:hover{
     font-family: "Jacquard 24", system-ui;
+    color: var(--color);
 }
 
 .card {
