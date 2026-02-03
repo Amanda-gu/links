@@ -102,14 +102,23 @@ hgroup{
 
 
 footer{
-    font-size: var(--caption-copy);
+    font-family: "PT Sans", sans-serif;
+    font-size: 60%;
     position: fixed;
     bottom: 0;
     width: 100%;
     display: flex;
-    justify-content:space-between;
+    column-gap: var(--space-bar-0);
     align-items: center;
-
+    justify-content: center;
+    
+    a{
+        text-decoration: underline;
+    }
+    a:hover{
+        font-family: "PT Sans", sans-serif;
+        color: var(--color);
+    }
     @media(width<1200px){
         display: block;
     }
@@ -121,6 +130,7 @@ a:hover{
     font-family: "Jacquard 24", system-ui;
     color: var(--color);
 }
+
 
 #card {
     width: 18vw;
