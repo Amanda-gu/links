@@ -2,14 +2,13 @@
 
 :root{
     --color: rgb(17, 17, 17);
-    --highlight: rgb(0, 42, 255);
-    --secondary-color: rgb(191, 191, 191);
+    --secondary-color: rgb(176, 176, 176);
     --background: rgb(244, 244, 242);
 
     --card-height:1rem;
     --card-width: auto;
 
-    --body-copy: 1.2rem;
+    --body-copy: 1.3rem;
     --caption-copy: calc(var(--body-copy) * 0.8);
 
     --space-bar-0: 0.8rem;
@@ -120,7 +119,7 @@ footer{
 
 a:hover{
     font-family: "Jacquard 24", system-ui;
-    color: var(--highlight);
+    color: var(--color);
 }
 
 #card {
@@ -148,7 +147,7 @@ a:hover{
         color: var(--secondary-color);
         }
     #card:hover{
-        color: var(--highlight);
+        color: var(--color);
     }
 }
 
