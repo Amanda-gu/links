@@ -139,6 +139,7 @@ a:hover{
 #images{
     #description{
         opacity: 0;
+        font-size: var(--caption-copy);
     }
     .card:hover #description {
         opacity: 0.5;
