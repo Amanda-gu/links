@@ -102,10 +102,12 @@ hgroup{
 
 footer{
     font-size: var(--caption-copy);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     display: flex;
     justify-content:space-between;
     align-items: center;
-  
 
     @media(width<1200px){
         display: block;
@@ -145,9 +147,16 @@ a:hover{
 
 }
 
-img{
-    border-radius: var(--space-bar-2);
-    overflow: hidden;
+#images{
+    #description{
+        opacity: 0;
+    }
+    .card:hover #description {
+        opacity: 0.5;
+        }
+    .card:hover{
+        color: var(--color);
+    }
 }
 
 #binding{
