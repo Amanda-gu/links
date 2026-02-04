@@ -44,6 +44,7 @@ hgroup, main, footer{
 
 hgroup{
     
+    z-index: 1;
     ul{
         display: flex;
         justify-content:space-between;
@@ -53,7 +54,6 @@ hgroup{
 
         position: sticky;
         inset-block-start: 0rem;
-        z-index: 1;
         white-space: nowrap;
 /* making about only show on mobile */
         #about{
@@ -141,15 +141,19 @@ hgroup:hover a{
 
 main{
     width: 100vw;
+    height: 100%;
     overflow-x: hidden;
+    overflow-y: scroll;
 }
 #content{
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     column-gap: var(--space-bar-1);
     justify-content: center;
     text-align: center;
+
     #description{
         font-family: "PT Sans", sans-serif;
         opacity: 0;
@@ -164,6 +168,8 @@ main{
         display: flex;
         flex-direction: column;
         font-size: var(--body-copy);
+        
+        /* this is for hover animation */
         scale: 20%;
         transition: 0.5s;
         transition-timing-function: ease-out;
@@ -201,7 +207,7 @@ main{
 
 .documents{
     iframe{
-        width: 18vw;
+        width: 100%;
         height: min-content;
     }
 }
@@ -219,7 +225,6 @@ main{
     hgroup{
         position: sticky;
         inset-block-start: 0rem;
-        z-index: -1;
         ul{
             #about{
                 text-align: center;
