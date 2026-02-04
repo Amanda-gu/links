@@ -154,6 +154,8 @@ main{
         font-family: "PT Sans", sans-serif;
         opacity: 0;
         font-size: 60%;
+        transition: 0.5s;
+        transition-timing-function: ease-out;
     }
 
     #card {
@@ -176,18 +178,17 @@ main{
     }
 }
 
-.text, .images{
-    width: 18vw;
-}
 
 .images{
     filter: grayscale(100%) invert(100%);
+    width: 18vw;
 }
 .images:hover{
     filter: grayscale(0%);
     }
 
 .text{
+     width: 40ch;
     #description{
         display: block;
         p:first-child{
@@ -242,7 +243,28 @@ main{
                 order: 0;
             }
         }
-}
+    }
+    #content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        column-gap: var(--space-bar-1);
+        align-items: center;
+        #description{
+            opacity: 1;
+        }
+
+        #card {
+            align-items: left;
+            gap: var(--space-bar-0);
+            display: flex;
+            flex-direction: column;
+            font-size: var(--body-copy);
+            scale: 100%;
+            transition: 0.5s;
+            transition-timing-function: ease-out;
+        }
+    }
 }
 @media(width<500px){
     :root{
