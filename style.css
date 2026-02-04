@@ -47,7 +47,6 @@ hgroup{
     ul{
         display: flex;
         justify-content:space-between;
-        align-items: baseline;
         column-gap: var(--space-bar-1);
         font-size: var(--body-copy);
         height: 3rem;
@@ -56,7 +55,7 @@ hgroup{
         inset-block-start: 0rem;
         z-index: 1;
         white-space: nowrap;
-
+/* making about only show on mobile */
         #about{
             visibility: hidden;
             width: 0;
@@ -68,6 +67,7 @@ hgroup{
             order:1;
         }
         li{
+            align-items: baseline;
             max-width: 20rem;
             *{
                 height: 100%;
@@ -133,9 +133,6 @@ footer{
         font-family: "PT Sans", sans-serif;
         color: var(--color);
     }
-    /* @media(width<1200px){
-        display: block;
-    } */
 }
 
 hgroup:hover a{
@@ -143,17 +140,6 @@ hgroup:hover a{
 }
 
 
-#card {
-    align-items: left;
-    gap: var(--space-bar-0);
-    display: flex;
-    flex-direction: column;
-    font-size: var(--body-copy);
-}
-
-.text, .images{
-    width: 18vw;
-}
 main{
     width: 100vw;
     overflow-x: hidden;
@@ -237,13 +223,14 @@ main{
             /* kimaya */
             li:nth-child(1), li:nth-child(3) {
                 visibility: hidden;
+                order: 0;
             }
         }
 }
 }
 @media(width<500px){
     :root{
-        font-size: 120%;
+        font-size: 110%;
     }
 }
 
