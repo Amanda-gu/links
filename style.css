@@ -155,13 +155,29 @@ main{
         opacity: 0;
         font-size: 60%;
     }
+
+    #card {
+        align-items: left;
+        gap: var(--space-bar-0);
+        display: flex;
+        flex-direction: column;
+        font-size: var(--body-copy);
+        scale: 20%;
+        transition: 0.5s;
+        transition-timing-function: ease-out;
+    }
     #card:hover #description {
         opacity: 1;
         color: var(--secondary-color);
         }
     #card:hover{
         color: var(--color);
+        scale: 100%;
     }
+}
+
+.text, .images{
+    width: 18vw;
 }
 
 .images{
