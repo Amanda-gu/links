@@ -41,20 +41,21 @@ hgroup, main, footer{
 
 }
 
+hgroup, footer{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
 
 hgroup{
-    
-    z-index: 1;
+    background-image: linear-gradient(to bottom, var(--background), var(--background-gradient));
     ul{
         display: flex;
         justify-content:space-between;
         column-gap: var(--space-bar-1);
         font-size: var(--body-copy);
-        height: 3rem;
-
-        position: sticky;
-        inset-block-start: 0rem;
         white-space: nowrap;
+
 /* making about only show on mobile */
         #about{
             visibility: hidden;
@@ -118,9 +119,7 @@ a:hover{
 footer{
     font-family: "PT Sans", sans-serif;
     font-size: 60%;
-    position: fixed;
     bottom: 0;
-    width: 100%;
     display: flex;
     column-gap: var(--space-bar-0);
     align-items: center;
@@ -142,7 +141,7 @@ hgroup:hover a{
 main{
     width: 100vw;
     height: 100%;
-    overflow-x: hidden;
+    overflow-x:hidden;
     overflow-y: scroll;
 }
 #content{
@@ -223,7 +222,11 @@ main{
     }
 
     hgroup{
-        position: sticky;
+        width: 100%;
+        height: 5rem;
+        
+        
+        position: fixed;
         inset-block-start: 0rem;
         ul{
             #about{
@@ -239,7 +242,8 @@ main{
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content:space-between;
+            justify-content: space-between;
+            row-gap: 0.6rem;
            
             /* h1 */
             li:nth-child(2) {
