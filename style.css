@@ -125,9 +125,10 @@ a:hover{
 
 footer, nav ul{
     display: flex;
-    column-gap: var(--space-bar-0);
+    column-gap: var(--space-bar-1);
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav{
@@ -135,27 +136,29 @@ nav{
     background-image: linear-gradient(to bottom, var(--background-gradient), var(--background),var(--background));
     width: 100%;
     padding-block-start: var(--space-bar-3);
-
-    li{
-        width: max-content;
+    
+    ul{
+        row-gap: var(--space-bar-0);
+        padding-block-end: var(--space-bar-0);
+        li{
+            width: max-content;
+        }
+        li:hover {
+            font-family: "Jacquard 24", system-ui;
+            color: var(--color);
+        }
+        }
     }
     #viewtoggle{
         /* active state of the button */
-            li:first-child{
+        li:first-child{
+                font-family: "Jacquard 24", system-ui;
                 color: var(--color);
             }
-        }
-    #listviewtoggle{
-            display: none;
-        }
-
-    li:hover {
-        font-family: "Jacquard 24", system-ui;
-        color: var(--color);
-    }
 }
 
 footer{
+    
     font-family: "PT Sans", sans-serif;
     background-color: var(--background);
     font-size: 60%;
