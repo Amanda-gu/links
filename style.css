@@ -166,10 +166,11 @@ main{
     }
 
     #card {
-        align-items: center;
         gap: var(--space-bar-0);
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         font-size: var(--body-copy);
         
         /* this is for hover animation */
