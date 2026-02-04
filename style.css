@@ -147,14 +147,12 @@ nav{
             font-family: "Jacquard 24", system-ui;
             color: var(--color);
         }
-        }
-    }
-    #viewtoggle{
         /* active state of the button */
         li:first-child{
-                font-family: "Jacquard 24", system-ui;
-                color: var(--color);
-            }
+            font-family: "Jacquard 24", system-ui;
+            color: var(--color);
+        }
+    }   
 }
 
 footer{
