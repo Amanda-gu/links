@@ -117,7 +117,9 @@ hgroup{
 
     }
 }
-
+hgroup:hover a{
+    opacity: 1;
+}
 a:hover{
     font-family: "Jacquard 24", system-ui;
     color: var(--color);
@@ -175,15 +177,12 @@ footer{
     }
 }
 
-hgroup:hover a{
-    opacity: 1;
-}
 
 main{
     width: 100vw;
-    height: 100%;
+    /* adding height here so i can scroll for sketch purposes */
+    height: 70rem;
     overflow-x:hidden;
-    overflow-y: scroll;
 }
 #content{
     width: 100%;
