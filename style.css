@@ -42,7 +42,7 @@ hgroup, main, footer{
 
 }
 
-hgroup, footer{
+hgroup, footer, nav{
     position: fixed;
     width: 100%;
     z-index: 1;
@@ -123,8 +123,42 @@ a:hover{
     color: var(--color);
 }
 
+footer, nav ul{
+    display: flex;
+    column-gap: var(--space-bar-0);
+    align-items: center;
+    justify-content: center;
+}
+
+nav{
+    bottom: 2.3rem;
+    background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background),var(--background));
+
+    padding-block: var(--space-bar-1);
+
+    li{
+        width: max-content;
+    }
+
+    #viewtoggle{
+        /* active state of the button */
+            li:first-child{
+                color: var(--color);
+            }
+        }
+    #listviewtoggle{
+            display: none;
+        }
+
+    li:hover {
+        font-family: "Jacquard 24", system-ui;
+        color: var(--color);
+    }
+}
+
 footer{
     font-family: "PT Sans", sans-serif;
+    background-color: var(--background);
     font-size: 60%;
     bottom: 0;
     display: flex;
@@ -289,6 +323,14 @@ main{
             scale: 100%;
             transition: 0.5s;
             transition-timing-function: ease-out;
+        }
+    }
+    nav{
+        #viewtoggle{
+            display: none;
+        }
+         #listviewtoggle{
+            display: flex;
         }
     }
 }
