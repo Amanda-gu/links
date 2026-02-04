@@ -60,20 +60,24 @@ hgroup{
         font-size: var(--body-copy);
         white-space: nowrap;
 
-/* making about only show on mobile */
         #about{
-            visibility: hidden;
-            width: 0;
+            /* making about only show on mobile */
+            
+            /* MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/visibility */
+
+            /* im not sure which one (visibility or display) to use */
+            /* I came across https://stackoverflow.com/questions/3695813/difference-between-visibilitycollapse-and-displaynone */
+            /* i learnt that disply hide the element entirely including its surrounding properties like column-gap */
+            display: none;
         }
-        li:nth-child(1), li:nth-child(2){
-            order:-1;
-        }
-        li:nth-child(3) {
-            order:1;
-        }
+        
+        /* i want the info to appear on hover. this is my reference: https://codepen.io/jimbennett/pen/OMPrjL */
+    
+        /* I referenced how the selector were written such as .textanim-container:hover .textanim-hidden */
+
         li{
             align-items: baseline;
-            max-width: 20rem;
+            width: min-content;
             *{
                 height: 100%;
             }
