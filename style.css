@@ -131,10 +131,11 @@ footer, nav ul{
 }
 
 nav{
-    bottom: 2.3rem;
-    background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background),var(--background));
+    bottom: 2rem;
+    background-image: linear-gradient(to bottom, var(--background-gradient), var(--background),var(--background));
 
     padding-block: var(--space-bar-1);
+    padding-block-start: var(--space-bar-3);
 
     li{
         width: max-content;
