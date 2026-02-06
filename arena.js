@@ -1,5 +1,5 @@
 let channelSlug = 'how-do-we-see-the-world' // The “slug” is just the end of the URL.
-let myUsername = 'kimaya-sarin' // For linking to your profile.
+let myUsername = 'amanda-guo' // For linking to your profile.
 
 
 
@@ -11,11 +11,11 @@ let placeChannelInfo = (channelData) => {
 	let channelCount = document.querySelector('#channel-count')
 	let channelLink = document.querySelector('#channel-link')
 
-	// Then set their content/attributes to our data:
-	channelTitle.innerHTML = channelData.title
-	channelDescription.innerHTML = channelData.description.html
-	channelCount.innerHTML = channelData.counts.blocks
-	channelLink.href = `https://www.are.na/channel/${channelSlug}`
+	// Then set their content/attributes to our data (only if elements exist):
+	if (channelTitle) channelTitle.innerHTML = channelData.title
+	if (channelDescription) channelDescription.innerHTML = channelData.description?.html || ''
+	if (channelCount) channelCount.innerHTML = channelData.counts.blocks
+	if (channelLink) channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
 
 
@@ -44,7 +44,7 @@ let renderBlock = (blockData) => {
 				<h3>
 						${ blockData.title }		
 				</h3>
-						${ blockData.description.html }
+				${ blockData.description?.html || '' }
 			</li>
 			`
 		// And puts it into the page!
@@ -59,21 +59,21 @@ let renderBlock = (blockData) => {
 		// …up to you!
 
 		// Declares a “template literal” of the dynamic HTML we want.
-		// let imageItem =
-		// 	`
-		// 	<li>
-		// 		<picture>
-		// 				<source media="(width < 500px)" srcset="${ blockData.image.small.src_2x }">
-		// 				<source media="(width < 1000px)" srcset="${ blockData.image.medium.src_2x }">
-		// 				<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
-		// 		</picture>
-		// 		<h3>
-		// 				${ blockData.title }		
-		// 		</h3>
-		// 				${ blockData.description.html }
-		// 	</li>
-		// 	`
-		// channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+		let imageItem =
+			`
+			<li>
+				<picture>
+						<source media="(width < 500px)" srcset="${ blockData.image.small.src_2x }">
+						<source media="(width < 1000px)" srcset="${ blockData.image.medium.src_2x }">
+						<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
+				</picture>
+				<h3>
+						${ blockData.title }		
+				</h3>
+${ blockData.description?.html || '' }
+			</li>
+			`
+		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 
 	}
 
@@ -81,18 +81,15 @@ let renderBlock = (blockData) => {
 	else if (blockData.type == 'Text') {
 		// …up to you!
 
-		// let textItem =
-		// 	`
-		// 	<li>
-		// 		<h2>${blockData.content}</h2>
-		// 		<section>
-		// 			<h3>${ blockData.title }</h3>
-		// 			${ blockData.description.html }
-		// 		</section>
-
-		// 	</li>
-		// 	`
-		// channelBlocks.insertAdjacentHTML('beforeend', textItem)
+		let textItem =
+			`
+			<li>
+				<h2>${blockData.content}</h2>
+				<section>
+					<h3>${ blockData.title }</h3>
+			</li>
+			`
+		channelBlocks.insertAdjacentHTML('beforeend', textItem)
 
 	}
 
@@ -110,14 +107,13 @@ let renderBlock = (blockData) => {
 					<h3>
 						${ blockData.title }		
 					</h3>
-					${ blockData.description.html }
+					${blockData.description.html}
 				</li>
 				`
 
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
 
-			// More on `video`, like the `autoplay` attribute:
-			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+		
 		}
 
 		// Uploaded PDFs!
@@ -147,7 +143,7 @@ let renderBlock = (blockData) => {
 					<h3>
 						${ blockData.title }		
 					</h3>
-					${ blockData.description.html }
+					${ blockData.description?.html || '' }
 				</li>
 				`
 
@@ -168,11 +164,11 @@ let renderBlock = (blockData) => {
 			let linkedVideoItem =
 				`
 				<li>
-					${ blockData.embed.html }
-					<h3>
-						${ blockData.title }		
-					</h3>
-						${ blockData.description.html }
+${ blockData.embed?.html || '' }
+			<h3>
+				${ blockData.title }		
+			</h3>
+					${ blockData.description?.html || '' }
 				</li>
 				`
 
@@ -194,6 +190,7 @@ let renderBlock = (blockData) => {
 // A function to display the owner/collaborator info:
 let renderUser = (userData) => {
 	let channelUsers = document.querySelector('#channel-users') // Container.
+	if (!channelUsers) return; // Exit if element doesn't exist
     
 	let userAddress =
 		`
