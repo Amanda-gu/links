@@ -31,22 +31,22 @@ let renderBlock = (blockData) => {
 		let linkItem =
 			`
 			<li>
-				<a href="${ blockData.source.url }">See the original ↗
+				<a href="${ blockData.source.url }">
 					<figure>
 						<picture>
 							<source media="(width < 500px)" srcset="${ blockData.image.small.src_2x }">
 							<source media="(width < 1000px)" srcset="${ blockData.image.medium.src_2x }">
 							<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
 						</picture>
-						<figcaption>
-							<h2>${ blockData.title }</h2>
-							${ blockData.description.html }
-						</figcaption>
+						
 					</figure>						
 				</a>
-				</li>
+				<h3>
+						${ blockData.title }		
+				</h3>
+						${ blockData.description.html }
+			</li>
 			`
-
 		// And puts it into the page!
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 
@@ -57,11 +57,43 @@ let renderBlock = (blockData) => {
 	// Images!
 	else if (blockData.type == 'Image') {
 		// …up to you!
+
+		// Declares a “template literal” of the dynamic HTML we want.
+		// let imageItem =
+		// 	`
+		// 	<li>
+		// 		<picture>
+		// 				<source media="(width < 500px)" srcset="${ blockData.image.small.src_2x }">
+		// 				<source media="(width < 1000px)" srcset="${ blockData.image.medium.src_2x }">
+		// 				<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
+		// 		</picture>
+		// 		<h3>
+		// 				${ blockData.title }		
+		// 		</h3>
+		// 				${ blockData.description.html }
+		// 	</li>
+		// 	`
+		// channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+
 	}
 
 	// Text!
 	else if (blockData.type == 'Text') {
 		// …up to you!
+
+		// let textItem =
+		// 	`
+		// 	<li>
+		// 		<h2>${blockData.content}</h2>
+		// 		<section>
+		// 			<h3>${ blockData.title }</h3>
+		// 			${ blockData.description.html }
+		// 		</section>
+
+		// 	</li>
+		// 	`
+		// channelBlocks.insertAdjacentHTML('beforeend', textItem)
+
 	}
 
 	// Uploaded (not linked) media…
@@ -74,8 +106,11 @@ let renderBlock = (blockData) => {
 			let videoItem =
 				`
 				<li>
-					<p><em>Video</em></p>
 					<video controls src="${ blockData.attachment.url }"></video>
+					<h3>
+						${ blockData.title }		
+					</h3>
+					${ blockData.description.html }
 				</li>
 				`
 
@@ -88,6 +123,18 @@ let renderBlock = (blockData) => {
 		// Uploaded PDFs!
 		else if (contentType.includes('pdf')) {
 			// …up to you!
+			let pdfItem =
+				`
+				<li>
+					<iframe src="${ blockData.attachment.url }"></iframe>
+					<h3>
+						${ blockData.title }		
+					</h3>
+					${ blockData.description.html }
+				</li>
+				`
+
+			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
 		}
 
 		// Uploaded audio!
@@ -96,8 +143,11 @@ let renderBlock = (blockData) => {
 			let audioItem =
 				`
 				<li>
-					<p><em>Audio</em></p>
-					<audio controls src="${ blockData.attachment.url }"></video>
+					<audio controls src="${ blockData.attachment.url }"></audio>
+					<h3>
+						${ blockData.title }		
+					</h3>
+					${ blockData.description.html }
 				</li>
 				`
 
@@ -118,8 +168,11 @@ let renderBlock = (blockData) => {
 			let linkedVideoItem =
 				`
 				<li>
-					<p><em>Linked Video</em></p>
 					${ blockData.embed.html }
+					<h3>
+						${ blockData.title }		
+					</h3>
+						${ blockData.description.html }
 				</li>
 				`
 
