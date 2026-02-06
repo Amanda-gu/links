@@ -237,15 +237,23 @@ main{
         h3{
             max-width: 40ch;
         }
-        /* this is for hover animation */
-        scale: 4%;
-        transition: 0.5s;
-        transition-timing-function: ease-out;
-
+        
         audio{
             height: 3rem;
             width: 100%;
         }
+        
+        /* this is for hover animation */
+        scale: 15%;
+        transition: 0.5s;
+        transition-timing-function: ease-out;
+        
+        /* adding an animation to the cards */
+        animation-name: movin;
+        animation-duration: 14s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+
     }
 
     li:hover p {
@@ -260,13 +268,6 @@ main{
 
     img{
         width: 20vw;
-    }
-
-    .documents{
-        iframe{
-            width: 100%;
-            height: min-content;
-        }
     }
 
 }
@@ -397,5 +398,27 @@ main{
   }
   100% {
     font-family: "Jacquard 24", system-ui;
+  }
+}
+
+
+@keyframes movin {
+  0% {
+    translate: 50% 50%;
+  }
+  20% {
+   translate: 20% 20%;
+  }
+  40% {
+    translate: 10% 10%;
+  }
+  60% {
+    translate: 0% 0%;
+  }
+  80% {
+    translate: -23% -25%;
+  }
+  100% {
+    translate: -50% 50%;
   }
 }
