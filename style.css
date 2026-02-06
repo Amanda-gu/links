@@ -28,6 +28,7 @@ body{
     font-weight: 400;
     font-style: normal;
     font-size: var(--body-copy);
+    text-wrap: balance;;
     color: var(--secondary-color);
 
     display: grid;
@@ -235,9 +236,14 @@ main{
             max-width: 40ch;
         }
         /* this is for hover animation */
-        scale: 20%;
+        scale: 4%;
         transition: 0.5s;
         transition-timing-function: ease-out;
+
+        audio{
+            height: 3rem;
+            width: 100%;
+        }
     }
 
     li:hover p {
