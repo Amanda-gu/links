@@ -293,7 +293,7 @@ img{
             }
         }
     }
-    #content{
+    #channel-blocks{
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -303,12 +303,12 @@ img{
             opacity: 1;
              color: var(--secondary-color);
         }
-        .images{
+        img, iframe, video{
             width: 40vw;
             filter: grayscale(0%);
         }
 
-        #card {
+        li {
             color: var(--color);
             align-items: left;
             gap: var(--space-bar-0);

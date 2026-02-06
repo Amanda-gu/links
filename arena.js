@@ -25,8 +25,8 @@ let renderBlock = (blockData) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#channel-blocks')
 
-	// let blockDescription = document.querySelector('#block-description')
-	// if (blockDescription) blockDescription.innerHTML = blockData.description?.html || ''
+	// A little helper for the block description, which we’ll use in multiple places:
+	// The `?.` is called “optional chaining” and it’s a way to avoid errors if the description is missing. It says, “if there’s a description, use its HTML; if not, just use an empty string.”
 	let blockDescription = blockData.description?.html || ''
 
 	// Links!
@@ -91,6 +91,7 @@ let renderBlock = (blockData) => {
 				<h2>${blockData.content.plain}</h2>
 				<section>
 					<h3>${ blockData.title }</h3>
+					${ blockDescription}
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
