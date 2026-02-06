@@ -31,20 +31,20 @@ let renderBlock = (blockData) => {
 		let linkItem =
 			`
 			<li>
-				<p><em>Link</em></p>
-				<figure>
-					<picture>
-						<source media="(width < 500px)" srcset="${ blockData.image.small.src_2x }">
-						<source media="(width < 1000px)" srcset="${ blockData.image.medium.src_2x }">
-						<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
-					</picture>
-					<figcaption>
-						<h3>${ blockData.title }</h3>
-						${ blockData.description.html }
-					</figcaption>
-				</figure>
-				<p><a href="${ blockData.source.url }">See the original ↗</a></p>
-			</li>
+				<a href="${ blockData.source.url }">See the original ↗
+					<figure>
+						<picture>
+							<source media="(width < 500px)" srcset="${ blockData.image.small.src_2x }">
+							<source media="(width < 1000px)" srcset="${ blockData.image.medium.src_2x }">
+							<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
+						</picture>
+						<figcaption>
+							<h2>${ blockData.title }</h2>
+							${ blockData.description.html }
+						</figcaption>
+					</figure>						
+				</a>
+				</li>
 			`
 
 		// And puts it into the page!

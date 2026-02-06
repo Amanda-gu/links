@@ -184,7 +184,7 @@ main{
     height: 70rem;
     overflow-x:hidden;
 }
-#content{
+#channel-blocks{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -202,7 +202,7 @@ main{
         transition-timing-function: ease-out;
     }
 
-    #card {
+    li {
         gap: var(--space-bar-0);
         display: flex;
         flex-direction: column;
@@ -215,11 +215,11 @@ main{
         transition: 0.5s;
         transition-timing-function: ease-out;
     }
-    #card:hover #description {
+    li:hover #description {
         opacity: 1;
         color: var(--secondary-color);
         }
-    #card:hover{
+    li:hover{
         color: var(--color);
         scale: 100%;
     }
