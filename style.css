@@ -203,7 +203,7 @@ main{
 
 
     li{
-        border:1px solid #ccc;
+
         gap: var(--space-bar-0);
         display: flex;
         flex-direction: column;
@@ -216,7 +216,7 @@ main{
         max-width: 40vw;
         
         h2{
-            max-width: 35ch;
+            max-width: 40ch;
             font-weight: 700;
             margin-block-end: 0.4rem;
             color: var(--color);
@@ -259,7 +259,6 @@ main{
     }
     li:nth-child(1n){
         animation-name: amovin;
-        animation-timing-function: linear;
     }
     li:nth-child(2n){
         animation-name: bmovin; 
@@ -267,7 +266,7 @@ main{
     li:nth-child(3n){
         animation-name: cmovin;
     }
-
+/* this is for the description to show */
     li:hover p {
         display: block;
         opacity: 1;
@@ -278,8 +277,9 @@ main{
         filter: grayscale(0%);
         }
 
-    img{
-        width: 20vw;
+     img, iframe, video, audio, html{
+            max-width: 30vw;
+            height: fit-content;
     }
 
 }
@@ -358,12 +358,11 @@ main{
 
 
         img, iframe, video, audio{
-            width: 40vw;
+            max-width: 40vw;
             filter: grayscale(0%);
         }
 
         li {
-            /* border:1px solid #ccc; */
             max-height: fit-content;
             p{
             display: block;
@@ -385,6 +384,16 @@ main{
     }
 }
 
+
+@media(width<500px){
+    #channel-blocks{
+        li {
+            max-width: 70vw;
+            animation-name: none;
+            animation-duration: 0s;
+        }
+    }
+}
 
 @keyframes fontchange {
   0% {
