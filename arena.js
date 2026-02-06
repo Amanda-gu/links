@@ -89,9 +89,10 @@ let renderBlock = (blockData) => {
 			`
 			<li>
 				<h2>${blockData.content.plain}</h2>
-				<section>
+
 					<h3>${ blockData.title }</h3>
 					${ blockDescription}
+					
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)

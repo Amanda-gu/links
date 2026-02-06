@@ -201,6 +201,7 @@ main{
 
     padding-block-start: 10vh;
 
+
     li{
         border:1px solid #ccc;
         gap: var(--space-bar-0);
@@ -237,7 +238,7 @@ main{
         h3{
             max-width: 40ch;
         }
-        
+
         audio{
             height: 3rem;
             width: 100%;
@@ -248,9 +249,9 @@ main{
         transition: 0.5s;
         transition-timing-function: ease-out;
         
-        /* adding an animation to the cards */
     }
-
+    
+    /* adding an animation to the cards */
     li{
         animation-duration: 20s;
         animation-iteration-count: infinite;
@@ -347,15 +348,12 @@ main{
             }
         }
     }
-    main{
-        width: 100vw;
-    }
     #channel-blocks{
         inset-block-start: 2rem;
         width: 100%;
         display: flex;
         flex-direction: column;
-        row-gap: var(--space-bar-2);
+        row-gap: var(--space-bar-0);
         align-items: center;
 
 
@@ -378,8 +376,6 @@ main{
             flex-direction: column;
             font-size: var(--body-copy);
             scale: 100%;
-            transition: 0.5s;
-            transition-timing-function: ease-out;
         }
     }
     nav{
