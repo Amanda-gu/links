@@ -25,8 +25,9 @@ let renderBlock = (blockData) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#channel-blocks')
 
-	let blockDescription = document.querySelector('#block-description')
-	if (blockDescription) blockDescription.innerHTML = blockData.description?.html || ''
+	// let blockDescription = document.querySelector('#block-description')
+	// if (blockDescription) blockDescription.innerHTML = blockData.description?.html || ''
+	let blockDescription = blockData.description?.html || ''
 
 	// Links!
 	if (blockData.type == 'Link') {
@@ -47,7 +48,7 @@ let renderBlock = (blockData) => {
 				<h3>
 						${blockData.title }		
 				</h3>
-				${ blockData.description.html }
+				${ blockDescription}
 			</li>
 			`
 		// And puts it into the page!
@@ -73,6 +74,7 @@ let renderBlock = (blockData) => {
 				<h3>
 						${ blockData.title }		
 				</h3>
+				${ blockDescription}
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
@@ -98,7 +100,7 @@ let renderBlock = (blockData) => {
 	// Uploaded (not linked) media…
 	else if (blockData.type == 'Attachment') {
 		let contentType = blockData.attachment.content_type // Save us some repetition.
-
+		
 		// Uploaded videos!
 		if (contentType.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
@@ -109,6 +111,7 @@ let renderBlock = (blockData) => {
 					<h3>
 						${ blockData.title }		
 					</h3>
+					${ blockDescription}
 				</li>
 				`
 
@@ -127,7 +130,7 @@ let renderBlock = (blockData) => {
 					<h3>
 						${ blockData.title }		
 					</h3>
-					${ blockData.description.html }
+					${ blockDescription}
 				</li>
 				`
 
@@ -144,7 +147,7 @@ let renderBlock = (blockData) => {
 					<h3>
 						${ blockData.title }		
 					</h3>
-					${ blockData.description.html }
+					${ blockDescription}
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
@@ -168,7 +171,7 @@ let renderBlock = (blockData) => {
 					<h3>
 						${ blockData.title }		
 					</h3>
-					${ blockData.description.html }
+					${ blockDescription}
 				</li>
 				`
 
@@ -188,7 +191,7 @@ let renderBlock = (blockData) => {
 					<h3>
 						${ blockData.title }		
 					</h3>
-					${ blockData.description.html }
+					${ blockDescription}
 				</li>
 				`
 
