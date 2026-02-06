@@ -26,6 +26,11 @@ let renderBlock = (blockData) => {
 	let channelBlocks = document.querySelector('#channel-blocks')
 
 	// Links!
+
+	let blockDescription = document.querySelector('#block-description')
+	if (blockDescription) blockDescription.innerHTML = blockData.description?.html || ''
+
+	// Links!
 	if (blockData.type == 'Link') {
 		// Declares a “template literal” of the dynamic HTML we want.
 		let linkItem =
@@ -42,9 +47,9 @@ let renderBlock = (blockData) => {
 					</figure>						
 				</a>
 				<h3>
-						${ blockData.title }		
+						${blockData.title }		
 				</h3>
-				${ blockData.description?.html || '' }
+				${ blockData.description.html }
 			</li>
 			`
 		// And puts it into the page!
@@ -70,7 +75,6 @@ let renderBlock = (blockData) => {
 				<h3>
 						${ blockData.title }		
 				</h3>
-${ blockData.description?.html || '' }
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
@@ -87,6 +91,7 @@ ${ blockData.description?.html || '' }
 				<h2>${blockData.content}</h2>
 				<section>
 					<h3>${ blockData.title }</h3>
+					${ blockData.description.html }
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
@@ -107,7 +112,6 @@ ${ blockData.description?.html || '' }
 					<h3>
 						${ blockData.title }		
 					</h3>
-					${blockData.description.html}
 				</li>
 				`
 
@@ -143,10 +147,9 @@ ${ blockData.description?.html || '' }
 					<h3>
 						${ blockData.title }		
 					</h3>
-					${ blockData.description?.html || '' }
+					${ blockData.description.html }
 				</li>
 				`
-
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
 
 			// More on`audio`:
@@ -164,11 +167,11 @@ ${ blockData.description?.html || '' }
 			let linkedVideoItem =
 				`
 				<li>
-${ blockData.embed?.html || '' }
-			<h3>
-				${ blockData.title }		
-			</h3>
-					${ blockData.description?.html || '' }
+				${ blockData.embed.html}
+					<h3>
+						${ blockData.title }		
+					</h3>
+					${ blockData.description.html }
 				</li>
 				`
 
@@ -181,6 +184,19 @@ ${ blockData.embed?.html || '' }
 		// Linked audio!
 		else if (embedType.includes('rich')) {
 			// …up to you!
+			let linkedAudioItem =
+				`
+				<li>
+				${ blockData.embed.html}
+					<h3>
+						${ blockData.title }		
+					</h3>
+					${ blockData.description.html }
+				</li>
+				`
+
+			channelBlocks.insertAdjacentHTML('beforeend', linkedAudioItem)
+			
 		}
 	}
 }

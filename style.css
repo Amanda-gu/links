@@ -182,7 +182,7 @@ footer{
 main{
     width: 100vw;
     /* adding height here so i can scroll for sketch purposes */
-    height: 1000rem;
+    height: 100%;
     overflow-x:hidden;
 }
 #channel-blocks{
