@@ -179,22 +179,26 @@ footer{
 
 
 main{
-    width: 100vw;
+    width: 200vw;
     /* adding height here so i can scroll for sketch purposes */
     height: 100%;
     overflow-x:hidden;
+
 }
 #channel-blocks{
+    
     width: 100%;
+    height: 150%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    row-gap: -2rem;
+    row-gap: 0rem;
+    column-gap: 0rem;
     justify-content: space-evenly;
     align-items: space-evenly;
     text-align: center;
 
-   
+    padding-block-start: 10vh;
 
     li{
         gap: var(--space-bar-0);
@@ -205,8 +209,10 @@ main{
         font-size: var(--body-copy);
         filter: grayscale(100%);
         color: var(--secondary-color);
+        max-height: 32vh;
+        max-width: 32vw;
         h2{
-            max-width: 40ch;
+            max-width: 35ch;
             font-weight: 700;
             margin-block-end: 0.4rem;
             color: var(--color);
@@ -214,45 +220,73 @@ main{
         }
         
         p{
-            display: block;
-            max-width: 40ch;
+            display: none;
+            max-width: 45ch;
+            text-wrap: balance;
+            color: var(--secondary-color);
             font-family: "PT Sans", sans-serif;
             opacity: 0;
             font-size: 60%;
+
             transition: 0.5s;
             transition-timing-function: ease-out;
         }
         h3{
-            max-width: 35ch;
+            max-width: 40ch;
         }
         /* this is for hover animation */
         scale: 20%;
         transition: 0.5s;
         transition-timing-function: ease-out;
     }
+
     li:hover p {
+        display: block;
         opacity: 1;
-        color: var(--secondary-color);
         }
-    li:hover{
-        
+    li:hover{    
         color: var(--color);
         scale: 100%;
         filter: grayscale(0%);
+        }
+
+    img{
+        width: 20vw;
     }
 
-img{
-    width: 20vw;
+    .documents{
+        iframe{
+            width: 100%;
+            height: min-content;
+        }
+    }
+
 }
 
-.documents{
-    iframe{
+.listview{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    row-gap: var(--space-bar-1);
+    align-items: center;
+    justify-content: center;
+    li{
         width: 100%;
-        height: min-content;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        gap: var(--space-bar-0);
+        color: var(--color);
+        font-size: var(--body-copy);
+        scale: 100%;
+
+        p{
+            display: block;
+            opacity: 1;
+        }
     }
 }
-
-}
+    
 
 
 @media(width<1000px){
@@ -293,22 +327,30 @@ img{
             }
         }
     }
+    main{
+        width: 100vw;
+    }
     #channel-blocks{
+        inset-block-start: 2rem;
         width: 100%;
         display: flex;
         flex-direction: column;
-        row-gap: var(--space-bar-3);
+        row-gap: var(--space-bar-2);
         align-items: center;
-        #description{
-            opacity: 1;
-             color: var(--secondary-color);
-        }
-        img, iframe, video{
+
+
+        img, iframe, video, audio{
             width: 40vw;
             filter: grayscale(0%);
         }
 
         li {
+            /* border:1px solid #ccc; */
+            max-height: fit-content;
+            p{
+            display: block;
+            opacity: 1;
+        }
             color: var(--color);
             align-items: left;
             gap: var(--space-bar-0);

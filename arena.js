@@ -144,7 +144,7 @@ let renderBlock = (blockData) => {
 			let audioItem =
 				`
 				<li>
-					<audio controls src="${ blockData.attachment.url }"></audio>
+					<audio controls src="${blockData.attachment.url }"></audio>
 					<h3>
 						${ blockData.title }		
 					</h3>
