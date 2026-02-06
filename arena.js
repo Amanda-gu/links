@@ -90,7 +90,10 @@ let renderBlock = (blockData) => {
 			<li>
 				<h2>${blockData.content.plain}</h2>
 
-					<h3>${ blockData.title }</h3>
+					${ blockData.title
+						? `<h3>${ blockData.title }</h3>`
+						: `<p>Untitled</p>`
+					}
 					${ blockDescription}
 					
 			</li>
