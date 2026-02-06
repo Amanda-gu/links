@@ -25,8 +25,6 @@ let renderBlock = (blockData) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#channel-blocks')
 
-	// Links!
-
 	let blockDescription = document.querySelector('#block-description')
 	if (blockDescription) blockDescription.innerHTML = blockData.description?.html || ''
 
@@ -88,10 +86,9 @@ let renderBlock = (blockData) => {
 		let textItem =
 			`
 			<li>
-				<h2>${blockData.content}</h2>
+				<h2>${blockData.content.plain}</h2>
 				<section>
 					<h3>${ blockData.title }</h3>
-					${ blockData.description.html }
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
