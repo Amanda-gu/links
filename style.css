@@ -202,6 +202,7 @@ main{
     padding-block-start: 10vh;
 
     li{
+        border:1px solid #ccc;
         gap: var(--space-bar-0);
         display: flex;
         flex-direction: column;
@@ -211,7 +212,8 @@ main{
         filter: grayscale(100%);
         color: var(--secondary-color);
         max-height: 32vh;
-        max-width: 32vw;
+        max-width: 40vw;
+        
         h2{
             max-width: 35ch;
             font-weight: 700;
