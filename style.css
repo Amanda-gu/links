@@ -371,7 +371,6 @@ main{
 
         img, iframe, video, audio{
             max-width: 40vw;
-            filter: grayscale(0%);
         }
 
         li {
@@ -387,6 +386,11 @@ main{
             flex-direction: column;
             font-size: var(--body-copy);
             scale: 100%;
+            /* filter: grayscale(0%); */
+        }
+
+        li:hover{    
+            z-index: 0;
         }
     }
     nav{
