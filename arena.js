@@ -47,9 +47,11 @@ let renderBlock = (blockData) => {
 							<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
 						</picture>
 						
-					</figure>						
+					</figure>	
 				</a>
+
 				<h3>
+					<a href="${ blockData.source.url }">
 						${blockData.title }		
 				</h3>
 				${ blockDescription}
@@ -96,7 +98,7 @@ let renderBlock = (blockData) => {
 
 					${ blockData.title
 						? `<h3>${ blockData.title }</h3>`
-						: `<p>Untitled</p>`
+						: `<h3>Untitled</h3>`
 					}
 					${ blockDescription}
 					
@@ -178,7 +180,8 @@ let renderBlock = (blockData) => {
 				<li>
 				${ blockData.embed.html}
 					<h3>
-						${ blockData.title }		
+						<a href="${ blockData.source.url }">
+						${blockData.title }		
 					</h3>
 					${ blockDescription}
 				</li>
@@ -198,7 +201,8 @@ let renderBlock = (blockData) => {
 				<li>
 				${ blockData.embed.html}
 					<h3>
-						${ blockData.title }		
+						<a href="${ blockData.source.url }">
+						${blockData.title }		
 					</h3>
 					${ blockDescription}
 				</li>
