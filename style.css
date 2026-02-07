@@ -144,7 +144,7 @@ nav{
         row-gap: var(--space-bar-0);
         padding-block-end: var(--space-bar-0);
         li{
-            width: max-content;
+            width:max-content;
         }
         li:hover {
             font-family: "Jacquard 24", system-ui;
@@ -199,7 +199,7 @@ main{
     align-items: space-evenly;
     text-align: center;
 
-    padding-block-start: 10vh;
+    padding-block: 10vh;
 
 
     li{
@@ -279,6 +279,7 @@ main{
         color: var(--color);
         scale: 100%;
         filter: grayscale(0%);
+        z-index: 2;
         }
 
      img, iframe, video, audio, html{
