@@ -10,12 +10,16 @@ let placeChannelInfo = (channelData) => {
 	let channelDescription = document.querySelector('#channel-description')
 	let channelCount = document.querySelector('#channel-count')
 	let channelLink = document.querySelector('#channel-link')
+	let channelUsers = document.querySelector('#channel-users')
 
 	// Then set their content/attributes to our data (only if elements exist):
 	if (channelTitle) channelTitle.innerHTML = channelData.title
 	if (channelDescription) channelDescription.innerHTML = channelData.description?.html || ''
 	if (channelCount) channelCount.innerHTML = channelData.counts.blocks
 	if (channelLink) channelLink.href = `https://www.are.na/channel/${channelSlug}`
+	if (channelUsers) channelUsers.innerHTML = channelData.owner.name // Clear any existing content.
+
+	console.log(json)
 }
 
 
@@ -207,26 +211,6 @@ let renderBlock = (blockData) => {
 }
 
 
-
-// A function to display the owner/collaborator info:
-let renderUser = (userData) => {
-	let channelUsers = document.querySelector('#channel-users') // Container.
-	if (!channelUsers) return; // Exit if element doesn't exist
-    
-	let userAddress =
-		`
-		<address>
-			<img src="${ userData.avatar }">
-			<h3>${ userData.name }</h3>
-			<p><a href="https://are.na/${ userData.slug }">Are.na profile ↗</a></p>
-		</address>
-		`
-
-	channelUsers.insertAdjacentHTML('beforeend', userAddress)
-}
-
-
-
 // Finally, a helper function to fetch data from the API, then run a callback function with it:
 let fetchJson = (url, callback) => {
 	fetch(url, { cache: 'no-store' })
@@ -244,14 +228,11 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}`, (json) => {
 	console.log(json) // Always good to check your response!
 
 	placeChannelInfo(json) // Pass all the data to the first function, above.
-	renderUser(json.owner) // Pass just the nested object `.owner`.
 })
 
 // Get your info to put with the owner's:
 fetchJson(`https://api.are.na/v3/users/${myUsername}/`, (json) => {
 	console.log(json) // See what we get back.
-
-	renderUser(json) // Pass this to the same function, no nesting.
 })
 
 // And the data for the blocks:

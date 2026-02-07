@@ -94,8 +94,8 @@ hgroup{
             a{
                 opacity: 0.1;
             }
-            #info{       
-                #hide{
+            #channel-link{       
+                #channel-description{
                     display: none;
                     white-space: wrap;
                     width: 60ch;
@@ -106,7 +106,7 @@ hgroup{
                 }
             }
             
-            #info:hover #hide {
+            #channel-link:hover #channel-description {
                 display: block;
                 }
         }
@@ -213,6 +213,7 @@ main{
         filter: grayscale(100%);
         color: var(--secondary-color);
         max-height: 32vh;
+        min-width: 15vw;
         max-width: 40vw;
         
         h2{
