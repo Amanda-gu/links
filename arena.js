@@ -19,7 +19,7 @@ let placeChannelInfo = (channelData) => {
 	if (channelLink) channelLink.href = `https://www.are.na/channel/${channelSlug}`
 	if (channelUsers) channelUsers.innerHTML = channelData.owner.name // Clear any existing content.
 
-	console.log(json)
+	console.log()
 }
 
 
