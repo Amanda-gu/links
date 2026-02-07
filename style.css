@@ -72,17 +72,13 @@ hgroup{
             /* i learnt that disply hide the element entirely including its surrounding properties like column-gap */
             display: none;
         }
-        
         /* i want the info to appear on hover. this is my reference: https://codepen.io/jimbennett/pen/OMPrjL */
     
         /* I referenced how the selector were written such as .textanim-container:hover .textanim-hidden */
 
         li{
-            align-items: baseline;
             width: min-content;
-            *{
-                height: 100%;
-            }
+        
             h1{
                 color: var(--color);
                 animation-name: fontchange;
@@ -94,6 +90,11 @@ hgroup{
     
             a{
                 opacity: 0.1;
+            }
+            a:hover{
+                font-family: "Jacquard 24", system-ui;
+                color: var(--color);
+                opacity: 1;
             }
             #channel-link{       
                 #channel-description{
@@ -112,18 +113,13 @@ hgroup{
                 }
         }
             
-        li:nth-child(1){
+        /* fix the width for channel details */
+       #channel{
             width:10rem;
         }
 
     }
-    a:hover{
-    font-family: "Jacquard 24", system-ui;
-    color: var(--color);
-}
-}
-hgroup:hover a{
-    opacity: 1;
+    
 }
 
 
@@ -329,43 +325,51 @@ main{
 
     hgroup{
         width: 100%;
-        height: max-content;
+        height: fit-content;
         padding-block-end: 6rem;
         position: fixed;
         inset-block-start: 0rem;
-        ul{
 
-            #about{
-                text-align: center;
-                width: 100%;
-                display: inline;
-                a{
-                    opacity: 1;
-                }
-                #channel-link{       
-                #channel-description{
-                    display: block;
-                }
-            }
-            }
+        ul{
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
             row-gap: 0.6rem;
-           
+            
+            height: max-content;
+            text-align: center;
+            
+            #about{
+                display: inline;
+            }
+            li {
+
+                a{
+                    opacity: 1;
+                    font-family: "Jacquard 24", system-ui;
+                    color: var(--color);
+                }
+
+                #channel-link{    
+                    padding-inline: var(--space-bar-1);
+                    #channel-description{
+                        max-width: 45ch;
+                        display: block;
+                        justify-content: center;
+                        padding-block-end: 1rem;
+                    }
+                }
+            }
+            /* channel info */
+            #channel {
+                width: max-content;   
+            }
+        
             /* h1 */
-            li:nth-child(2) {
+            li:nth-child(3) {
                 order: -2;
             }
-
-
-            /* desktop headers */
-            li:nth-child(1), li:nth-child(3) {
-                display: none;
-
-            }
-        }
     }
     #channel-blocks{
         inset-block-start: 2rem;
@@ -411,6 +415,7 @@ main{
 
     footer{
         display:none;
+    }
     }
 }
 
