@@ -44,7 +44,7 @@ hgroup, main, footer, nav{
 
 }
 
-hgroup, footer, nav{
+hgroup, footer{
     position: fixed;
     width: 100%;
     z-index: 1;
@@ -136,15 +136,21 @@ footer, nav ul{
 }
 
 nav{
+    width: max-content;
+    /* i want to make the nav centered at the bottom */
+    /* saw this example:https://stackoverflow.com/a/22278778 */
+    /* the anchor point of the nav element is top left corner */
+    /* left:50% shifts it to the right for half of the screen width
+    then, translate 50% to the right to offset the element to the center  */
+    position: fixed;
     bottom: 0rem;
-    background-image: linear-gradient(to bottom, var(--background-gradient), var(--background),var(--background));
-    width: 100%;
-    padding-block-start: var(--space-bar-3);
-    
+    left: 50%;
+    transform: translate(-50%,0);
+    z-index: 3;
     ul{
         row-gap: var(--space-bar-0);
         li{
-            width:max-content;
+            width: max-content;
         }
         li:hover {
             font-family: "Jacquard 24", system-ui;
@@ -166,8 +172,11 @@ footer{
     display: flex;
     column-gap: var(--space-bar-0);
     justify-content: space-between;
-
     
+/* for the skrim */
+    background-image: linear-gradient(to bottom, var(--background-gradient), var(--background),var(--background));
+
+    padding-block-start: var(--space-bar-3); padding-block-start: var(--space-bar-3);
     a{
         text-decoration: underline;
     }
@@ -387,7 +396,6 @@ main{
     }
 }
 
-
 @media(width<500px){
     #channel-blocks{
         li {
@@ -420,7 +428,6 @@ main{
   }
 }
 
-
 @keyframes amovin {
   0% {
     translate: 15% 30%;
@@ -444,8 +451,6 @@ main{
     translate: 15% 30%;
   }
 }
-
-
 
 @keyframes bmovin {
   0% {
