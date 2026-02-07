@@ -3,6 +3,7 @@
 :root{
     --color: rgb(17, 17, 17);
     --secondary-color: rgb(176, 176, 176);
+    --tertiary-color: rgb(203, 203, 203);
     --background: rgb(244, 244, 242);
     --background-gradient: rgba(244, 244, 242, 0);
 
@@ -37,7 +38,7 @@ body{
 }
 
 
-hgroup, main, footer{
+hgroup, main, footer, nav{
     padding-inline: var(--space-page-margin);
     padding-block: var(--space-bar-0);
 
@@ -135,14 +136,13 @@ footer, nav ul{
 }
 
 nav{
-    bottom: 2rem;
+    bottom: 0rem;
     background-image: linear-gradient(to bottom, var(--background-gradient), var(--background),var(--background));
     width: 100%;
     padding-block-start: var(--space-bar-3);
     
     ul{
         row-gap: var(--space-bar-0);
-        padding-block-end: var(--space-bar-0);
         li{
             width:max-content;
         }
@@ -159,21 +159,19 @@ nav{
 }
 
 footer{
-    
+    color: var(--tertiary-color);
     font-family: "PT Sans", sans-serif;
-    background-color: var(--background);
     font-size: 60%;
     bottom: 0;
     display: flex;
     column-gap: var(--space-bar-0);
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+
     
     a{
         text-decoration: underline;
     }
     a:hover{
-        font-family: "PT Sans", sans-serif;
         color: var(--color);
     }
 }
