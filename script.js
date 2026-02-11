@@ -4,10 +4,12 @@ let showChannelInfo = 'show-channel-info'
 
 let channelBlocks = document.querySelector('#channel-blocks') // This can use any CSS selector.
 let channelInfo = document.querySelector('#channel') // This can use any CSS selector.
+let channelDialog = document.querySelector('#channel-about') // This can use any CSS selector.
 
 let listButton = document.querySelector('#list-view-button') // But use `id` for a singular thing.
 let fieldButton = document.querySelector('#field-view-button') // But use `id` for a singular thing.
 let aboutButton = document.querySelector('#about') // But use `id` for a singular thing.
+let closeButton = document.querySelector('#close-button') // But use `id` for a singular thing.
 
 
 listButton.addEventListener('click', () => { // “Listen” for clicks.
@@ -25,13 +27,28 @@ fieldButton.addEventListener('click', () => { // “Listen” for clicks.
 })
 
 
-aboutButton.addEventListener('click', () => { // “Listen” for clicks.
+// aboutButton.addEventListener('click', () => { // “Listen” for clicks.
 	
-	channelInfo.classList.toggle(showChannelInfo)
-	 // Toggle the class!
+// 	channelInfo.classList.toggle(showChannelInfo)
+// 	 // Toggle the class!
+// })
+
+
+aboutButton.addEventListener('click', () => { // “Listen” for clicks.
+	channelDialog.showModal() // This opens it up.
 })
 
+closeButton.addEventListener('click', () => {
+	channelDialog.close() // And this closes it!
+})
 
+// Listen to *all* clicks, now including the `event` parameter…
+document.addEventListener('click', (event) => {
+	// Only clicks on the page itself behind the `dialog`.
+	if (event.target == document.documentElement) {
+		channelDialog.close() // Close it too then.
+	}
+})
 
 
 

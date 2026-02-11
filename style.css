@@ -31,8 +31,10 @@ body{
     background-size: 40px 40px;
     /* using radial-gradient here to 'remove' the lines */
     /* inside radial-gradient, circle shape, center of the circle gradient, start of the outer color of the circle */
-    background-image: radial-gradient(circle, var(--tertiary-color) 1px, var(--background) 1px);
-
+    /* background-image: radial-gradient(circle, var(--tertiary-color) 1px, var(--background) 1px); */
+    /* background-image:
+    linear-gradient(to right, rgb(73, 58, 58) 1px, transparent 1px),
+    linear-gradient(to bottom, grey 1px, transparent 1px); */
 
     animation-name: movinggrid;
     animation-timing-function: ease-in-out;
@@ -172,7 +174,6 @@ nav{
     margin-block-end: var(--space-bar-1);
     ul{
         column-gap: var(--space-bar-2);
-        row-gap: var(--space-bar-1);
         button{
             font-family: "Jacquard 12 Charted", system-ui;
             width: max-content;
@@ -411,9 +412,7 @@ main{
             
             #about{
                 display: inline;
-                cursor: pointer;
             }
-
             li {
 
                 a{
@@ -422,29 +421,19 @@ main{
                     color: var(--color);
                 }
 
-            }
-            /* channel info */
-            #channel {
-                display: none;
-                width: max-content;  
-                
                 #channel-link{    
                     padding-inline: var(--space-bar-1);
-                    
                     #channel-description{
                         max-width: 45ch;
                         display: block;
                         justify-content: center;
-                        padding-block-end: var(--space-bar-2);
+                        padding-block-end: 1rem;
                     }
                 }
-             
-                &.show-channel-info{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                } 
+            }
+            /* channel info */
+            #channel {
+                width: max-content;   
             }
         
             /* h1 */
