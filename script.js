@@ -14,7 +14,7 @@ listButton.addEventListener('click', () => { // “Listen” for clicks.
 
 fieldButton.addEventListener('click', () => { // “Listen” for clicks.
 	channelBlocks.classList.remove(listClass)
-	fieldButton.classList.remove('button-unclicked')
+	fieldButton.classList.add('button-unclicked')
 	listButton.classList.remove('button-clicked')
 	 // Toggle the class!
 })
