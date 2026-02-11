@@ -4,12 +4,12 @@ let showChannelInfo = 'show-channel-info'
 
 let channelBlocks = document.querySelector('#channel-blocks') // This can use any CSS selector.
 let channelInfo = document.querySelector('#channel') // This can use any CSS selector.
-let channelDialog = document.querySelector('#channel-about') // This can use any CSS selector.
+let channelDialog = document.querySelector('#channel-dialog') // This can use any CSS selector.
 
 let listButton = document.querySelector('#list-view-button') // But use `id` for a singular thing.
 let fieldButton = document.querySelector('#field-view-button') // But use `id` for a singular thing.
 let aboutButton = document.querySelector('#about') // But use `id` for a singular thing.
-let closeButton = document.querySelector('#close-button') // But use `id` for a singular thing.
+let closeButton = document.querySelector('#close') // But use `id` for a singular thing.
 
 
 listButton.addEventListener('click', () => { // “Listen” for clicks.
