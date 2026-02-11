@@ -1,3 +1,39 @@
+// Set up our variables.
+let listClass = 'listview-channel'
+let cardlistClass = 'listview-card' // “Strings” (like this class name) are wrapped in quotes.
+let channelBlocks = document.querySelector('#channel-blocks') // This can use any CSS selector.
+let listButton = document.querySelector('#list-view-button') // But use `id` for a singular thing.
+let fieldButton = document.querySelector('#field-view-button') // But use `id` for a singular thing.
+
+
+listButton.addEventListener('click', () => { // “Listen” for clicks.
+	channelBlocks.classList.add(listClass) // Toggle the class!
+	listButton.classList.add('button-clicked')
+	fieldButton.classList.remove('button-clicked')
+})
+
+fieldButton.addEventListener('click', () => { // “Listen” for clicks.
+	channelBlocks.classList.remove(listClass)
+	fieldButton.classList.add('button-clicked')
+	listButton.classList.remove('button-clicked')
+	 // Toggle the class!
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//from michael
+//will do later
 // Lil’ helper function to randomly sort a list (array):
 let shuffleArray = (array) => {
 	array.sort(() => Math.random() - 0.5)
