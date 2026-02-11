@@ -531,8 +531,6 @@ main{
     #channel-blocks{
         li {
             max-width: 70vw;
-            animation-name: none;
-            animation-duration: 0s;
         }
     }
 }
