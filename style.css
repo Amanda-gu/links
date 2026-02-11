@@ -495,7 +495,7 @@ main{
         }
 
         li {
-            max-height: fit-content;
+            max-height: max-content;
             p{
                 display: block;
                 opacity: 1;
@@ -507,7 +507,7 @@ main{
             flex-direction: column;
             font-size: var(--body-copy);
             scale: 100%;
-            /* filter: grayscale(0%); */
+            filter: grayscale(0%);
         }
 
         li:hover{    
