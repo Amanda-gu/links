@@ -21,7 +21,27 @@
     --space-page-margin: 2rem;
 }
 
+
+
+
 body{
+/*  want to add a grid pattern to the bg */
+/* how to make a grid pattern: https://stackoverflow.com/questions/3540194/how-to-make-a-grid-like-graph-paper-grid-with-just-css */
+/* bg size is the size of the individual grid squares */
+    background-size: 40px 40px;
+    /* using radial-gradient here to 'remove' the lines */
+    /* inside radial-gradient, circle shape, center of the circle gradient, start of the outer color of the circle */
+    background-image: radial-gradient(circle, var(--tertiary-color) 1px, var(--background) 1px);
+
+
+    animation-name: movinggrid;
+    animation-timing-function: ease-in-out;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+
+
+
+
     height: 100vh;
     color: var(--color);
     background-color: var(--background);
@@ -35,6 +55,9 @@ body{
     display: grid;
     grid-template-rows: min-content 1fr min-content;
     align-items: center;
+
+
+    
 }
 
 
@@ -148,7 +171,8 @@ nav{
     row-gap: var(--space-bar-1);
     margin-block-end: var(--space-bar-1);
     ul{
-        
+        column-gap: var(--space-bar-2);
+        row-gap: var(--space-bar-1);
         button{
             font-family: "Jacquard 12 Charted", system-ui;
             width: max-content;
@@ -387,7 +411,9 @@ main{
             
             #about{
                 display: inline;
+                cursor: pointer;
             }
+
             li {
 
                 a{
@@ -396,19 +422,29 @@ main{
                     color: var(--color);
                 }
 
+            }
+            /* channel info */
+            #channel {
+                display: none;
+                width: max-content;  
+                
                 #channel-link{    
                     padding-inline: var(--space-bar-1);
+                    
                     #channel-description{
                         max-width: 45ch;
                         display: block;
                         justify-content: center;
-                        padding-block-end: 1rem;
+                        padding-block-end: var(--space-bar-2);
                     }
                 }
-            }
-            /* channel info */
-            #channel {
-                width: max-content;   
+             
+                &.show-channel-info{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                } 
             }
         
             /* h1 */
@@ -453,7 +489,6 @@ main{
     }
     nav{
         background-image: linear-gradient(to bottom, var(--background-gradient), var(--background),var(--background));
-
         padding-block-start: var(--space-bar-3); 
         #viewtoggle{
             display: none;

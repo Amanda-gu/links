@@ -1,8 +1,13 @@
 // Set up our variables.
 let listClass = 'listview-channel'
+let showChannelInfo = 'show-channel-info'
+
 let channelBlocks = document.querySelector('#channel-blocks') // This can use any CSS selector.
+let channelInfo = document.querySelector('#channel') // This can use any CSS selector.
+
 let listButton = document.querySelector('#list-view-button') // But use `id` for a singular thing.
 let fieldButton = document.querySelector('#field-view-button') // But use `id` for a singular thing.
+let aboutButton = document.querySelector('#about') // But use `id` for a singular thing.
 
 
 listButton.addEventListener('click', () => { // “Listen” for clicks.
@@ -16,6 +21,13 @@ fieldButton.addEventListener('click', () => { // “Listen” for clicks.
 	channelBlocks.classList.remove(listClass)
 	fieldButton.classList.add('button-unclicked')
 	listButton.classList.remove('button-clicked')
+	 // Toggle the class!
+})
+
+
+aboutButton.addEventListener('click', () => { // “Listen” for clicks.
+	
+	channelInfo.classList.toggle(showChannelInfo)
 	 // Toggle the class!
 })
 
