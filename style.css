@@ -132,7 +132,7 @@ footer, nav ul{
 }
 
 nav{
-    width: max-content;
+    width: 90%;
     /* i want to make the nav centered at the bottom */
     /* saw this example:https://stackoverflow.com/a/22278778 */
     /* the anchor point of the nav element is top left corner */
@@ -246,9 +246,9 @@ main{
             font-family:"Jacquard 24", system-ui;;
         }
 
-        audio{
-            height: 3rem;
-            width: 100%;
+        audio {
+            block-size: revert;
+            inline-size: 100%;
         }
         
         /* this is for hover animation */
@@ -371,6 +371,7 @@ main{
                 order: -2;
             }
     }
+    }
     #channel-blocks{
         inset-block-start: 2rem;
         width: 100%;
@@ -387,9 +388,9 @@ main{
         li {
             max-height: fit-content;
             p{
-            display: block;
-            opacity: 1;
-        }
+                display: block;
+                opacity: 1;
+            }
             color: var(--color);
             align-items: left;
             gap: var(--space-bar-0);
@@ -415,7 +416,6 @@ main{
 
     footer{
         display:none;
-    }
     }
 }
 
