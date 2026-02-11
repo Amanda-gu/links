@@ -21,7 +21,20 @@
     --space-page-margin: 2rem;
 }
 
-
+button{
+            font-family: "Jacquard 12 Charted", system-ui;
+            width: max-content;
+            cursor: pointer; 
+            
+            &.button-clicked {
+                font-family: "Jacquard 24", system-ui;
+                color: var(--color);
+            }
+        }
+button:hover{
+            font-family: "Jacquard 24", system-ui;
+            color: var(--color);
+        }
 
 
 body{
