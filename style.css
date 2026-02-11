@@ -188,16 +188,7 @@ nav{
     ul{
         column-gap: var(--space-bar-2);
         row-gap: var(--space-bar-1);
-        button{
-            font-family: "Jacquard 12 Charted", system-ui;
-            width: max-content;
-            cursor: pointer; 
-            /* background-color: rgb(168, 168, 168); */
-            &.button-clicked {
-                font-family: "Jacquard 24", system-ui;
-                color: var(--color);
-            }
-        }
+        
         #field-view-button{
             font-family: "Jacquard 24", system-ui;
                 color: var(--color);
