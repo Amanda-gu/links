@@ -306,8 +306,6 @@ main{
 
     }
     
-   
-
     li:nth-child(1n){
         animation-name: amovin;
     }
@@ -317,6 +315,8 @@ main{
     li:nth-child(3n){
         animation-name: cmovin;
     }
+
+
 /* this is for the description to show */
     li:hover p {
         display: block;
