@@ -13,16 +13,18 @@ let closeButton = document.querySelector('#close') // But use `id` for a singula
 
 
 listButton.addEventListener('click', () => { // “Listen” for clicks.
-	channelBlocks.classList.add(listClass) // Toggle the class!
-	listButton.classList.add('button-clicked')
+	channelBlocks.classList.add(listClass) // add list view class
+	listButton.classList.add('button-clicked') //active state of the button
+
 	fieldButton.classList.remove('button-clicked')
-	fieldButton.classList.add('button-unclicked')
+	fieldButton.classList.add('button-unclicked')//defult state of the button
 })
 
 fieldButton.addEventListener('click', () => { // “Listen” for clicks.
-	channelBlocks.classList.remove(listClass)
-	fieldButton.classList.add('button-unclicked')
-	listButton.classList.remove('button-clicked')
+	channelBlocks.classList.remove(listClass) //switch to field view
+
+	fieldButton.classList.add('button-unclicked') //active state of the button. the site opens with field being in defualt hence the ,unclick'
+	listButton.classList.remove('button-clicked') //defult state of the button
 	 // Toggle the class!
 })
 
