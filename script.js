@@ -7,9 +7,9 @@ let channelInfo = document.querySelector('#channel') // This can use any CSS sel
 let channelDialog = document.querySelector('#channel-dialog') // This can use any CSS selector.
 
 let listButton = document.querySelector('#list-view-button') // But use `id` for a singular thing.
-let fieldButton = document.querySelector('#field-view-button') // But use `id` for a singular thing.
-let aboutButton = document.querySelector('#about') // But use `id` for a singular thing.
-let closeButton = document.querySelector('#close') // But use `id` for a singular thing.
+let fieldButton = document.querySelector('#field-view-button')
+let aboutButton = document.querySelector('#about') 
+let closeButton = document.querySelector('#close') 
 
 
 listButton.addEventListener('click', () => { // “Listen” for clicks.
@@ -25,15 +25,11 @@ fieldButton.addEventListener('click', () => { // “Listen” for clicks.
 
 	fieldButton.classList.add('button-unclicked') //active state of the button. the site opens with field being in defualt hence the ,unclick'
 	listButton.classList.remove('button-clicked') //defult state of the button
-	 // Toggle the class!
 })
 
 
-// aboutButton.addEventListener('click', () => { // “Listen” for clicks.
-	
-// 	channelInfo.classList.toggle(showChannelInfo)
-// 	 // Toggle the class!
-// })
+
+//for mobile about button
 
 
 aboutButton.addEventListener('click', () => { // “Listen” for clicks.
