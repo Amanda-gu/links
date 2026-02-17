@@ -186,35 +186,36 @@ nav{
     flex-direction: column;
     row-gap: var(--space-bar-1);
     padding-block-end: var(--space-bar-2);
-    
+
     /* making the box click transparent */
     pointer-events: none;
+
+    button{
+        pointer-events: auto;
+    }
     #viewtoggle, #listviewtoggle{
             button{
                 pointer-events: auto;
             }
-        }
-
-    ul{
-        column-gap: var(--space-bar-2);
-        row-gap: var(--space-bar-1);
-
-        
-        #field-view-button{
-            font-family: "Jacquard 24", system-ui;
-            color: var(--color);
-            
-            &.button-unclicked {
-                font-family: "Jacquard 12 Charted", system-ui;
-                color: var(--secondary-color);
-            }
-        }
+            column-gap: var(--space-bar-2);
+            row-gap: var(--space-bar-1);
     
-        #field-view-button:hover, button:hover{
-            font-family: "Jacquard 24", system-ui;
-            color: var(--color);
-        }
-    }   
+            
+            #field-view-button{
+                font-family: "Jacquard 24", system-ui;
+                color: var(--color);
+                
+                &.button-unclicked {
+                    font-family: "Jacquard 12 Charted", system-ui;
+                    color: var(--secondary-color);
+                }
+            }
+        
+            #field-view-button:hover, button:hover{
+                font-family: "Jacquard 24", system-ui;
+                color: var(--color);
+            }
+        } 
 }
 
 footer{
