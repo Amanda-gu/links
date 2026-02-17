@@ -382,8 +382,8 @@ main{
                 scale: 100%;
                 flex-direction: column;
                 gap: var(--space-bar-1);
-                max-height: fit-content;
-                /* max-width: fit-content; */
+                /* max-height: fit-content; */
+
                 p{
                     display: block;
                     opacity: 1;

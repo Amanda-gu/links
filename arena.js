@@ -52,7 +52,8 @@ let renderBlock = (blockData) => {
 
 				<h3>
 					<a href="${ blockData.source.url }">
-						${blockData.title }		
+						${blockData.title }	
+					</a>	
 				</h3>
 				${ blockDescription}
 			</li>
