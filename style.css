@@ -332,8 +332,8 @@ main{
         }
 
     img, iframe, video, audio, html{
-            max-width: 30vw;
-            height: fit-content;
+            /* max-width: 30vw; */
+            /* height: fit-content; */
     }
 
     
