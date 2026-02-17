@@ -284,7 +284,7 @@ main{
             font-size: 60%;
 
             transition: 0.5s;
-            transition-timing-function: ease-out;
+            transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
         }
         h3{
             max-width: 40ch;
@@ -299,12 +299,12 @@ main{
         }
         
         /* this is for hover animation */
-        scale: 15%;
+        scale: 25%;
         transition: 0.5s;
-        transition-timing-function: ease-out;
+        transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
         animation-duration: 30s;
         animation-iteration-count: infinite;
-        animation-timing-function: linear;
+        /* animation-timing-function: linear; */
 
     }
     
@@ -332,7 +332,8 @@ main{
         }
 
     img, iframe, video, audio, html{
-            /* max-width: 30vw; */
+        /*need the incline to make small ones hoverable */
+            max-width: 30vw;
             /* height: fit-content; */
     }
 
