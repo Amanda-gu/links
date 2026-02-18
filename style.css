@@ -315,10 +315,11 @@ main{
         /* this is for hover animation */
         scale: 25%;
         transition: 0.5s;
+
+        /*values from https://easings.net/#easeInQuartic */
         transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
-        animation-duration: 30s;
+        animation-duration: 40s;
         animation-iteration-count: infinite;
-        /* animation-timing-function: linear; */
 
     }
     
