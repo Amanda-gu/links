@@ -436,7 +436,7 @@ main{
 
     dialog{
  
-        width: 80vw;
+        width: 100vw;
         /* When JS adds the `open` attribute… */
         &[open] { 
 
