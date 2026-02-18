@@ -259,20 +259,40 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 	
 		let container = document.querySelector('#channel-blocks')
 		
-		if (!container) {
-			console.error('Container #channel-blocks not found')
-			return
-		}
-		
+			if (!container) {
+				console.error('Container #channel-blocks not found')
+				return
+			}
+			
 		let myCards = Array.from(container.querySelectorAll('li'))
 	
-		console.log('Found cards:', myCards.length)
+			console.log('Found cards:', myCards.length)
+
+
+		myCards.forEach(card => {
+			card.addEventListener('mouseenter', () => { 
+
+
+				// Get fresh list of cards (in case order changed)
+				// Get the NodeList and convert it to an array
+				let currentCards = Array.from(container.querySelectorAll('li'))
+
+				let hoveredCard = event.currentTarget
+				let otherCards = currentCards.filter(card => card !== hoveredCard)
+				
+				otherCards.sort(() => Math.random() - 0.5)
+				otherCards.forEach(c => container.appendChild(c))
+				console.log('Mouse entered! Shuffling...')
+
+			})
+
+			card.addEventListener('mouseleave', () => { 
+				console.log('Mouse left!')
+			})
+		})
+		// myCards.sort(() => Math.random() - 0.5)
 		
-		// Shuffle directly
-		myCards.sort(() => Math.random() - 0.5)
-		
-		// Update DOM
-		myCards.forEach(card => container.appendChild(card))
+		// Update DOM need this so that it shows on page!
 		
 		console.log('Shuffled!', myCards)
 	}, 100)
