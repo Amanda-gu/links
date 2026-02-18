@@ -208,9 +208,13 @@ nav{
                 font-family: "Jacquard 24", system-ui;
                 color: var(--color);
                 
-                &.button-unclicked {
+                &.button-remove {
                     font-family: "Jacquard 12 Charted", system-ui;
                     color: var(--secondary-color);
+                }
+                &.button-clicked {
+                    font-family: "Jacquard 24", system-ui;
+                    color: var(--color);
                 }
             }
         

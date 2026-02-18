@@ -18,13 +18,14 @@ listButton.addEventListener('click', () => { // “Listen” for clicks.
 	listButton.classList.add('button-clicked') //active state of the button
 
 	fieldButton.classList.remove('button-clicked')
-	fieldButton.classList.add('button-unclicked')//defult state of the button
+	fieldButton.classList.add('button-remove')//defult state of the button
 })
 
 fieldButton.addEventListener('click', () => { // “Listen” for clicks.
 	channelBlocks.classList.remove(listClass) //switch to field view
 
-	fieldButton.classList.add('button-unclicked') //active state of the button. the site opens with field being the defualt view hence the ,unclick'
+	fieldButton.classList.add('button-remove') //active state of the button. the site opens with field being the defualt view hence the ,unclick'
+	fieldButton.classList.add('button-clicked') //active state of the button. the site opens with field being the defualt view hence the ,unclick'
 	listButton.classList.remove('button-clicked') //defult state of the button
 })
 
