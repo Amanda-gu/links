@@ -301,10 +301,31 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 		
 		console.log('Shuffled!', myCards)
 	}, 100)
-
-
-	
 	// Delay of 100ms to ensure blocks are rendered before shuffling.
+
+
+	let container = document.querySelector('#channel-blocks')
+	let highlightClass = 'highlight' // Set up variables again.
+	let highlightBlocks = container.querySelectorAll('li') // Gets all of them.
+
+	// Loop through the list, doing this `forEach` one.
+	highlightBlocks.forEach((block) => {
+		let sectionObserver = new IntersectionObserver(([entry])=> {
+			// When it is intersecting, apply the class; otherwise, remove it.
+			if (entry.isIntersecting) {
+				block.classList.add(highlightClass)
+			} else {
+				block.classList.remove(highlightClass)
+			}
+		}, {
+			
+			rootMargin: '-35% 0% -35% 0%', // CSS-ish: top/right/bottom/left.
+		})
+
+		sectionObserver.observe(block) // Watch each one!
+	})
+
+
 })
 
 
