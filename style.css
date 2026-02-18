@@ -374,6 +374,7 @@ main{
                 grid-column: span 1;
                 animation:none;
                 transition: none;
+                translate: 0% 0%;
                 scale: 100%;
                 flex-direction: column;
                 gap: var(--space-bar-1);
@@ -396,63 +397,12 @@ main{
     }
 
     hgroup{
-        width: 100%;
-        height: fit-content;
+
         padding-block-end: var(--space-bar-2);
         position: fixed;
         inset-block-start: 0rem;
 
-        dialog{
-
-                li a{
-                    opacity: 1;
-
-                    #channel-link{       
-                            #channel-description{
-                                display: block;
-                                white-space: wrap;
-                                width: 60ch;
-                                position:relative;
-                                top: var(--space-bar-1);
-                                color: var(--secondary-color);
-                                font-family: "VT323", monospace;
-                            }
-                        }
-                    
-                }
-                
-                height: max-content;
-                background-color: white;
-                border-radius: var(--space-bar-0);
-                filter: drop-shadow(0 0.5rem 1rem rgb(0 0 0 / 50%)); /* Some depth. */
-                gap: calc(2 * var(--space-bar-0));
-                justify-items: center; /* Center the children. */
-                padding: var(--space-bar-0);
-
-                /* Defaults to `position: absolute;`, this centers it: */
-                inset-block-start: 50%;
-                inset-inline-start: 50%;
-                position: fixed; /* In the viewport. */
-                translate: -50% -50%;
-
-                /* When JS adds the `open` attribute… */
-                &[open] { 
-                    display: grid 
-                } /* `block` is default, but we can override. */
-
-                button { 
-                    font-family: "Jacquard 12 Charted", system-ui;
-                    width: max-content;
-                    cursor: pointer; 
-                } /* Always have a clear “close” `button`! */
-
-                &::backdrop {
-                    background-color: rgb(0 0 0 / 66%); /* A dark overlay. */
-                    pointer-events: none; /* Let clicks pass through to our `document` listener. */
-                }
-                
-            
-        }
+        
 
         ul{
             display: flex;
@@ -476,8 +426,64 @@ main{
             li:nth-child(3) {
                 order: -2;
             }
+        }     
+        
     }
+
+    dialog{
+ 
+        /* When JS adds the `open` attribute… */
+        &[open] { 
+                background-color: var(--background);
+                border-radius: var(--space-bar-0);
+                filter: drop-shadow(0 0.5rem 1rem rgb(0 0 0 / 50%)); /* Some depth. */
+                gap: calc(2 * var(--space-bar-0));
+                justify-items: center; /* Center the children. */
+                padding: var(--space-bar-0);
+    
+                /* Defaults to `position: absolute;`, this centers it: */
+                inset-block-start: 50%;
+                inset-inline-start: 50%;
+                position: fixed; /* In the viewport. */
+                translate: -50% -50%;
+
+                li{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    a{
+                        font-family: "Jacquard 24", system-ui;
+                        color: var(--color);
+                        opacity: 1;
+                    }
+
+                    #channel-description{
+            
+                        text-wrap: wrap;
+                        width: 60ch;
+                        
+                        top: var(--space-bar-1);
+                        color: var(--secondary-color);
+                        font-family: "VT323", monospace;
+                    }
+
+                }
+            } /* `block` is default, but we can override. */
+
+            button { 
+                font-family: "Jacquard 12 Charted", system-ui;
+                cursor: pointer; 
+            } /* Always have a clear “close” `button`! */
+
+            &::backdrop {
+                background-color: rgb(0 0 0 / 66%); /* A dark overlay. */
+                pointer-events: none; /* Let clicks pass through to our `document` listener. */
+            }
+            
+        
     }
+
     #channel-blocks{
         inset-block-start: 2rem;
         width: 100%;
