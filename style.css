@@ -474,7 +474,7 @@ main{
                     #channel-description{
             
                         text-wrap: wrap;
-                        width: 60vw;
+                        width: 80vw;
                         top: var(--space-bar-1);
                         color: var(--secondary-color);
                         font-family: "VT323", monospace;
