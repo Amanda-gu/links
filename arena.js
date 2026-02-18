@@ -271,8 +271,11 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 
 
 		myCards.forEach(card => {
-			card.addEventListener('mouseenter', () => { 
+			card.addEventListener('mouseleave', () => { 
 
+				container.classList.add('shuffling') // Pause the animation when the mouse leaves the card
+
+				
 				// Get fresh list of cards (in case order changed)
 				let currentCards = Array.from(container.querySelectorAll('li'))
 				let hoveredCard = myCards.currentTarget
@@ -282,6 +285,12 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 
 				// Update DOM need this so that it shows on page!
 				otherCards.forEach(card => container.appendChild(card))
+
+				//remove the class after the animation duration so that it can be added again on the next hover
+				setTimeout(() => {
+					container.classList.remove('shuffling')
+				}, 800)
+
 
 				console.log('Mouse entered! Shuffling...')
 

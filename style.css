@@ -313,11 +313,11 @@ main{
         }
         
         /* this is for hover animation */
-        scale: 25%;
+        scale: 20%;
         transition: 0.5s;
 
         /*values from https://easings.net/#easeInQuartic */
-        transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+        animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
         animation-duration: 40s;
         animation-iteration-count: infinite;
 
@@ -325,12 +325,15 @@ main{
     
     li:nth-child(1n){
         animation-name: amovin;
+        translate: 15% 30%;
     }
     li:nth-child(2n){
         animation-name: bmovin; 
+        translate: 0% 0%;
     }
     li:nth-child(3n){
         animation-name: cmovin;
+        translate: -20% -10%;
     }
 
 
@@ -352,36 +355,12 @@ main{
             max-width: 32vw;
     }
 
-    
-    
-    /* when list is clicked */
-        /* &.listview-channel{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(28vw, 1fr));
-            animation: none;
-            row-gap: var(--space-bar-3); 
-            column-gap: var(--space-bar-2); 
-            
-            li{
-                grid-column: span 1;
-                animation:none;
-                transition: none;
-                scale: 100%;
-                flex-direction: column;
-                gap: var(--space-bar-1);
-                max-height: fit-content;
-                max-width: fit-content;
-                justify-content: center;
-                align-items: center;
-                p{
-                    display: block;
-                    opacity: 1;
-                    }
-                img, iframe, video, audio{
-                    max-width: 20vw;
-                }
-            }
-        } */
+
+    &.shuffling li{
+        animation-name: shuffle;
+        animation-duration: 800ms;        
+    }
+   
 }
 
 #channel-blocks.listview-channel{
@@ -573,6 +552,17 @@ main{
   100% {
     font-family: "Jacquard 24", system-ui;
   }
+}
+
+@keyframes shuffle{
+
+    0% {
+        scale: 25%;
+    }
+    100% {
+        scale: 20%;
+    
+    }
 }
 
 @keyframes amovin {
