@@ -190,10 +190,11 @@ nav{
     /* making the box click transparent */
     pointer-events: none;
 
-    button{
-        pointer-events: auto;
-    }
-    #viewtoggle, #listviewtoggle{
+    #randomize{
+            display: none;
+        }
+
+    #viewtoggle{
             button{
                 pointer-events: auto;
             }
@@ -358,7 +359,7 @@ main{
 
     &.shuffling li{
         animation-name: shuffle;
-        animation-duration: 800ms;        
+        animation-duration: 1200ms;        
     }
    
 }
@@ -371,6 +372,7 @@ main{
             column-gap: var(--space-bar-2); 
             
             li{
+                border: solid var(--secondary-color) 1px;
                 grid-column: span 1;
                 animation:none;
                 transition: none;
@@ -505,6 +507,7 @@ main{
         }
 
         li {
+            pointer-events: none;
             max-height: max-content;
             scale: 50%;
             p{
@@ -534,8 +537,11 @@ main{
     nav{
         background-image: linear-gradient(to bottom, var(--background-gradient), var(--background),var(--background));
         padding-block-start: var(--space-bar-3); 
-        #viewtoggle{
+        #field-view-button, #list-view-button{
             display: none;
+        }
+        #randomize{
+            display: block;
         }
     }
 

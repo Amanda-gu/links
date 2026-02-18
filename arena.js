@@ -289,7 +289,7 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 				//remove the class after the animation duration so that it can be added again on the next hover
 				setTimeout(() => {
 					container.classList.remove('shuffling')
-				}, 800)
+				}, 1200)
 
 
 				console.log('Mouse entered! Shuffling...')
