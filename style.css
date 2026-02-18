@@ -148,6 +148,8 @@ hgroup{
             
             #channel-link:hover #channel-description {
                 display: block;
+                background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background-gradient));
+    
                 }
         }
             
@@ -369,10 +371,10 @@ main{
             grid-template-columns: repeat(auto-fit, minmax(28vw, 1fr));
             animation: none;
             row-gap: var(--space-bar-3); 
-            column-gap: var(--space-bar-2); 
+            column-gap: var(--space-bar-2);
+             
             
             li{
-                border: solid var(--secondary-color) 1px;
                 grid-column: span 1;
                 animation:none;
                 transition: none;
