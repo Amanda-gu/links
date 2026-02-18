@@ -432,7 +432,7 @@ main{
 
     dialog{
  
-        width: 60vw;
+        width: 80vw;
         /* When JS adds the `open` attribute… */
         &[open] { 
 
@@ -447,7 +447,6 @@ main{
                 filter: drop-shadow(0 0.5rem 1rem rgb(0 0 0 / 50%)); /* Some depth. */
               
                 padding: var(--space-bar-2);
-                margin: var(--space-bar-2);
     
                 /* Defaults to `position: absolute;`, this centers it: */
                 inset-block-start: 50%;
@@ -470,7 +469,7 @@ main{
                     #channel-description{
             
                         text-wrap: wrap;
-                        width: 50vw;
+                        width: 60vw;
                         top: var(--space-bar-1);
                         color: var(--secondary-color);
                         font-family: "VT323", monospace;
