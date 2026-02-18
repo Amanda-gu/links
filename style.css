@@ -432,14 +432,22 @@ main{
 
     dialog{
  
+        width: 60vw;
         /* When JS adds the `open` attribute… */
         &[open] { 
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                row-gap: calc(var(--space-bar-3) * 0.8);
+
                 background-color: var(--background);
                 border-radius: var(--space-bar-0);
                 filter: drop-shadow(0 0.5rem 1rem rgb(0 0 0 / 50%)); /* Some depth. */
-                gap: calc(2 * var(--space-bar-0));
-                justify-items: center; /* Center the children. */
-                padding: var(--space-bar-0);
+              
+                padding: var(--space-bar-2);
+                margin: var(--space-bar-2);
     
                 /* Defaults to `position: absolute;`, this centers it: */
                 inset-block-start: 50%;
@@ -451,6 +459,7 @@ main{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    row-gap: var(--space-bar-0);
 
                     a{
                         font-family: "Jacquard 24", system-ui;
@@ -461,8 +470,7 @@ main{
                     #channel-description{
             
                         text-wrap: wrap;
-                        width: 60ch;
-                        
+                        width: 50vw;
                         top: var(--space-bar-1);
                         color: var(--secondary-color);
                         font-family: "VT323", monospace;
