@@ -54,10 +54,10 @@ document.addEventListener('click', (event) => {
 randomButton.addEventListener('click', () => {
 		
 
-		let cards = Array.from(channelBlocks.querySelectorAll('li')) 
+		let myCards = Array.from(channelBlocks.querySelectorAll('li')) 
 
-		cards.sort(() => Math.random() - 0.5) // Shuffle the array randomly.
-		cards.forEach(card =>  channelBlocks.appendChild(card)) // Update the DOM need this so that it shows on page!
+		myCards.sort(() => Math.random() - 0.5) // Shuffle the array randomly.
+		myCards.forEach(card =>  channelBlocks.appendChild(card)) // Update the DOM need this so that it shows on page!
 		
-		console.log('Shuffled!', cards)
+		console.log('Shuffled!', myCards)
 		}) 
