@@ -10,6 +10,7 @@ let listButton = document.querySelector('#list-view-button') // But use `id` for
 let fieldButton = document.querySelector('#field-view-button')
 let aboutButton = document.querySelector('#about') 
 let closeButton = document.querySelector('#close') 
+let randomButton = document.querySelector('#randomize')
 
 
 listButton.addEventListener('click', () => { // “Listen” for clicks.
@@ -50,27 +51,13 @@ document.addEventListener('click', (event) => {
 
 
 
+randomButton.addEventListener('click', () => {
+		
 
+		let cards = Array.from(channelBlocks.querySelectorAll('li')) 
 
-	let container = document.querySelector('#channel-blocks')
-	let highlightClass = 'highlight' // Set up variables again.
-	let highlightBlocks = container.querySelectorAll('li') // Gets all of them.
-
-	// Loop through the list, doing this `forEach` one.
-	highlightBlocks.forEach((block) => {
-		let sectionObserver = new IntersectionObserver(([entry])=> {
-			// When it is intersecting, apply the class; otherwise, remove it.
-			if (entry.isIntersecting) {
-				block.classList.add(highlightClass)
-			} else {
-				block.classList.remove(highlightClass)
-			}
-		}, {
-			root: container, // This is only needed here in the example `iframe`!
-			rootMargin: '-25% 0% -25% 0%', // CSS-ish: top/right/bottom/left.
-		})
-
-		sectionObserver.observe(block) // Watch each one!
-	})
-
-
+		cards.sort(() => Math.random() - 0.5) // Shuffle the array randomly.
+		cards.forEach(card =>  channelBlocks.appendChild(card)) // Update the DOM need this so that it shows on page!
+		
+		console.log('Shuffled!', cards)
+		}) 

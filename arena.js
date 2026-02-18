@@ -253,24 +253,23 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 		renderBlock(blockData) // Pass the single block’s data to the render function.
 	})
 	
-	//LLM told me to delay the function and put it in the last fetchJson so that it runs after the blocks are rendered. I also added some error handling and logging to make sure it works.
 
-	setTimeout(() => {
-	
-		let container = document.querySelector('#channel-blocks')
-		
-			if (!container) {
-				console.error('Container #channel-blocks not found')
-				return
-			}
+
+
+//LLM told me to delay the function and put it in the last fetchJson so that it runs after the blocks are rendered. I also added some error handling and logging to make sure it works.
+
+	let container = document.querySelector('#channel-blocks')		
+		if (!container) {
+			console.error('Container #channel-blocks not found')
+			return
+		}
 			
 		// Get the NodeList and convert it to an array so we can use array methods on it.
-		let myCards = Array.from(container.querySelectorAll('li'))
-	
-			console.log('Found cards:', myCards.length)
+	let myCards = Array.from(container.querySelectorAll('li'))	
+		console.log('Found cards:', myCards.length)
 
-
-		myCards.forEach(card => {
+//random hover shuffle
+	myCards.forEach(card => {
 			card.addEventListener('mouseleave', () => { 
 
 				container.classList.add('shuffling') // Pause the animation when the mouse leaves the card
@@ -295,16 +294,12 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 				console.log('Mouse entered! Shuffling...')
 
 			})
-
 		})
+	console.log('Shuffled!', myCards)
 		
 		
-		console.log('Shuffled!', myCards)
-	}, 100)
-	// Delay of 100ms to ensure blocks are rendered before shuffling.
-
-
-	let container = document.querySelector('#channel-blocks')
+	
+//this is for mobile highlight on scroll using loop logic
 	let highlightClass = 'highlight' // Set up variables again.
 	let highlightBlocks = container.querySelectorAll('li') // Gets all of them.
 
@@ -319,7 +314,7 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 			}
 		}, {
 			
-			rootMargin: '-35% 0% -35% 0%', // CSS-ish: top/right/bottom/left.
+			rootMargin: '-30% 0% -30% 0%', // CSS-ish: top/right/bottom/left.
 		})
 
 		sectionObserver.observe(block) // Watch each one!
