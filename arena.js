@@ -182,7 +182,8 @@ let renderBlock = (blockData) => {
 				${ blockData.embed.html}
 					<h3>
 						<a href="${ blockData.source.url }">
-						${blockData.title }		
+						${blockData.title }	
+						</a>	
 					</h3>
 					${ blockDescription}
 				</li>
@@ -203,7 +204,8 @@ let renderBlock = (blockData) => {
 				${ blockData.embed.html}
 					<h3>
 						<a href="${ blockData.source.url }">
-						${blockData.title }		
+						${blockData.title }
+						</a>		
 					</h3>
 					${ blockDescription}
 				</li>
@@ -250,4 +252,33 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 
 		renderBlock(blockData) // Pass the single block’s data to the render function.
 	})
+	
+	//LLM told me to delay the function and put it in the last fetchJson so that it runs after the blocks are rendered. I also added some error handling and logging to make sure it works.
+
+	setTimeout(() => {
+	
+		let container = document.querySelector('#channel-blocks')
+		
+		if (!container) {
+			console.error('Container #channel-blocks not found')
+			return
+		}
+		
+		let myCards = Array.from(container.querySelectorAll('li'))
+	
+		console.log('Found cards:', myCards.length)
+		
+		// Shuffle directly
+		myCards.sort(() => Math.random() - 0.5)
+		
+		// Update DOM
+		myCards.forEach(card => container.appendChild(card))
+		
+		console.log('Shuffled!', myCards)
+	}, 100)
+	// Delay of 100ms to ensure blocks are rendered before shuffling.
 })
+
+
+
+

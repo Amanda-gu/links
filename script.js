@@ -58,33 +58,3 @@ document.addEventListener('click', (event) => {
 
 
 
-
-//from michael
-//will do later
-// Lil’ helper function to randomly sort a list (array):
-
-// More on `.sort()` and `Math.random`:
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-
-
-
-
-window.addEventListener('load', function() {
-
-	let shuffleCards = (array) => {
-		array.sort(() => Math.random() - 0.5)
-	}
-	
-	let myCards = Array.from(document.querySelectorAll('#channel-blocks li'))
-	
-	let shuffledCards = shuffleCards(myCards)
-	
-	// IMPORTANT: Update the DOM with the new order
-	shuffledCards.forEach(card => container.appendChild(card))
-
-
-	console.log(shuffledCards)
-
-
-})
