@@ -264,6 +264,7 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 				return
 			}
 			
+		// Get the NodeList and convert it to an array so we can use array methods on it.
 		let myCards = Array.from(container.querySelectorAll('li'))
 	
 			console.log('Found cards:', myCards.length)
@@ -272,33 +273,29 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 		myCards.forEach(card => {
 			card.addEventListener('mouseenter', () => { 
 
-
 				// Get fresh list of cards (in case order changed)
-				// Get the NodeList and convert it to an array
 				let currentCards = Array.from(container.querySelectorAll('li'))
-
-				let hoveredCard = event.currentTarget
+				let hoveredCard = myCards.currentTarget
 				let otherCards = currentCards.filter(card => card !== hoveredCard)
 				
 				otherCards.sort(() => Math.random() - 0.5)
-				otherCards.forEach(c => container.appendChild(c))
+
+				// Update DOM need this so that it shows on page!
+				otherCards.forEach(card => container.appendChild(card))
+
 				console.log('Mouse entered! Shuffling...')
 
 			})
 
-			card.addEventListener('mouseleave', () => { 
-				console.log('Mouse left!')
-			})
 		})
-		// myCards.sort(() => Math.random() - 0.5)
 		
-		// Update DOM need this so that it shows on page!
 		
 		console.log('Shuffled!', myCards)
 	}, 100)
+
+
+	
 	// Delay of 100ms to ensure blocks are rendered before shuffling.
 })
-
-
 
 

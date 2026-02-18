@@ -398,7 +398,7 @@ main{
                 scale: 100%;
                 flex-direction: column;
                 gap: var(--space-bar-1);
-                /* max-height: fit-content; */
+                max-height: max-content;
 
                 p{
                     display: block;
