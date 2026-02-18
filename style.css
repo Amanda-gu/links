@@ -270,7 +270,7 @@ main{
 
 
     li{
-
+        
         gap: var(--space-bar-0);
         display: flex;
         flex-direction: column;
