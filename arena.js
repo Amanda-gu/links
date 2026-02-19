@@ -8,14 +8,12 @@ let placeChannelInfo = (channelData) => {
 	// Target some elements in your HTML:
 	let channelTitle = document.querySelector('#channel-title')
 	let channelDescription = document.querySelector('#channel-description')
-	let channelCount = document.querySelector('#channel-count')
 	let channelLink = document.querySelector('#channel-link')
 	let channelUsers = document.querySelector('#channel-users')
 
 	// Then set their content/attributes to our data (only if elements exist):
 	if (channelTitle) channelTitle.innerHTML = channelData.title
 	if (channelDescription) channelDescription.innerHTML = channelData.description?.html || ''
-	if (channelCount) channelCount.innerHTML = channelData.counts.blocks
 	if (channelLink) channelLink.href = `https://www.are.na/channel/${channelSlug}`
 	if (channelUsers) channelUsers.innerHTML = channelData.owner.name // Clear any existing content.
 
@@ -48,14 +46,12 @@ let renderBlock = (blockData) => {
 						</picture>
 						
 					</figure>	
+					
+					<h3>
+					${blockData.title }	
+					</h3>
+					${ blockDescription}
 				</a>
-
-				<h3>
-					<a href="${ blockData.source.url }">
-						${blockData.title }	
-					</a>	
-				</h3>
-				${ blockDescription}
 			</li>
 			`
 		// And puts it into the page!
@@ -179,9 +175,9 @@ let renderBlock = (blockData) => {
 			let linkedVideoItem =
 				`
 				<li>
-				${ blockData.embed.html}
+				<a href="${ blockData.source.url }">
+					${ blockData.embed.html}
 					<h3>
-						<a href="${ blockData.source.url }">
 						${blockData.title }	
 						<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
 							<g clip-path="url(#clip0_145_4524)">
@@ -195,9 +191,9 @@ let renderBlock = (blockData) => {
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M50.3785 29.9095L46.36 25.891L50.3785 21.8725L54.397 25.891L58.4155 29.9095L54.397 33.928L50.3785 29.9095Z"/>
 							</g>
 							</svg>
-						</a>	
-					</h3>
-					${ blockDescription}
+							</h3>
+							${ blockDescription}
+					</a>	
 				</li>
 				`
 
@@ -213,13 +209,13 @@ let renderBlock = (blockData) => {
 			let linkedAudioItem =
 				`
 				<li>
-				${ blockData.embed.html}
-					<h3>
-						<a href="${ blockData.source.url }">
-						${blockData.title }
-						</a>		
-					</h3>
-					${ blockDescription}
+					<a href="${ blockData.source.url }">
+						${ blockData.embed.html}
+						<h3>
+							${blockData.title }
+						</h3>
+						${ blockDescription}
+					</a>
 				</li>
 				`
 

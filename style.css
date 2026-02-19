@@ -276,17 +276,22 @@ main{
 
     padding-block: 10vh;
 
-
-    li{
-        fill: rgb(0, 0, 0);
-        gap: var(--space-bar-0);
+    li, li a{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: var(--space-bar-0);
+        background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background-gradient));
+
+    }
+
+    li{
         font-size: var(--body-copy);
-        filter: grayscale(100%);
         color: var(--secondary-color);
+
+        filter: grayscale(100%);
+
         max-height: 32vh;
         min-width: 15vw;
         max-width: 40vw;
@@ -306,7 +311,6 @@ main{
             text-wrap: balance;
             color: var(--secondary-color);
             font-family: "PT Sans", sans-serif;
-            opacity: 0;
             font-size: 60%;
 
             transition: 0.5s;
@@ -316,13 +320,12 @@ main{
         h3{
             font-family: var(--heading-font);
             max-width: 40ch;
-            
-            a{
-                display: flex;
-                justify-content: center;
-                column-gap:calc(var(--space-bar-0)* 0.5) ;
+        
+            display: flex;
+            justify-content: center;
+            column-gap:calc(var(--space-bar-0)* 0.5) ;
 
-                svg{
+            svg{
                     width: 1rem;
                     height: auto;
                     align-items: baseline;
@@ -330,8 +333,8 @@ main{
                     path{
                         color: var(--secondary-color);
                         }
-                }
             }
+            
         }
 
 
@@ -369,9 +372,8 @@ main{
 /* this is for the description to show */
     li:hover p {
         display: block;
-        opacity: 1;
         }
-    li:hover{    
+    li:hover{ 
         color: var(--color);
         scale: 100%;
         filter: grayscale(0%);
