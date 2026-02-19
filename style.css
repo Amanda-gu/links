@@ -305,7 +305,7 @@ main{
             font-size: 60%;
 
             transition: 0.5s;
-            transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+            transition-timing-function: linear;
         }
         h3{
             max-width: 40ch;
@@ -408,13 +408,12 @@ main{
 #channel-blocks.playview-channel{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(28vw, 1fr));
-            animation: none;
             row-gap: var(--space-bar-3); 
             column-gap: var(--space-bar-2);
-             
             
             li{
-                opacity: 0;
+                transform: skew(2rem);
+                opacity: 1;
                 grid-column: span 1;
                 animation:none;
                 transition: none;
@@ -435,6 +434,40 @@ main{
 
             li:hover{
                 opacity: 1;
+                scale: 100%;
+            }
+        }
+
+#channel-blocks.indexview-channel{
+            display: grid;
+            grid-template-columns: repeat(1fr, 1fr);
+            row-gap: var(--space-bar-3); 
+            
+            
+            li{
+                transform: skew(2rem);
+                opacity: 1;
+                grid-column: span 1;
+                animation:none;
+                transition: none;
+                translate: 0% 0%;
+                scale: 100%;
+                flex-direction: column;
+                gap: var(--space-bar-1);
+                max-height: max-content;
+
+                p{
+                    display: block;
+                    opacity: 1;
+                    }
+                img, iframe, video, audio{
+                    max-width: 20vw;
+                }
+            }
+
+            li:hover{
+                opacity: 1;
+                scale: 100%;
             }
         }
 
