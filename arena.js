@@ -362,7 +362,7 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 			}
 		}, {
 			
-			rootMargin: '-30% 0% -30% 0%', // CSS-ish: top/right/bottom/left.
+			rootMargin: '-30% 0% -20% 0%', // CSS-ish: top/right/bottom/left.
 		})
 
 		sectionObserver.observe(block) // Watch each one!
