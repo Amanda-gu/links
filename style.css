@@ -459,6 +459,9 @@ main{
                 }
 
                 div, a, figure{
+                    h3{
+                        order: -1;
+                    }
     
                     *{
                         justify-content: flex-start;
@@ -470,7 +473,7 @@ main{
                     
                     align-items: flex-start;
                     
-                    column-gap: var(--space-bar-2);
+                    column-gap: var(--space-bar-3);
                     
                     
                     h2, picture, img, iframe, video, audio{
