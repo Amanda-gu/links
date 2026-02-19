@@ -10,11 +10,15 @@
     --card-height:1rem;
     --card-width: auto;
 
-    --body-copy: 1.3rem;
+    --heading-font-shadow: "Jacquard 12 Charted", system-ui;
+    --heading-font: "Jacquard 24", system-ui;
+    --body-font: "VT323", monospace;
+
+    --body-copy: 1.6rem;
     --heading-copy: calc(var(--body-copy) * 1.4);
     --caption-copy: calc(var(--body-copy) * 0.8);
 
-    --space-bar-0: 0.8rem;
+    --space-bar-0: 1rem;
     --space-bar-1: 1rem;
     --space-bar-2: calc(var(--space-bar-1) * 1.8);
     --space-bar-3: 4rem;
@@ -22,12 +26,12 @@
 }
 
 button{
-            font-family: "Jacquard 12 Charted", system-ui;
+            font-family: var(--heading-font-shadow);
             width: max-content;
             cursor: pointer; 
             
             &.button-clicked {
-                font-family: "Jacquard 24", system-ui;
+                font-family: var(--heading-font);
                 color: var(--color);
             }
         }
@@ -60,7 +64,7 @@ body{
     height: 100vh;
     color: var(--color);
     background-color: var(--background);
-    font-family: "VT323", monospace;
+    font-family: var(--body-font);
     font-weight: 400;
     font-style: normal;
     font-size: var(--body-copy);
@@ -293,6 +297,7 @@ main{
             margin-block-end: 0.4rem;
             color: var(--color);
             opacity: 50%;
+            font-family: var(--body-font);
         }
         
         p{
@@ -308,10 +313,14 @@ main{
             transition-timing-function: linear;
         }
         h3{
+            font-family: var(--heading-font);
             max-width: 40ch;
         }
+        h3 a{
+            font-family: var(--heading-font-shadow);
+        }
         h3 a:hover{
-            font-family:"Jacquard 24", system-ui;;
+            font-family: var(--heading-font);
         }
 
         audio {
