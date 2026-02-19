@@ -14,7 +14,7 @@
     --heading-font: "Jacquard 24", system-ui;
     --body-font: "VT323", monospace;
 
-    --body-copy: 1.6rem;
+    --body-copy: 1.5rem;
     --heading-copy: calc(var(--body-copy) * 1.4);
     --caption-copy: calc(var(--body-copy) * 0.8);
 
@@ -316,25 +316,24 @@ main{
         h3{
             font-family: var(--heading-font);
             max-width: 40ch;
-        }
-        h3 a{
-            font-family: var(--heading-font-shadow);
-        }
+            
+            a{
+                display: flex;
+                justify-content: center;
+                column-gap:calc(var(--space-bar-0)* 0.5) ;
 
-        h3 a:hover{
-                    font-family: var(--heading-font);
-        }
-
-        h3 a::after {
-            content: url('assets/arrow.svg');
-            display: inline-flex; 
-            width: var(--body-copy);
-            height: auto;
-                
-                path{
-                    fill: var(--color);
+                svg{
+                    width: 1rem;
+                    height: auto;
+                    align-items: baseline;
+                            
+                    path{
+                        color: var(--secondary-color);
+                        }
                 }
+            }
         }
+
 
        
         audio {
@@ -551,7 +550,7 @@ main{
                 filter: drop-shadow(0 0.5rem 1rem rgb(0 0 0 / 50%)); /* Some depth. */
               
                 padding: var(--space-bar-2);
-                padding-block: var(--space-bar-3);
+                padding-block:calc( var(--space-bar-3)*2);
     
                 /* Defaults to `position: absolute;`, this centers it: */
                 inset-block-start: 50%;
@@ -566,21 +565,31 @@ main{
                     row-gap: var(--space-bar-0);
 
                     a{
-                        font-family: "Jacquard 24", system-ui;
+                        font-family: var(--heading-font);
                         color: var(--color);
                         opacity: 1;
+                        
+                        #channel-description{
+                            text-wrap: wrap;
+                            width: 80vw;
+                            top: var(--space-bar-1);
+                            color: var(--secondary-color);
+                            font-family: var(--body-font)
+                        }
+                        svg{
+                            width: 1rem;
+                            height: auto;
+                            align-items: baseline;
+                                    
+                            path{
+                                color: var(--secondary-color);
+                                }
+                        }
                     }
 
-                    #channel-description{
-            
-                        text-wrap: wrap;
-                        width: 80vw;
-                        top: var(--space-bar-1);
-                        color: var(--secondary-color);
-                        font-family: "VT323", monospace;
-                    }
 
                 }
+                 
             } /* `block` is default, but we can override. */
 
             button { 
