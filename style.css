@@ -196,9 +196,7 @@ nav{
     /* making the box click transparent */
     pointer-events: none;
 
-    #randomize{
-            display: none;
-        }
+
 
     #viewtoggle{
             button{
@@ -276,13 +274,14 @@ main{
 
     padding-block: 10vh;
 
-    li, li a{
+    li, li a, li figure{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: var(--space-bar-0);
-        background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background-gradient));
+        
+        background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background-gradient));
 
     }
 
@@ -653,9 +652,6 @@ main{
         padding-block-start: var(--space-bar-3); 
         #field-view-button, #list-view-button{
             display: none;
-        }
-        #randomize{
-            display: block;
         }
     }
 
