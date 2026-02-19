@@ -318,8 +318,8 @@ main{
             max-width: 40ch;
         
             display: inline-flex;
-            justify-content: center;
-            column-gap:calc(var(--space-bar-0)* 0.5) ;
+            justify-content: start;
+            column-gap:calc(var(--space-bar-0)* 0.2) ;
 
             svg{
                     width: 1rem;
