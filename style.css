@@ -469,7 +469,6 @@ main{
             
             li{
                 transform: skew(2rem);
-                opacity: 1;
                 grid-column: span 1;
                 animation:none;
                 transition: none;
@@ -489,7 +488,6 @@ main{
             }
 
             li:hover{
-                opacity: 1;
                 scale: 100%;
             }
         }
