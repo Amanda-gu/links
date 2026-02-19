@@ -270,7 +270,7 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 
 //random hover shuffle
 	myCards.forEach(card => {
-			card.addEventListener('mouseleave', () => { 
+			card.addEventListener('scroll', () => { 
 
 				container.classList.add('shuffling') // Pause the animation when the mouse leaves the card
 
