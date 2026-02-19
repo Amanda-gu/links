@@ -61,7 +61,7 @@ let renderBlock = (blockData) => {
 							</g>
 						</svg>	
 					</h3>
-					${ blockDescription}
+					<section> ${blockDescription}</section>
 				</a>
 			</li>
 			`
@@ -90,7 +90,7 @@ let renderBlock = (blockData) => {
 					<h3>
 							${ blockData.title }		
 					</h3>
-					${ blockDescription}
+					<section> ${blockDescription}</section>
 				</figure>
 			</li>
 			`
@@ -117,7 +117,7 @@ let renderBlock = (blockData) => {
 						: `<h3>Untitled</h3>`
 					}
 					
-					${ blockDescription}
+					<section> ${blockDescription}</section>
 			</div>
 					
 			</li>
@@ -142,7 +142,7 @@ let renderBlock = (blockData) => {
 						<h3>
 							${ blockData.title }		
 						</h3>
-						${ blockDescription}
+						<section> ${blockDescription}</section>
 					</figure>
 				</li>
 				`
@@ -163,7 +163,7 @@ let renderBlock = (blockData) => {
 						<h3>
 							${ blockData.title }		
 						</h3>
-						${ blockDescription}
+						<section> ${blockDescription}</section>
 					</figure>
 				</li>
 				`
@@ -182,7 +182,7 @@ let renderBlock = (blockData) => {
 						<h3>
 							${ blockData.title }		
 						</h3>
-						${blockDescription}
+						<section> ${blockDescription}</section>
 					</figure>
 				</li>
 				`
@@ -203,24 +203,25 @@ let renderBlock = (blockData) => {
 			let linkedVideoItem =
 				`
 				<li>
-				<a href="${ blockData.source.url }">
-					${ blockData.embed.html}
-					<h3>
-						${blockData.title}	
-						<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
-							<g clip-path="url(#clip0_145_4524)">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M61.9253 10.3263L57.9068 14.3449L53.8883 10.3263L49.8698 14.3449L45.8513 18.3634L41.8328 14.3449L37.8143 18.3634L33.7958 22.3819L29.7773 18.3634L25.7587 22.3819L21.7402 26.4004L25.7587 30.4189L29.7773 34.4374L33.7958 30.4189L37.8143 26.4004L41.8328 22.3819L45.8513 26.4004L49.8698 22.3819L53.8883 26.4004L57.9068 30.4189L53.8883 34.4374L49.8698 38.4559L53.8883 42.4744L49.8698 46.4929L45.8513 50.5115L49.8698 54.53L53.8883 58.5485L57.9068 54.53L61.9253 50.5115L57.9068 46.4929L61.9253 42.4744L65.9439 38.4559L61.9253 34.4374L65.9439 30.4189L69.9624 26.4004L65.9439 22.3819L69.9624 18.3634L65.9439 14.3449L61.9253 10.3263Z"/>
-								<path d="M14.2119 58.0391L18.2304 54.0206L22.2489 58.0391L18.2304 62.0576L14.2119 58.0391ZM18.2304 54.0206L22.2489 50.0021L26.2674 54.0206L22.2489 58.0391L18.2304 54.0206ZM22.2489 50.0021L26.2674 45.9836L30.2859 50.0021L26.2674 54.0206L22.2489 50.0021ZM26.2674 45.9836L30.2859 41.9651L34.3044 45.9836L30.2859 50.0021L26.2674 45.9836ZM14.2119 66.0761L18.2304 62.0576L22.2489 66.0761L18.2304 70.0946L14.2119 66.0761ZM18.2304 62.0576L22.2489 58.0391L26.2674 62.0576L22.2489 66.0761L18.2304 62.0576ZM22.2489 58.0391L26.2674 54.0206L30.2859 58.0391L26.2674 62.0576L22.2489 58.0391ZM26.2674 54.0206L30.2859 50.0021L34.3044 54.0206L30.2859 58.0391L26.2674 54.0206ZM30.2859 50.0021L34.3044 45.9836L38.3229 50.0021L34.3044 54.0206L30.2859 50.0021Z"/>
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M38.3229 50.0021L34.3044 45.9836L38.3229 41.9651L42.3415 45.9836L38.3229 50.0021Z"/>
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M34.3044 45.9836L30.2859 41.9651L34.3044 37.9465L38.3229 41.9651L34.3044 45.9836Z"/>
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M38.3229 41.9651L34.3044 37.9465L38.3229 33.928L42.3415 37.9465L46.36 41.9651L42.3415 45.9836L38.3229 41.9651Z"/>
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M42.3415 37.9465L38.3229 33.928L42.3415 29.9095L46.36 33.928L50.3785 37.9465L46.36 41.9651L42.3415 37.9465Z"/>
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M46.36 33.928L42.3415 29.9095L46.36 25.891L50.3785 29.9095L54.397 33.928L50.3785 37.9465L46.36 33.928Z" fill="#1E1E1E"/>
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M50.3785 29.9095L46.36 25.891L50.3785 21.8725L54.397 25.891L58.4155 29.9095L54.397 33.928L50.3785 29.9095Z"/>
-							</g>
+					<a href="${ blockData.source.url }">
+						${ blockData.embed.html}
+						<h3>
+							${blockData.title}	
+							<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+								<g clip-path="url(#clip0_145_4524)">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M61.9253 10.3263L57.9068 14.3449L53.8883 10.3263L49.8698 14.3449L45.8513 18.3634L41.8328 14.3449L37.8143 18.3634L33.7958 22.3819L29.7773 18.3634L25.7587 22.3819L21.7402 26.4004L25.7587 30.4189L29.7773 34.4374L33.7958 30.4189L37.8143 26.4004L41.8328 22.3819L45.8513 26.4004L49.8698 22.3819L53.8883 26.4004L57.9068 30.4189L53.8883 34.4374L49.8698 38.4559L53.8883 42.4744L49.8698 46.4929L45.8513 50.5115L49.8698 54.53L53.8883 58.5485L57.9068 54.53L61.9253 50.5115L57.9068 46.4929L61.9253 42.4744L65.9439 38.4559L61.9253 34.4374L65.9439 30.4189L69.9624 26.4004L65.9439 22.3819L69.9624 18.3634L65.9439 14.3449L61.9253 10.3263Z"/>
+									<path d="M14.2119 58.0391L18.2304 54.0206L22.2489 58.0391L18.2304 62.0576L14.2119 58.0391ZM18.2304 54.0206L22.2489 50.0021L26.2674 54.0206L22.2489 58.0391L18.2304 54.0206ZM22.2489 50.0021L26.2674 45.9836L30.2859 50.0021L26.2674 54.0206L22.2489 50.0021ZM26.2674 45.9836L30.2859 41.9651L34.3044 45.9836L30.2859 50.0021L26.2674 45.9836ZM14.2119 66.0761L18.2304 62.0576L22.2489 66.0761L18.2304 70.0946L14.2119 66.0761ZM18.2304 62.0576L22.2489 58.0391L26.2674 62.0576L22.2489 66.0761L18.2304 62.0576ZM22.2489 58.0391L26.2674 54.0206L30.2859 58.0391L26.2674 62.0576L22.2489 58.0391ZM26.2674 54.0206L30.2859 50.0021L34.3044 54.0206L30.2859 58.0391L26.2674 54.0206ZM30.2859 50.0021L34.3044 45.9836L38.3229 50.0021L34.3044 54.0206L30.2859 50.0021Z"/>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M38.3229 50.0021L34.3044 45.9836L38.3229 41.9651L42.3415 45.9836L38.3229 50.0021Z"/>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M34.3044 45.9836L30.2859 41.9651L34.3044 37.9465L38.3229 41.9651L34.3044 45.9836Z"/>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M38.3229 41.9651L34.3044 37.9465L38.3229 33.928L42.3415 37.9465L46.36 41.9651L42.3415 45.9836L38.3229 41.9651Z"/>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M42.3415 37.9465L38.3229 33.928L42.3415 29.9095L46.36 33.928L50.3785 37.9465L46.36 41.9651L42.3415 37.9465Z"/>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M46.36 33.928L42.3415 29.9095L46.36 25.891L50.3785 29.9095L54.397 33.928L50.3785 37.9465L46.36 33.928Z" fill="#1E1E1E"/>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M50.3785 29.9095L46.36 25.891L50.3785 21.8725L54.397 25.891L58.4155 29.9095L54.397 33.928L50.3785 29.9095Z"/>
+								</g>
 							</svg>
 						</h3>
-							${ blockDescription}
+						<section> ${blockDescription}
+						</section>
 					</a>	
 				</li>
 				`
@@ -254,7 +255,7 @@ let renderBlock = (blockData) => {
 							</g>
 						</svg>	
 						</h3>
-						${ blockDescription}
+						<section> ${blockDescription}</section>
 					</a>
 				</li>
 				`
@@ -362,7 +363,7 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 			}
 		}, {
 			
-			rootMargin: '-30% 0% -20% 0%', // CSS-ish: top/right/bottom/left.
+			rootMargin: '-40% 0% -20% 0%', // CSS-ish: top/right/bottom/left.
 		})
 
 		sectionObserver.observe(block) // Watch each one!
