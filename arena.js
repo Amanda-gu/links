@@ -81,15 +81,18 @@ let renderBlock = (blockData) => {
 		let imageItem =
 			`
 			<li>
-				<picture>
-						<source media="(width < 500px)" srcset="${ blockData.image.small.src_2x }">
-						<source media="(width < 1000px)" srcset="${ blockData.image.medium.src_2x }">
-						<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
-				</picture>
-				<h3>
-						${ blockData.title }		
-				</h3>
-				${ blockDescription}
+
+				<figure>
+					<picture>
+							<source media="(width < 500px)" srcset="${ blockData.image.small.src_2x }">
+							<source media="(width < 1000px)" srcset="${ blockData.image.medium.src_2x }">
+							<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
+					</picture>
+					<h3>
+							${ blockData.title }		
+					</h3>
+					${ blockDescription}
+				</figure>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
@@ -103,7 +106,9 @@ let renderBlock = (blockData) => {
 		let textItem =
 			`
 			<li>
-				<h2>${blockData.content.plain}</h2>
+				<h2>
+					${blockData.content.plain}
+				</h2>
 
 					${ blockData.title
 						? `<h3>${ blockData.title }</h3>`
@@ -127,11 +132,14 @@ let renderBlock = (blockData) => {
 			let videoItem =
 				`
 				<li>
-					<video controls src="${ blockData.attachment.url }"></video>
-					<h3>
-						${ blockData.title }		
-					</h3>
-					${ blockDescription}
+
+					<figure>
+						<video controls src="${ blockData.attachment.url }"></video>
+						<h3>
+							${ blockData.title }		
+						</h3>
+						${ blockDescription}
+					</figure>
 				</li>
 				`
 
@@ -146,11 +154,13 @@ let renderBlock = (blockData) => {
 			let pdfItem =
 				`
 				<li>
-					<iframe src="${ blockData.attachment.url }"></iframe>
-					<h3>
-						${ blockData.title }		
-					</h3>
-					${ blockDescription}
+					<figure>
+						<iframe src="${ blockData.attachment.url }"></iframe>
+						<h3>
+							${ blockData.title }		
+						</h3>
+						${ blockDescription}
+					</figure>
 				</li>
 				`
 
@@ -163,11 +173,13 @@ let renderBlock = (blockData) => {
 			let audioItem =
 				`
 				<li>
-					<audio controls src="${blockData.attachment.url}"></audio>
-					<h3>
-						${ blockData.title }		
-					</h3>
-					${blockDescription}
+					<figure>
+						<audio controls src="${blockData.attachment.url}"></audio>
+						<h3>
+							${ blockData.title }		
+						</h3>
+						${blockDescription}
+					</figure>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
