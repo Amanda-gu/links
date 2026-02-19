@@ -160,7 +160,7 @@ footer, nav ul{
 }
 
 nav{
-    width: 90%;
+    width: 100%;
     /* i want to make the nav centered at the bottom */
     /* saw this example:https://stackoverflow.com/a/22278778 */
     /* the anchor point of the nav element is top left corner */
@@ -180,7 +180,9 @@ nav{
     /* making the box click transparent */
     pointer-events: none;
 
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     button{
         pointer-events: auto;
@@ -211,7 +213,12 @@ nav{
         } 
 
     #randomize{
-        font-family: ;
+        width: 2.2rem;
+        height: 2.2rem;
+        color: var(--color);
+    }
+    #randomize:hover{
+        fill: var(--secondary-color);
     }
 }
 
@@ -593,9 +600,12 @@ button:hover{
                  
             } /* `block` is default, but we can override. */
 
-            button { 
+            #close { 
                 font-family: "Jacquard 12 Charted", system-ui;
                 cursor: pointer; 
+                width: 1.5rem;
+                height: auto;
+                fill: var(--color);
             } /* Always have a clear “close” `button`! */
 
             &::backdrop {
@@ -650,9 +660,7 @@ button:hover{
     nav{
         background-image: linear-gradient(to bottom, var(--background-gradient), var(--background),var(--background));
         padding-block-start: var(--space-bar-3); 
-        #field-view-button, #list-view-button{
-            display: none;
-        }
+     
     }
 
     footer{
