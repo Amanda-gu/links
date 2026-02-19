@@ -182,24 +182,24 @@ nav{
 
 
 
+    button{
+        pointer-events: auto;
+    }
     #viewtoggle{
-            button{
-                pointer-events: auto;
-            }
             column-gap: var(--space-bar-2);
             row-gap: var(--space-bar-1);
     
             
             #field-view-button{
-                font-family: "Jacquard 24", system-ui;
+                font-family: var(--heading-copy);
                 color: var(--color);
                 
                 &.button-remove {
-                    font-family: "Jacquard 12 Charted", system-ui;
+                    font-family: var(--heading-copy-shadow);
                     color: var(--secondary-color);
                 }
                 &.button-clicked {
-                    font-family: "Jacquard 24", system-ui;
+                    font-family: var(--heading-copy);
                     color: var(--color);
                 }
             }
@@ -209,6 +209,10 @@ nav{
                 color: var(--color);
             }
         } 
+
+    #randomize{
+        font-family: ;
+    }
 }
 
 footer{
