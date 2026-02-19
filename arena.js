@@ -38,15 +38,14 @@ let renderBlock = (blockData) => {
 			`
 			<li>
 				<a href="${ blockData.source.url }">
-					<figure>
+					
 						<picture>
 							<source media="(width < 500px)" srcset="${ blockData.image.small.src_2x }">
 							<source media="(width < 1000px)" srcset="${ blockData.image.medium.src_2x }">
 							<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
 						</picture>
-						
-					</figure>	
 					
+			
 					<h3>
 					${blockData.title} 
 					<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
@@ -106,6 +105,9 @@ let renderBlock = (blockData) => {
 		let textItem =
 			`
 			<li>
+
+			<div>
+
 				<h2>
 					${blockData.content.plain}
 				</h2>
@@ -114,7 +116,9 @@ let renderBlock = (blockData) => {
 						? `<h3>${ blockData.title }</h3>`
 						: `<h3>Untitled</h3>`
 					}
+					
 					${ blockDescription}
+			</div>
 					
 			</li>
 			`

@@ -25,22 +25,6 @@
     --space-page-margin: 2rem;
 }
 
-button{
-            font-family: var(--heading-font-shadow);
-            width: max-content;
-            cursor: pointer; 
-            
-            &.button-clicked {
-                font-family: var(--heading-font);
-                color: var(--color);
-            }
-        }
-button:hover{
-            font-family: "Jacquard 24", system-ui;
-            color: var(--color);
-        }
-
-
 body{
 /*  want to add a grid pattern to the bg */
 /* how to make a grid pattern: https://stackoverflow.com/questions/3540194/how-to-make-a-grid-like-graph-paper-grid-with-just-css */
@@ -274,7 +258,7 @@ main{
 
     padding-block: 10vh;
 
-    li, li a, li figure{
+    li div, li a, li figure{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -369,9 +353,7 @@ main{
 
 
 /* this is for the description to show */
-    li:hover p {
-        display: block;
-        }
+
     li:hover{ 
         color: var(--color);
         scale: 100%;
@@ -394,7 +376,7 @@ main{
    
 }
 
-#channel-blocks.listview-channel{
+#channel-blocks.seekview-channel{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(28vw, 1fr));
             animation: none;
@@ -403,6 +385,7 @@ main{
              
             
             li{
+                height: max-content;
                 opacity: 0;
                 grid-column: span 1;
                 animation:none;
@@ -428,53 +411,29 @@ main{
         }
 
 
-#channel-blocks.playview-channel{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(28vw, 1fr));
-            row-gap: var(--space-bar-3); 
-            column-gap: var(--space-bar-2);
-            
-            li{
-                transform: skew(2rem);
-                opacity: 1;
-                grid-column: span 1;
-                animation:none;
-                transition: none;
-                translate: 0% 0%;
-                scale: 100%;
-                flex-direction: column;
-                gap: var(--space-bar-1);
-                max-height: max-content;
-
-                p{
-                    display: block;
-                    opacity: 1;
-                    }
-                img, iframe, video, audio{
-                    max-width: 20vw;
-                }
-            }
-
-            li:hover{
-                opacity: 1;
-                scale: 100%;
-            }
-        }
-
 #channel-blocks.indexview-channel{
             display: grid;
-            grid-template-columns: repeat(1fr, 1fr);
+            grid-template-columns: 1fr;
             row-gap: var(--space-bar-3); 
-            
-            
+            width: 100vw;
+            margin: var(--space-bar-3);
+
+            *{
+                text-align: left;
+            }
             li{
-                transform: skew(2rem);
-                grid-column: span 1;
+
                 animation:none;
                 transition: none;
                 translate: 0% 0%;
                 scale: 100%;
-                flex-direction: column;
+            }
+            li div, li a, li figure{
+                width: 100vw;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+
+                align-items: left;
                 gap: var(--space-bar-1);
                 max-height: max-content;
 
@@ -483,14 +442,35 @@ main{
                     opacity: 1;
                     }
                 img, iframe, video, audio{
-                    max-width: 20vw;
+ 
+                    width: 150px;
+                    height: 100px;
+                    object-fit: cover;
                 }
-            }
+                
 
-            li:hover{
-                scale: 100%;
             }
         }
+
+
+
+
+button{
+            font-family: var(--heading-font-shadow);
+            width: max-content;
+            cursor: pointer; 
+            
+            &.button-clicked {
+                font-family: var(--heading-font);
+                color: var(--color);
+            }
+        }
+button:hover{
+            font-family: var(--heading-font);
+            color: var(--color);
+        }
+
+
 
 
 @media(width<1000px){

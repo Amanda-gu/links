@@ -1,5 +1,5 @@
 // Set up our variables.
-let listClass = 'listview-channel'
+let seekClass = 'seekview-channel'
 let indexClass = 'indexview-channel'
 let showChannelInfo = 'show-channel-info'
 
@@ -7,7 +7,7 @@ let channelBlocks = document.querySelector('#channel-blocks') // This can use an
 let channelInfo = document.querySelector('#channel') // This can use any CSS selector.
 let channelDialog = document.querySelector('#channel-dialog') // This can use any CSS selector.
 
-let listButton = document.querySelector('#list-view-button') // But use `id` for a singular thing.
+let seekButton = document.querySelector('#seek-view-button') // But use `id` for a singular thing.
 let fieldButton = document.querySelector('#field-view-button')
 let indexButton = document.querySelector('#index-view-button')
 let aboutButton = document.querySelector('#about') 
@@ -15,35 +15,36 @@ let closeButton = document.querySelector('#close')
 let randomButton = document.querySelector('#randomize')
 
 
-listButton.addEventListener('click', () => { // “Listen” for clicks.
-	channelBlocks.classList.add(listClass) // add list view class
-	channelBlocks.classList.remove(playClass) //switch to field view
+seekButton.addEventListener('click', () => { // “Listen” for clicks.
+	channelBlocks.classList.add(seekClass) // add list view class
+	channelBlocks.classList.remove(indexClass) //switch to field view
 
 
-	listButton.classList.add('button-clicked') //active state of the button
+	seekButton.classList.add('button-clicked') //active state of the button
 	fieldButton.classList.remove('button-clicked')
 	fieldButton.classList.add('button-remove')
+	indexButton.classList.remove('button-clicked') 
 })
 
 fieldButton.addEventListener('click', () => { // “Listen” for clicks.
-	channelBlocks.classList.remove(listClass) //switch to field view
-	channelBlocks.classList.remove(playClass)
+	channelBlocks.classList.remove(seekClass) //switch to field view
+	channelBlocks.classList.remove(indexClass)
 
 
-	fieldButton.classList.add('button-remove') //active state of the button. the site opens with field being the defualt view hence the ,unclick'
+
 	fieldButton.classList.add('button-clicked') 
-	listButton.classList.remove('button-clicked') 
+	seekButton.classList.remove('button-clicked') 
+	indexButton.classList.remove('button-clicked') 
 })
 
 
 
 indexButton.addEventListener('click', () => { // “Listen” for clicks.
 	channelBlocks.classList.add(indexClass) //switch to field view
-	channelBlocks.classList.remove(listClass) 
-	channelBlocks.classList.remove(playClass) 
+	channelBlocks.classList.remove(seekClass) 
 
 	fieldButton.classList.add('button-remove') //active state of the button. the site opens with field being the defualt view hence the ,unclick'
-	listButton.classList.remove('button-clicked')
+	seekButton.classList.remove('button-clicked')
 	indexButton.classList.add('button-clicked')
 
 })
