@@ -213,8 +213,8 @@ nav{
         } 
 
     #randomize{
-        width: 2.2rem;
-        height: 2.2rem;
+        width: 2rem;
+        height: auto;
         color: var(--color);
     }
     #randomize:hover{
@@ -277,7 +277,25 @@ main{
         gap: var(--space-bar-0);
         
         background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background-gradient));
+/* all description texts */
+        section p, section a{
+            display: none;
+            padding-block-end: var(--space-bar-0);
+            max-width: 45ch;
+            text-wrap: balance;
+            color: var(--secondary-color);
+            font-family: "PT Sans", sans-serif;
+            font-size: 60%;
 
+            transition: 0.5s;
+            transition-timing-function: linear;
+
+            a{
+             display: none;
+                
+             }
+        }
+        
     }
 
     li{
@@ -285,11 +303,7 @@ main{
         color: var(--secondary-color);
 
         filter: grayscale(100%);
-
-        max-height: 32vh;
-        min-width: 15vw;
-        max-width: 40vw;
-        
+    
         h2{
             max-width: 40ch;
             font-weight: 700;
@@ -299,18 +313,6 @@ main{
             font-family: var(--body-font);
         }
         
-        p{
-            display: none;
-            max-width: 45ch;
-            text-wrap: balance;
-            color: var(--secondary-color);
-            font-family: "PT Sans", sans-serif;
-            font-size: 60%;
-
-            transition: 0.5s;
-            transition-timing-function: linear;
-        }
-
         h3{
             font-family: var(--heading-font);
             max-width: 40ch;
@@ -330,8 +332,6 @@ main{
             }
             
         }
-
-
        
         audio {
             block-size: revert;
@@ -389,10 +389,9 @@ main{
 
 #channel-blocks.seekview-channel{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(28vw, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             animation: none;
             row-gap: var(--space-bar-3); 
-            /* column-gap: var(--space-bar-2); */
              
             
             li{
@@ -406,13 +405,14 @@ main{
                 gap: var(--space-bar-1);
                 max-height: max-content;
                 
-                p{
-
+                section p{
                     display: block;
                     opacity: 1;
                     }
                 img, iframe, video, audio{
-                    max-width: 20vw;
+                    width: 150px;
+                    height: 100px;
+                    object-fit: cover;
                 }
             }
 
@@ -424,21 +424,31 @@ main{
 
 #channel-blocks.indexview-channel{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100vw, 1fr));
             animation: none;
             row-gap: var(--space-bar-3); 
            
             
 
             li{
-                height: max-content;
-                padding-block: var(--space-bar-3);
                 color: var(--secondary-color);
+                margin-inline: var(--space-bar-3);
                 animation:none;
                 transition: none;
                 translate: 0% 0%;
                 scale: 100%;
-                border-block-end: 0.04rem solid firebrick;
+                border-block-start: 0.04rem solid var(--secondary-color);
+                padding-block-start: var(--space-bar-1);
+                
+                section {
+                   
+                    p{
+                            display: block;
+    
+                        }
+                    a, p a{
+                            display: none;
+                        }
+                    }
                 
                 a{
                     color: var(--color);
@@ -447,38 +457,39 @@ main{
                 a:hover{
                     color: var(--secondary-color);
                 }
-            }
-            
-            li div, li a, li figure{
-                height: max-content;
-                width: 100vw;
 
-                *{
-                    justify-content: flex-start;
-                    text-align: left;
-                }
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                
-                align-items: flex-start;
-                
-                gap: var(--space-bar-1);
-                max-height: max-content;
-                
-                img, iframe, video, audio{
+                div, a, figure{
     
-                    width: 150px;
-                    height: 100px;
-                    object-fit: cover;
-                }
-
-                p{
-                    display: block;
-                    opacity: 1;
-                    grid-column: 3/span 1;
+                    *{
+                        justify-content: flex-start;
+                        text-align: left;
                     }
 
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                    
+                    align-items: flex-start;
+                    
+                    column-gap: var(--space-bar-2);
+                    
+                    
+                    h2, picture, img, iframe, video, audio{
+                        grid-column: span 2;
+                        width: fill;
+                  
+                    }
+                    picture, img, iframe, video, audio{
+                        max-height: 20vh;
+                        object-fit: cover;
+                    }
+
+                    section{
+                         grid-column: 4 / span 2;
+                    }
+    
+                }
             }
+            
         }
 
 
@@ -626,7 +637,7 @@ button:hover{
         align-items: center;    
         padding-block: var(--space-bar-1);
         img, iframe, video, audio{
-            max-width: 60vw;
+            max-width: 30vw;
         }
 
         li {
@@ -634,8 +645,7 @@ button:hover{
             max-height: max-content;
             scale: 50%;
             p{
-                display: block;
-                opacity: 1;
+                display: none;
             }
 
             color: var(--color);
