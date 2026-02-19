@@ -384,8 +384,7 @@ main{
             column-gap: var(--space-bar-2);
              
             
-            li{
-                height: max-content;
+            li, li div, li figure, li a{
                 opacity: 0;
                 grid-column: span 1;
                 animation:none;
@@ -397,6 +396,7 @@ main{
                 max-height: max-content;
 
                 p{
+
                     display: block;
                     opacity: 1;
                     }
@@ -418,36 +418,41 @@ main{
             width: 100vw;
             margin: var(--space-bar-3);
 
-            *{
-                text-align: left;
-            }
             li{
-
                 animation:none;
                 transition: none;
                 translate: 0% 0%;
                 scale: 100%;
             }
             li div, li a, li figure{
+
+                *{
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    text-align: left;
+                }
+
+                height: max-content;
                 width: 100vw;
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-
+                
                 align-items: left;
                 gap: var(--space-bar-1);
                 max-height: max-content;
-
-                p{
-                    display: block;
-                    opacity: 1;
-                    }
+                
                 img, iframe, video, audio{
- 
+    
                     width: 150px;
                     height: 100px;
                     object-fit: cover;
                 }
-                
+
+                p{
+                    display: block;
+                    opacity: 1;
+                    grid-column: 3/span 1;
+                    }
 
             }
         }
