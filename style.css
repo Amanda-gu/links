@@ -321,7 +321,7 @@ main{
             font-family: var(--heading-font);
             max-width: 40ch;
         
-            display: flex;
+            display: inline-flex;
             justify-content: center;
             column-gap:calc(var(--space-bar-0)* 0.5) ;
 
