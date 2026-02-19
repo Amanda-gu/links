@@ -312,6 +312,7 @@ main{
             transition: 0.5s;
             transition-timing-function: linear;
         }
+
         h3{
             font-family: var(--heading-font);
             max-width: 40ch;
@@ -319,10 +320,23 @@ main{
         h3 a{
             font-family: var(--heading-font-shadow);
         }
+
         h3 a:hover{
-            font-family: var(--heading-font);
+                    font-family: var(--heading-font);
         }
 
+        h3 a::after {
+            content: url('assets/arrow.svg');
+            display: inline-flex; 
+            width: var(--body-copy);
+            height: auto;
+                
+                path{
+                    fill: var(--color);
+                }
+        }
+
+       
         audio {
             block-size: revert;
             inline-size: 100%;
