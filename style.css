@@ -419,15 +419,20 @@ main{
             margin: var(--space-bar-3);
 
             li{
+                color: var(--secondary-color);
                 animation:none;
                 transition: none;
                 translate: 0% 0%;
                 scale: 100%;
+                border-block-end: 0.1rem solid firebrick;
+
+                a{
+                    color: var(--color);
+                }
             }
             li div, li a, li figure{
 
                 *{
-                    align-items: flex-start;
                     justify-content: flex-start;
                     text-align: left;
                 }
@@ -437,7 +442,8 @@ main{
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 
-                align-items: left;
+                align-items: flex-start;
+                
                 gap: var(--space-bar-1);
                 max-height: max-content;
                 
