@@ -410,8 +410,8 @@ main{
                     opacity: 1;
                     }
                 img, iframe, video, audio{
-                    width: 150px;
-                    height: 100px;
+                    max-width: 20vw;
+                    height: auto;
                     object-fit: cover;
                 }
             }
