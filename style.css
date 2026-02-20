@@ -316,6 +316,7 @@ main{
         h3{
             font-family: var(--heading-font);
             max-width: 40ch;
+            
         
             display: inline-flex;
             justify-content: start;
@@ -395,6 +396,7 @@ main{
              
             
             li{
+
                 opacity: 0;
                 grid-column: span 1;
                 animation:none;
@@ -409,10 +411,11 @@ main{
                     display: block;
                     opacity: 1;
                     }
+
+
                 img, iframe, video, audio{
                     max-width: 20vw;
                     height: auto;
-                    object-fit: cover;
                 }
             }
 
@@ -448,7 +451,7 @@ main{
                     a, p a{
                             display: none;
                         }
-                    }
+                }
                 
                 a{
                     color: var(--color);
@@ -459,6 +462,7 @@ main{
                 }
 
                 div, a, figure{
+
                     h3{
                         order: -1;
                     }
@@ -469,20 +473,19 @@ main{
                     }
 
                     display: grid;
-                    grid-template-columns: repeat(5, 1fr);
-                    
+                    grid-template-columns: repeat(5, 1fr); 
                     align-items: flex-start;
-                    
                     column-gap: var(--space-bar-3);
-                    
                     
                     h2, picture, img, iframe, video, audio{
                         grid-column: span 2;
-                        width: fill;
-                  
+              
+                        
                     }
                     picture, img, iframe, video, audio{
+                        aspect-ratio: 16 / 9;
                         max-height: 20vh;
+                        overflow: hidden;
                         object-fit: cover;
                     }
 
