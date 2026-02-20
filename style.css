@@ -333,7 +333,11 @@ main{
                 }    
             }
 
-            
+            img, iframe, video, audio, html{
+                /*need the inline width to make small ones hoverable */
+                max-width: 22vw;
+            }
+
             audio {
                 block-size: revert;
                 inline-size: 100%;
@@ -346,11 +350,13 @@ main{
                     inset: 0;
                     background-color: var(--color);
                     z-index: 1;
+                    opacity: 1;
+                    transition: 1200ms;
         }
         
         /* this is for hover animation */
         scale: 28%;
-        transition: 0.5s;
+        transition: 800ms;
 
         /*values from https://easings.net/#easeInQuartic */
         animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
@@ -385,17 +391,13 @@ main{
         }
 
         div::before, a::before, figure::before{
-                    content: none;
+                    content: "";
                     position: fixed;
                     inset: 0;
                     background-color: var(--color);
                     z-index: 1;
+                    opacity: 0;
         }
-    }
-
-    img, iframe, video, audio, html{
-        /*need the inline width to make small ones hoverable */
-            max-width: 32vw;
     }
 
 
@@ -660,7 +662,7 @@ button:hover{
         align-items: center;    
         
         img, iframe, video, audio{
-            max-width: 70vw;
+            max-width: 30vw;
         }
 
         li {
@@ -683,8 +685,14 @@ button:hover{
                 scale: 100%;
                 opacity: 1;
                 animation-play-state: paused;
+                
                 div::before, a::before, figure::before{
-                    content: none;
+                    content: "";
+                    position: fixed;
+                    inset: 0;
+                    background-color: var(--color);
+                    z-index: 1;
+                    opacity: 0;
                 }
             }
 
@@ -697,8 +705,10 @@ button:hover{
 
 @media(width<700px){
     #channel-blocks{
-        li {
+        li { 
+            img, iframe, video, audio{
             max-width: 70vw;
+        }
         }
     }
     #channel-blocks.indexview-channel{
