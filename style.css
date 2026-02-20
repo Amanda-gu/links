@@ -692,20 +692,42 @@ button:hover{
                     content: none;
                 }
             }
+        img, iframe, video, audio, html{
+            /*need the inline width to make small ones hoverable */
+            max-width: 32vw;
+            }
         }
         
         
     }
 
+    #channel-blocks.indexview-channel{
+            display: grid;
+            animation: none;
+            row-gap: var(--space-bar-0); 
 
-    nav{
-        background-image: linear-gradient(to bottom, var(--background-gradient), var(--background),var(--background));
-        padding-block-start: var(--space-bar-3); 
-     
-    }
+            li{
+                div, a, figure{
+                    display: flex;
+                    flex-direction: column;   
+                    
+                img, iframe, video, audio, html{
+                    max-width: 100vw;
+                }
+             }  
+                        
+            }
 
-    footer{
-        display:none;
+
+        nav{
+            background-image: linear-gradient(to bottom, var(--background-gradient), var(--background),var(--background));
+            padding-block-start: var(--space-bar-3); 
+        
+        }
+
+        footer{
+            display:none;
+        }
     }
 }
 
