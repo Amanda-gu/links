@@ -478,7 +478,8 @@ main{
                     /* moving h3 to the front */
                     h3{
                         order: -1;
-                        overflow-wrap: break-word;
+                        overflow: hidden;
+                        overflow-wrap: break-word; /*force word wrap*/
                     } 
                     
                     h2, picture, img, iframe, video, audio{
