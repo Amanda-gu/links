@@ -56,7 +56,7 @@ let renderBlock = (blockData) => {
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M34.3044 45.9836L30.2859 41.9651L34.3044 37.9465L38.3229 41.9651L34.3044 45.9836Z"/>
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M38.3229 41.9651L34.3044 37.9465L38.3229 33.928L42.3415 37.9465L46.36 41.9651L42.3415 45.9836L38.3229 41.9651Z"/>
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M42.3415 37.9465L38.3229 33.928L42.3415 29.9095L46.36 33.928L50.3785 37.9465L46.36 41.9651L42.3415 37.9465Z"/>
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M46.36 33.928L42.3415 29.9095L46.36 25.891L50.3785 29.9095L54.397 33.928L50.3785 37.9465L46.36 33.928Z" fill="#1E1E1E"/>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M46.36 33.928L42.3415 29.9095L46.36 25.891L50.3785 29.9095L54.397 33.928L50.3785 37.9465L46.36 33.928Z"/>
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M50.3785 29.9095L46.36 25.891L50.3785 21.8725L54.397 25.891L58.4155 29.9095L54.397 33.928L50.3785 29.9095Z"/>
 							</g>
 						</svg>	
