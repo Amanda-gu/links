@@ -314,11 +314,12 @@ main{
             }
             
             h2{
-                max-width: 40ch;
-                font-weight: 700;
                 margin-block-end: 0.4rem;
+                max-width: 40ch;
                 color: var(--color);
                 font-family: var(--body-font);
+                font-weight: 700;
+                line-height: 120%;
             }
             
             h3{
@@ -337,11 +338,18 @@ main{
             }
 
             
-           
             audio {
                 block-size: revert;
                 inline-size: 100%;
             }
+        }
+
+        div::before, a::before, figure::before{
+                    content: "";
+                    position: fixed;
+                    inset: 0;
+                    background-color: var(--color);
+                    z-index: 1;
         }
         
         /* this is for hover animation */
@@ -379,7 +387,15 @@ main{
         h3{
             opacity: 1;
         }
+
+        div::before, a::before, figure::before{
+                    content: none;
+                    position: fixed;
+                    inset: 0;
+                    background-color: var(--color);
+                    z-index: 1;
         }
+    }
 
     img, iframe, video, audio, html{
         /*need the inline width to make small ones hoverable */
@@ -412,6 +428,10 @@ main{
                 gap: var(--space-bar-1);
                 max-height: max-content;
 
+                div::before, a::before, figure::before{
+                    content: none;
+                }
+
                 section p{
                     display: block;
                     opacity: 1;
@@ -422,6 +442,7 @@ main{
                     max-width: 20vw;
                     height: auto;
                 }
+
             }
 
             li:hover{
@@ -441,7 +462,7 @@ main{
                 transition: none;
                 translate: 0% 0%;
                 scale: 100%;
-                border-block-start: 0.04rem solid var(--secondary-color);
+                border-block-start: 0.04rem dotted var(--secondary-color);
                 padding-block-start: var(--space-bar-1);
                 
                 /* remove all links in description */
@@ -455,6 +476,7 @@ main{
                 }
 
                 div, a, figure{
+                    background-image: none;
                     
                     display: grid;
                     grid-template-columns: repeat(5, minmax(0, 1fr)); 
@@ -478,6 +500,7 @@ main{
                         grid-column: span 2;   
                     }
 
+                    
                     picture, img, iframe, video, audio{
                         aspect-ratio: 16 / 9;
                         max-height: 20vh;
@@ -489,6 +512,9 @@ main{
                          grid-column: 4 / span 2;
                     }
     
+                }
+                div::before, a::before, figure::before{
+                    content: none;
                 }
             }
             
@@ -657,11 +683,14 @@ button:hover{
             flex-direction: column;
             font-size: var(--body-copy);
             filter: grayscale(0%);
-            opacity: 0;
+            /* opacity: 0; */
 
             &.highlight {
                 scale: 100%;
                 opacity: 1;
+                div::before, a::before, figure::before{
+                    content: none;
+                }
             }
         }
         
