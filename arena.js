@@ -312,37 +312,14 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 			console.error('Container #channel-blocks not found')
 			return
 		}
-			
-		// Get the NodeList and convert it to an array so we can use array methods on it.
-	let myCards = Array.from(container.querySelectorAll('li'))	
-		console.log('Found cards:', myCards.length)
 
-	// Function to shuffle cards
-	let shuffleCards = () => {
-		container.classList.add('shuffling')
+// Shuffle cards immediately after they're rendered
+	let myCards = Array.from(container.querySelectorAll('li')) 
+
+	myCards.sort(() => Math.random() - 0.5) // Shuffle the array randomly.
+	myCards.forEach(card =>  container.appendChild(card)) // Update the DOM need this so that it shows on page!
 		
-		// Get fresh list of cards (in case order changed)
-		let currentCards = Array.from(container.querySelectorAll('li'))
-		let otherCards = currentCards
-		
-		otherCards.sort(() => Math.random() - 0.5)
-
-		// Update DOM need this so that it shows on page!
-		otherCards.forEach(card => container.appendChild(card))
-
-		//remove the class after the animation duration so that it can be added again on the next shuffle
-		setTimeout(() => {
-			container.classList.remove('shuffling')
-		}, 1200)
-
-		console.log('Shuffling...')
-	}
-
-	// Shuffle on page load
-	shuffleCards()
-	console.log('Shuffled!', myCards)
-		
-		
+	console.log('Shuffled!!', myCards)
 	
 //this is for mobile highlight on scroll using loop logic
 	let highlightClass = 'highlight' // Set up variables again.

@@ -52,8 +52,7 @@ body{
     font-weight: 400;
     font-style: normal;
     font-size: var(--body-copy);
-    text-wrap: balance;;
-    color: var(--secondary-color);
+    text-wrap: balance;
 
     display: grid;
     grid-template-rows: min-content 1fr min-content;
@@ -246,7 +245,6 @@ footer{
     }
 }
 
-
 main{
     width: 100vw;
     /* adding height here so i can scroll for sketch purposes */
@@ -254,6 +252,7 @@ main{
     overflow-x:hidden;
 
 }
+
 #channel-blocks{
     
     width: 100%;
@@ -269,74 +268,84 @@ main{
 
     padding-block: 10vh;
 
-    li div, li a, li figure{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: var(--space-bar-0);
-        
-        background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background-gradient));
-/* all description texts */
-        section p, section a{
-            display: none;
-            padding-block-end: var(--space-bar-0);
-            max-width: 45ch;
-            text-wrap: balance;
-            color: var(--secondary-color);
-            font-family: "PT Sans", sans-serif;
-            font-size: 60%;
-
-            transition: 0.5s;
-            transition-timing-function: linear;
-
-            a{
-             display: none;
-                
-             }
-        }
-        
-    }
-
+    
     li{
         font-size: var(--body-copy);
         color: var(--secondary-color);
-
         filter: grayscale(100%);
-    
-        h2{
-            max-width: 40ch;
-            font-weight: 700;
-            margin-block-end: 0.4rem;
+        
+        section {
+            a, p a{
+                display: none;
+            }
+        }
+        a h3{
             color: var(--color);
-            opacity: 50%;
-            font-family: var(--body-font);
+        }
+        a h3:hover{
+            color: var(--secondary-color);
         }
         
-        h3{
-            font-family: var(--heading-font);
-            max-width: 40ch;
+        div, a, figure{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-bar-0);
             
-        
-            display: inline-flex;
-            justify-content: start;
-            column-gap:calc(var(--space-bar-0)* 0.2) ;
+            background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background-gradient));
+    
+            /* all description texts */
+            section p, section a{
 
-            svg{
-                    width: 1rem;
-                    height: auto;
-                    align-items: baseline;
-                            
-                    path{
-                        color: var(--secondary-color);
-                        }
+                display: none;
+                padding-block-end: var(--space-bar-0);
+                max-width: 45ch;
+                text-wrap: balance;
+                color: var(--secondary-color);
+                font-family: "PT Sans", sans-serif;
+                font-size: 60%;
+    
+                transition: 0.5s;
+                transition-timing-function: linear;
+
             }
             
-        }
-       
-        audio {
-            block-size: revert;
-            inline-size: 100%;
+            h2{
+                max-width: 40ch;
+                font-weight: 700;
+                margin-block-end: 0.4rem;
+                color: var(--color);
+                opacity: 50%;
+                font-family: var(--body-font);
+            }
+            
+            h3{
+                opacity: 0;
+                font-family: var(--heading-font);
+                max-width: 40ch;
+                display: inline-flex;
+                justify-content: start;
+                column-gap:calc(var(--space-bar-0)* 0.2);
+    
+                svg{
+                        width: 1rem;
+                        height: auto;
+                        align-items: baseline;
+                                
+                        path{
+                            color: var(--secondary-color);
+                        }
+                }
+                
+            }
+
+            
+           
+            audio {
+                block-size: revert;
+                inline-size: 100%;
+            }
         }
         
         /* this is for hover animation */
@@ -367,12 +376,13 @@ main{
 /* this is for the description to show */
 
     li:hover{ 
-        color: var(--color);
         scale: 100%;
         filter: grayscale(0%);
-        opacity: 1;
         z-index: 2;
         animation-play-state: paused;
+        h3{
+            opacity: 1;
+        }
         }
 
     img, iframe, video, audio, html{
@@ -395,8 +405,7 @@ main{
             row-gap: var(--space-bar-3); 
              
             
-            li{
-
+            li{ 
                 opacity: 0;
                 grid-column: span 1;
                 animation:none;
@@ -406,7 +415,7 @@ main{
                 flex-direction: column;
                 gap: var(--space-bar-1);
                 max-height: max-content;
-                
+
                 section p{
                     display: block;
                     opacity: 1;
@@ -429,11 +438,8 @@ main{
             display: grid;
             animation: none;
             row-gap: var(--space-bar-3); 
-           
-            
 
-            li{
-                color: var(--secondary-color);
+            li{                
                 margin-inline: var(--space-bar-3);
                 animation:none;
                 transition: none;
@@ -443,25 +449,14 @@ main{
                 padding-block-start: var(--space-bar-1);
                 
                 /* remove all links in description */
-                section {
-                   
+                section { 
                     p{
                             display: block;
-    
                         }
                     a, p a{
                             display: none;
                         }
                 }
-
-                /* for all linked media */
-                a{
-                    color: var(--color);
-                }
-                a:hover{
-                    color: var(--secondary-color);
-                }
-
 
                 div, a, figure{
                     
@@ -477,6 +472,7 @@ main{
 
                     /* moving h3 to the front */
                     h3{
+                        opacity: 1;
                         order: -1;
                         overflow: hidden;
                         overflow-wrap: break-word; /*force word wrap*/

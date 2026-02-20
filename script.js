@@ -27,7 +27,7 @@ seekButton.addEventListener('click', () => { // “Listen” for clicks.
 })
 
 fieldButton.addEventListener('click', () => { // “Listen” for clicks.
-	channelBlocks.classList.remove(seekClass) //switch to field view
+	channelBlocks.classList.remove(seekClass) 
 	channelBlocks.classList.remove(indexClass)
 
 
@@ -40,7 +40,7 @@ fieldButton.addEventListener('click', () => { // “Listen” for clicks.
 
 
 indexButton.addEventListener('click', () => { // “Listen” for clicks.
-	channelBlocks.classList.add(indexClass) //switch to field view
+	channelBlocks.classList.add(indexClass)
 	channelBlocks.classList.remove(seekClass) 
 
 	fieldButton.classList.add('button-remove') //active state of the button. the site opens with field being the defualt view hence the ,unclick'
@@ -71,14 +71,14 @@ document.addEventListener('click', (event) => {
 })
 
 
+// Get the NodeList and convert it to an array so we can use array methods on it.
 
 randomButton.addEventListener('click', () => {
-		
-
-		let myCards = Array.from(channelBlocks.querySelectorAll('li')) 
+	
+	let myCards = Array.from(channelBlocks.querySelectorAll('li')) 
 
 		myCards.sort(() => Math.random() - 0.5) // Shuffle the array randomly.
 		myCards.forEach(card =>  channelBlocks.appendChild(card)) // Update the DOM need this so that it shows on page!
 		
 		console.log('Shuffled!', myCards)
-		}) 
+}) 
