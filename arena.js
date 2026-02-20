@@ -317,33 +317,29 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 	let myCards = Array.from(container.querySelectorAll('li'))	
 		console.log('Found cards:', myCards.length)
 
-//random hover shuffle
-	myCards.forEach(card => {
-			card.addEventListener('scroll', () => { 
+	// Function to shuffle cards
+	let shuffleCards = () => {
+		container.classList.add('shuffling')
+		
+		// Get fresh list of cards (in case order changed)
+		let currentCards = Array.from(container.querySelectorAll('li'))
+		let otherCards = currentCards
+		
+		otherCards.sort(() => Math.random() - 0.5)
 
-				container.classList.add('shuffling') // Pause the animation when the mouse leaves the card
+		// Update DOM need this so that it shows on page!
+		otherCards.forEach(card => container.appendChild(card))
 
-				
-				// Get fresh list of cards (in case order changed)
-				let currentCards = Array.from(container.querySelectorAll('li'))
-				let hoveredCard = myCards.currentTarget
-				let otherCards = currentCards.filter(card => card !== hoveredCard)
-				
-				otherCards.sort(() => Math.random() - 0.5)
+		//remove the class after the animation duration so that it can be added again on the next shuffle
+		setTimeout(() => {
+			container.classList.remove('shuffling')
+		}, 1200)
 
-				// Update DOM need this so that it shows on page!
-				otherCards.forEach(card => container.appendChild(card))
+		console.log('Shuffling...')
+	}
 
-				//remove the class after the animation duration so that it can be added again on the next hover
-				setTimeout(() => {
-					container.classList.remove('shuffling')
-				}, 1200)
-
-
-				console.log('Mouse entered! Shuffling...')
-
-			})
-		})
+	// Shuffle on page load
+	shuffleCards()
 	console.log('Shuffled!', myCards)
 		
 		
