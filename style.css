@@ -296,9 +296,10 @@ main{
             justify-content: center;
             gap: var(--space-bar-0);
             background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background-gradient));
+            
             /* all description texts */
+            
             section p, section a{
-
                 display: none;
                 padding-block-end: var(--space-bar-0);
                 max-width: 45ch;
@@ -323,7 +324,7 @@ main{
             }
             
             h3{
-                opacity: 0;
+              
                 font-family: var(--heading-font);
                 display: inline-flex;
                 justify-content: start;
@@ -362,7 +363,7 @@ main{
         transition: 800ms;
 
         /*values from https://easings.net/#easeInQuartic */
-        animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+        animation-timing-function: linear;
         animation-duration: 40s;
         animation-iteration-count: infinite;
 
@@ -382,31 +383,20 @@ main{
     }
 
 
-/* this is for the description to show */
-
     li:hover{ 
         scale: 100%;
         filter: grayscale(0%);
         z-index: 2;
         animation-play-state: paused;
-        h3{
-            opacity: 1;
+
+        div::before, a::before, figure::before{                         
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-color: var(--color);
+            z-index: 1;
+            opacity: 0;
         }
-
-        div::before, a::before, figure::before{
-                    content: "";
-                    position: fixed;
-                    inset: 0;
-                    background-color: var(--color);
-                    z-index: 1;
-                    opacity: 0;
-        }
-    }
-
-
-    &.shuffling li{
-        animation-name: shuffle;
-        animation-duration: 1200ms;        
     }
    
 }
@@ -515,6 +505,7 @@ main{
                 }
                 div::before, a::before, figure::before{
                     content: none;
+                    transition: none;
                 }
             }
             
@@ -669,21 +660,23 @@ button:hover{
             pointer-events: none;
             max-height: max-content;
             scale: 50%;
-            p{
-                display: none;
-            }
-            picture, img, iframe, video, audio{
-                max-width: 30vw;
-            }
-            
-            color: var(--color);
-            align-items: left;
-            gap: var(--space-bar-0);
-            display: flex;
-            flex-direction: column;
-            font-size: var(--body-copy);
-            filter: grayscale(0%);
+            div, a, figure{
+                p{
+                    display: none;
+                }
+                picture, img, iframe, video, audio{
+                    max-width: 60vw;
+                }
+                
+                color: var(--color);
+                align-items: left;
+                gap: var(--space-bar-0);
+                display: flex;
+                flex-direction: column;
+                font-size: var(--body-copy);
+                filter: grayscale(0%);
 
+            }
             &.highlight {
                 scale: 100%;
                 opacity: 1;
@@ -785,16 +778,6 @@ button:hover{
   }
 }
 
-@keyframes shuffle{
-
-    0% {
-        scale: 25%;
-    }
-    100% {
-        scale: 20%;
-    
-    }
-}
 
 @keyframes amovin {
   0% {
