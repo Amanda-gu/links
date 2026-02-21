@@ -29,21 +29,15 @@ body{
 /*  want to add a grid pattern to the bg */
 /* how to make a grid pattern: https://stackoverflow.com/questions/3540194/how-to-make-a-grid-like-graph-paper-grid-with-just-css */
 /* bg size is the size of the individual grid squares */
-    background-size: 40px 40px;
+    background-size: 4rem 4rem;
     /* using radial-gradient here to 'remove' the lines */
     /* inside radial-gradient, circle shape, center of the circle gradient, start of the outer color of the circle */
     background-image: radial-gradient(circle, var(--tertiary-color) 1px, var(--background) 1px);
-    /* background-image:
-    linear-gradient(to right, rgb(73, 58, 58) 1px, transparent 1px),
-    linear-gradient(to bottom, grey 1px, transparent 1px); */
-
+ 
     animation-name: movinggrid;
     animation-timing-function: ease-in-out;
     animation-duration: 60s;
     animation-iteration-count: infinite;
-
-
-
 
     height: 100vh;
     color: var(--color);
@@ -57,9 +51,6 @@ body{
     display: grid;
     grid-template-rows: min-content 1fr min-content;
     align-items: center;
-
-
-    
 }
 
 
@@ -270,20 +261,21 @@ main{
         color: var(--secondary-color);
         filter: grayscale(100%);
         align-self: center;
-        
+
         section {
             a, p a{
                 display: none;
             }
         }
+
         a h3{
-            color: var(--color);
+            color: var(--color);   
             svg{
                 fill: var(--color);   
             }   
         }
         a h3:hover{
-            color: var(--secondary-color);
+            color: var(--secondary-color);  
             svg{
                 fill: var(--secondary-color);   
             }    
@@ -312,7 +304,6 @@ main{
             }
 
             h2, h3{
-
                 max-width: 40ch;
             }
 
@@ -511,9 +502,6 @@ main{
             }
             
         }
-
-
-
 
 button{
             font-family: var(--heading-font-shadow);
