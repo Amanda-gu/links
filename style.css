@@ -308,10 +308,14 @@ main{
                 font-size: 60%;
 
             }
-            
+
+            h2, h3{
+
+                max-width: 40ch;
+            }
+
             h2{
                 margin-block-end: 0.4rem;
-                max-width: 40ch;
                 color: var(--color);
                 font-family: var(--body-font);
                 font-weight: 700;
@@ -321,7 +325,6 @@ main{
             h3{
                 opacity: 0;
                 font-family: var(--heading-font);
-                max-width: 40ch;
                 display: inline-flex;
                 justify-content: start;
                 column-gap:calc(var(--space-bar-0)* 0.2);
@@ -333,7 +336,7 @@ main{
                 }    
             }
 
-            img, iframe, video, audio, html{
+            picture, img, iframe, video, audio{
                 /*need the inline width to make small ones hoverable */
                 max-width: 22vw;
             }
@@ -434,12 +437,11 @@ main{
                     display: block;
                     opacity: 1;
                     }
+/* 
 
-
-                img, iframe, video, audio{
-                    max-width: 20vw;
+                picture, img, iframe, video, audio{
                     height: auto;
-                }
+                } */
 
             }
 
@@ -500,7 +502,8 @@ main{
                     
                     picture, img, iframe, video, audio{
                         aspect-ratio: 16 / 9;
-                        max-height: 20vh;
+                        width: 100%;
+                        max-height: auto;
                         overflow: hidden;
                         object-fit: cover;
                     }
@@ -661,10 +664,7 @@ button:hover{
         row-gap: var(--space-bar-2);
         align-items: center;    
         
-        img, iframe, video, audio{
-            max-width: 30vw;
-        }
-
+        
         li {
             pointer-events: none;
             max-height: max-content;
@@ -672,7 +672,10 @@ button:hover{
             p{
                 display: none;
             }
-
+            picture, img, iframe, video, audio{
+                max-width: 30vw;
+            }
+            
             color: var(--color);
             align-items: left;
             gap: var(--space-bar-0);
@@ -706,7 +709,7 @@ button:hover{
 @media(width<700px){
     #channel-blocks{
         li { 
-            img, iframe, video, audio{
+            picture, img, iframe, video, audio{
             max-width: 70vw;
         }
         }
@@ -716,24 +719,33 @@ button:hover{
                 animation: none;
                 row-gap: var(--space-bar-2); 
                 height: 100%;
-                border-block-start: 0rem;
                 
                 
                 li{
+                    border-block-start: none;
                     padding-block: var(--space-bar-0);
                     
                     div, a, figure{
-                        h3{
-                            order: 0;
-                        } 
+
                         display: flex;
                         flex-direction: column;   
-                        
-                        h2, img, iframe, video, audio, html{
-                            padding-block-end: var(--space-bar-2);
+
+                        h3{
+                            order: 0;
                             width: 100%;
-                            height: auto;
+                            padding-block-start: var(--space-bar-1);
+                            border-block-start: 0.04rem dotted var(--secondary-color);
+                        } 
+                        /* this get rid of the word ch limit for desktop */
+                        h3,  h2, picture, img, iframe, video, audio,section p, section a{
+                            max-width: 100%;
                         }
+                        
+                        h2, picture, img, iframe, video, audio{
+                            padding-block-end: var(--space-bar-1);
+                        }
+
+
                     }  
                             
                 }
