@@ -29,11 +29,12 @@ body{
 /*  want to add a grid pattern to the bg */
 /* how to make a grid pattern: https://stackoverflow.com/questions/3540194/how-to-make-a-grid-like-graph-paper-grid-with-just-css */
 /* bg size is the size of the individual grid squares */
-    background-size: 4rem 4rem;
+    /* background-size: 4rem 4rem; */
     /* using radial-gradient here to 'remove' the lines */
     /* inside radial-gradient, circle shape, center of the circle gradient, start of the outer color of the circle */
-    background-image: radial-gradient(circle, var(--tertiary-color) 1px, var(--background) 1px);
- 
+    /* background-image: radial-gradient(circle, var(--tertiary-color) 1px, var(--background) 1px); */
+     background-image: radial-gradient(circle, #a6a6a6 1rem, var(--background) 100vw);
+
     animation-name: movinggrid;
     animation-timing-function: ease-in-out;
     animation-duration: 60s;
@@ -67,7 +68,7 @@ hgroup, footer{
 }
 
 hgroup{
-    background-image: linear-gradient(to bottom, var(--background), var(--background), var(--background), var(--background),var(--background-gradient));
+    /* background-image: linear-gradient(to bottom, var(--background), var(--background), var(--background), var(--background),var(--background-gradient)); */
     top: 0;
     height: 3rem;
     
