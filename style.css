@@ -619,7 +619,6 @@ button:hover{
         
         
         li {
-            pointer-events: none;
             max-height: max-content;
             scale: 50%;
             div, a, figure{
