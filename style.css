@@ -292,6 +292,15 @@ main{
             /* all description texts */
             max-width: 25vw;
             
+             picture, img, video, audio{
+                /*need the inline width to make small ones hoverable */
+                width: 100%;
+                height: auto;
+            }
+            iframe{
+                width: fit-content;
+            }
+
             section p, section a{
                 display: none;
                 padding-block-end: var(--space-bar-0);
@@ -331,14 +340,7 @@ main{
                 }    
             }
 
-            picture, img, video, audio{
-                /*need the inline width to make small ones hoverable */
-                width: 100%;
-                height: auto;
-            }
-            iframe{
-                width: fit-content;
-            }
+           
 
             audio {
                 block-size: revert;
@@ -614,16 +616,13 @@ button:hover{
             max-height: max-content;
             scale: 50%;
             div, a, figure{
+                max-width: 45vw;
                 p{
                     display: none;
                 }
-                picture, img, iframe, video, audio{
-                    max-width: 40vw;
+                h2, picture, img, iframe, video, audio{
+                    width: 100%;                
                 }
-                h2{
-                    max-width: 70vw;
-                }
-                
                 align-items: left;
                 gap: var(--space-bar-0);
                 display: flex;
@@ -650,7 +649,7 @@ button:hover{
     #channel-blocks.indexview-channel{
         li{
              div, a, figure{
-                    column-gap: var(--space-bar-2);
+                column-gap: var(--space-bar-2);
                 
         }
         }
@@ -660,10 +659,12 @@ button:hover{
 @media(width<700px){
     #channel-blocks{
         li { 
-            div, a, figure {
-                picture, img, iframe, video, audio{
-                    max-width: 60vw;
-                }   
+            div, a, figure{
+                max-width: 65vw;
+
+                h2, picture, img, iframe, video, audio{
+                    width: 100%;
+                }
             }
         }
     }
