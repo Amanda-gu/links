@@ -342,13 +342,14 @@ main{
         }
 
         div::before, a::before, figure::before{
-                    content: "";
-                    position: fixed;
-                    inset: 0;
-                    background-color: var(--color);
-                    z-index: 1;
-                    opacity: 1;
-                    transition: 1200ms;
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-color: var(--color);
+            box-shadow: inset 0rem 0rem 0.4rem 0.4rem rgb(244, 244, 242);
+            z-index: 1;
+            opacity: 1;
+            transition: 1200ms;
         }
         
         /* this is for hover animation */
@@ -385,10 +386,6 @@ main{
 
         div::before, a::before, figure::before{                         
             content: "";
-            position: fixed;
-            inset: 0;
-            background-color: var(--color);
-            z-index: 1;
             opacity: 0;
         }
     }
