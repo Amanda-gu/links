@@ -317,9 +317,11 @@ main{
             h3{
               
                 font-family: var(--heading-font);
-                display: inline-flex;
-                justify-content: start;
-                column-gap:calc(var(--space-bar-0)* 0.2);
+                display: flex;
+                flex-direction: column;
+                row-gap: calc(var(--space-bar-0)* 0.5);
+                justify-content: center;
+                align-items: center;
     
                 svg{
                         width: 1rem;
@@ -363,7 +365,7 @@ main{
     
     li:nth-child(1n){
         animation-name: amovin;
-        translate: 15% 30%;
+        translate: 25% 30%;
     }
     li:nth-child(2n){
         animation-name: bmovin; 
@@ -433,6 +435,8 @@ main{
                     h3{
                         opacity: 1;
                         order: -1;
+                        justify-content: start;
+                        align-items: start;
                         overflow: hidden;
                         overflow-wrap: break-word; /*force word wrap*/
                     } 
@@ -482,7 +486,7 @@ button:hover{
 .trail-particle {
     pointer-events: none;
     position: absolute;
-    background:var(--color);
+    background:var(--tertiary-color);
     border-radius: 50%;
     width: 0.2rem;
     height: 0.2rem;
@@ -545,20 +549,17 @@ button:hover{
                 width: 100vw;
                 /* When JS adds the `open` attribute… */
                 &[open] { 
-        
+                        height: 100vh;
                         display: flex;
                         flex-direction: column;
+                        justify-content: center;
                         align-items: center;
-        
-                        row-gap: calc(var(--space-bar-3) * 0.6);
+                        row-gap: calc(var(--space-bar-3)*0.6) ;
         
                         background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background-gradient));
                         border-radius: var(--space-bar-0);
                         filter: drop-shadow(0 0.5rem 1rem rgb(0 0 0 / 50%)); /* Some depth. */
                       
-                        padding: var(--space-bar-2);
-                        padding-block:calc( var(--space-bar-3)*2);
-            
                         /* Defaults to `position: absolute;`, this centers it: */
                         inset-block-start: 50%;
                         inset-inline-start: 50%;
@@ -569,7 +570,6 @@ button:hover{
                             display: flex;
                             flex-direction: column;
                             align-items: center;
-                            row-gap: var(--space-bar-0);
         
                             a{
                                 font-family: var(--heading-font);
@@ -580,22 +580,15 @@ button:hover{
                                     display: block;
                                     text-wrap: wrap;
                                     width: 80vw;
-                                    top: var(--space-bar-1);
                                     color: var(--secondary-color);
                                     font-family: var(--body-font)
                                 }
                                 svg{
                                     width: 1rem;
                                     height: auto;
-                                    align-items: baseline;
-                                            
-                                    path{
-                                        color: var(--secondary-color);
-                                        }
+                                    align-items: baseline;         
                                 }
                             }
-        
-        
                         }
                          
                     } /* `block` is default, but we can override. */
@@ -752,10 +745,10 @@ button:hover{
 
 @keyframes amovin {
   0% {
-    translate: 15% 30%;
+    translate: 25% 30%;
   }
   15% {
-   translate: 5% 20%;
+   translate: 15% 20%;
   }
   30% {
     translate: 10% 10%;
@@ -767,10 +760,10 @@ button:hover{
     translate: -12% -15%;
   }
   80% {
-    translate: -20% 20%;
+    translate: -15% 20%;
   }
   100% {
-    translate: 15% 30%;
+    translate: 25% 30%;
   }
 }
 
