@@ -261,7 +261,6 @@ main{
         filter: grayscale(100%);
         align-self: center;
 
-
         section {
             a, p a{
                 display: none;
@@ -288,9 +287,10 @@ main{
             align-self: center;
             gap: var(--space-bar-0);
             background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background-gradient));
-            /* i saw riya's code for the transparent gradient thing, i like it */
+            /* i saw riya's code for the mask with transparent gradient, i like the effect of it */
             mask-image: radial-gradient(circle, black 0%, rgba(0, 0, 0, 0) 90%);
             /* all description texts */
+            max-width: 25vw;
             
             section p, section a{
                 display: none;
@@ -333,7 +333,7 @@ main{
 
             picture, img, video, audio{
                 /*need the inline width to make small ones hoverable */
-                max-width: 25vw;
+                width: 100%;
                 height: auto;
             }
             iframe{
@@ -393,7 +393,7 @@ main{
             row-gap: var(--space-bar-3); 
 
             li{                
-                margin-inline: var(--space-bar-0);
+                /* margin-inline: var(--space-bar-0); */
                 animation:none;
                 transition: none;
                 translate: 0% 0%;
@@ -418,6 +418,7 @@ main{
                     align-items: flex-start;
                     column-gap: var(--space-bar-3);
                     mask-image: none;
+                    max-width: 100vw;
                     
                     *{
                         justify-content: flex-start;
@@ -439,14 +440,13 @@ main{
                     }
 
                     
-                    picture, img, iframe, video, audio{
+                    picture,img, iframe, video, audio{
                         aspect-ratio: 16 / 9;
                         width: 100%;
                         max-height: auto;
                         overflow: hidden;
                         object-fit: cover;
                     }
-
                     section{
                          grid-column: 4 / span 2;
                     }
@@ -645,6 +645,15 @@ button:hover{
         }
         
         
+    }
+
+    #channel-blocks.indexview-channel{
+        li{
+             div, a, figure{
+                    column-gap: var(--space-bar-2);
+                
+        }
+        }
     }
 }
 
