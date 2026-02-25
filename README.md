@@ -10,3 +10,6 @@
 <h3>Design</h3>
 <p>I decided to design a field view with blocks in random order so everyone can have their own unique navigation experience on the site, because I think how people navigate and understand their surroundings is intuitive and personal. There is also a randomize button to change up the order of the blocks.</p> 
 
+<h3>Leanings</h3>
+<p>In this prohject, I learned some basic javascript funtions. I also got to build on my css animation skills a bit more.</p> 
+
