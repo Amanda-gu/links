@@ -346,7 +346,7 @@ main{
             position: fixed;
             inset: 0;
             background-color: var(--color);
-            box-shadow: inset 0rem 0rem 0.4rem 0.4rem rgb(244, 244, 242);
+            box-shadow: inset 0rem 0rem 0.4rem 0.4rem var(--background);
             z-index: 1;
             opacity: 1;
             transition: 1200ms;
@@ -752,13 +752,13 @@ button:hover{
     translate: 10% 10%;
   }
   45% {
-    translate: 0% 0%;
+    translate: -5% 0%;
   }
   60% {
     translate: -12% -15%;
   }
   80% {
-    translate: -15% 20%;
+    translate: -20% 20%;
   }
   100% {
     translate: 25% 30%;
@@ -776,10 +776,10 @@ button:hover{
     translate: 10% 10%;
   }
   60% {
-    translate: 0% 0%;
+    translate: 5% 10%;
   }
   80% {
-    translate: 5% 10%;
+    translate: -10% -5%;
   }
   100% {
     translate: 0% 0%;
