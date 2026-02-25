@@ -630,7 +630,6 @@ button:hover{
                     max-width: 60vw;
                 }
                 
-                /* color: var(--color); */
                 align-items: left;
                 gap: var(--space-bar-0);
                 display: flex;
