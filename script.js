@@ -76,7 +76,7 @@ randomButton.addEventListener('click', () => {
 
 //mousemove eventlistener. https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event
 window.addEventListener('mousemove', (e) => {
-  // 1.Create a new div everytime it moves
+  // 1.Create a new div everytime it moves so there is a trail
   	let particle = document.createElement('div')
   //assign them class in css
 	particle.className = 'trail-particle'
