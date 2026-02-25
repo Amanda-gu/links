@@ -11,7 +11,7 @@ let placeChannelInfo = (channelData) => {
 
 	let channelTitle = document.querySelectorAll('.channel-title')// use a class
 	channelTitle.forEach(el => { el.innerHTML = channelData.title})
-	//after call every class items, use loop to append content to every class item, 
+	//after call every class items, use loop to append content to every class item/element, 
 	//el is for element
 
 	let channelDescription = document.querySelectorAll('.channel-description')
@@ -37,6 +37,8 @@ let renderBlock = (blockData) => {
 	// A little helper for the block description, which we’ll use in multiple places:
 	// The `?.` is called “optional chaining” and it’s a way to avoid errors if the description is missing. It says, “if there’s a description, use its HTML; if not, just use an empty string.”
 	let blockDescription = blockData.description?.html || ''
+	let blockTitle = blockData.title || 'Untitled'
+								
 
 	// Links!
 	if (blockData.type == 'Link') {
@@ -54,7 +56,7 @@ let renderBlock = (blockData) => {
 					
 			
 					<h3>
-					${blockData.title.plain} 
+					${blockTitle} 
 					<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
 							<g clip-path="url(#clip0_145_4524)">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M61.9253 10.3263L57.9068 14.3449L53.8883 10.3263L49.8698 14.3449L45.8513 18.3634L41.8328 14.3449L37.8143 18.3634L33.7958 22.3819L29.7773 18.3634L25.7587 22.3819L21.7402 26.4004L25.7587 30.4189L29.7773 34.4374L33.7958 30.4189L37.8143 26.4004L41.8328 22.3819L45.8513 26.4004L49.8698 22.3819L53.8883 26.4004L57.9068 30.4189L53.8883 34.4374L49.8698 38.4559L53.8883 42.4744L49.8698 46.4929L45.8513 50.5115L49.8698 54.53L53.8883 58.5485L57.9068 54.53L61.9253 50.5115L57.9068 46.4929L61.9253 42.4744L65.9439 38.4559L61.9253 34.4374L65.9439 30.4189L69.9624 26.4004L65.9439 22.3819L69.9624 18.3634L65.9439 14.3449L61.9253 10.3263Z"/>
@@ -95,7 +97,7 @@ let renderBlock = (blockData) => {
 							<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
 					</picture>
 					<h3>
-							${ blockData.title }		
+						${ blockTitle }		
 					</h3>
 					<section> ${blockDescription}</section>
 				</figure>
@@ -118,13 +120,10 @@ let renderBlock = (blockData) => {
 				<h2>
 					${blockData.content.plain}
 				</h2>
-
-					${ blockData.title
-						? `<h3>${ blockData.title }</h3>`
-						: `<h3>Untitled</h3>`
-					}
-					
-					<section> ${blockDescription}</section>
+				<h3>
+					${blockTitle} 	
+				</h3>
+				<section> ${blockDescription}</section>
 			</div>
 					
 			</li>
@@ -147,7 +146,7 @@ let renderBlock = (blockData) => {
 					<figure>
 						<video controls src="${ blockData.attachment.url }"></video>
 						<h3>
-							${ blockData.title }		
+							${blockTitle} 	
 						</h3>
 						<section> ${blockDescription}</section>
 					</figure>
@@ -172,7 +171,7 @@ let renderBlock = (blockData) => {
 								<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
 							</picture>
 							<h3>
-								${ blockData.title }
+								${blockTitle} 	
 								<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
 							<g clip-path="url(#clip0_145_4524)">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M61.9253 10.3263L57.9068 14.3449L53.8883 10.3263L49.8698 14.3449L45.8513 18.3634L41.8328 14.3449L37.8143 18.3634L33.7958 22.3819L29.7773 18.3634L25.7587 22.3819L21.7402 26.4004L25.7587 30.4189L29.7773 34.4374L33.7958 30.4189L37.8143 26.4004L41.8328 22.3819L45.8513 26.4004L49.8698 22.3819L53.8883 26.4004L57.9068 30.4189L53.8883 34.4374L49.8698 38.4559L53.8883 42.4744L49.8698 46.4929L45.8513 50.5115L49.8698 54.53L53.8883 58.5485L57.9068 54.53L61.9253 50.5115L57.9068 46.4929L61.9253 42.4744L65.9439 38.4559L61.9253 34.4374L65.9439 30.4189L69.9624 26.4004L65.9439 22.3819L69.9624 18.3634L65.9439 14.3449L61.9253 10.3263Z"/>
@@ -203,7 +202,7 @@ let renderBlock = (blockData) => {
 					<figure>
 						<audio controls src="${blockData.attachment.url}"></audio>
 						<h3>
-							${ blockData.title }		
+							${blockTitle} 	
 						</h3>
 						<section> ${blockDescription}</section>
 					</figure>
@@ -229,7 +228,7 @@ let renderBlock = (blockData) => {
 					<a href="${ blockData.source.url }">
 						${ blockData.embed.html}
 						<h3>
-							${blockData.title.plain}	
+							${blockTitle}
 							<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
 								<g clip-path="url(#clip0_145_4524)">
 									<path fill-rule="evenodd" clip-rule="evenodd" d="M61.9253 10.3263L57.9068 14.3449L53.8883 10.3263L49.8698 14.3449L45.8513 18.3634L41.8328 14.3449L37.8143 18.3634L33.7958 22.3819L29.7773 18.3634L25.7587 22.3819L21.7402 26.4004L25.7587 30.4189L29.7773 34.4374L33.7958 30.4189L37.8143 26.4004L41.8328 22.3819L45.8513 26.4004L49.8698 22.3819L53.8883 26.4004L57.9068 30.4189L53.8883 34.4374L49.8698 38.4559L53.8883 42.4744L49.8698 46.4929L45.8513 50.5115L49.8698 54.53L53.8883 58.5485L57.9068 54.53L61.9253 50.5115L57.9068 46.4929L61.9253 42.4744L65.9439 38.4559L61.9253 34.4374L65.9439 30.4189L69.9624 26.4004L65.9439 22.3819L69.9624 18.3634L65.9439 14.3449L61.9253 10.3263Z"/>
@@ -264,7 +263,7 @@ let renderBlock = (blockData) => {
 					<a href="${ blockData.source.url }">
 						${ blockData.embed.html}
 						<h3>
-							${blockData.title }
+							${blockTitle} 	
 							<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
 							<g clip-path="url(#clip0_145_4524)">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M61.9253 10.3263L57.9068 14.3449L53.8883 10.3263L49.8698 14.3449L45.8513 18.3634L41.8328 14.3449L37.8143 18.3634L33.7958 22.3819L29.7773 18.3634L25.7587 22.3819L21.7402 26.4004L25.7587 30.4189L29.7773 34.4374L33.7958 30.4189L37.8143 26.4004L41.8328 22.3819L45.8513 26.4004L49.8698 22.3819L53.8883 26.4004L57.9068 30.4189L53.8883 34.4374L49.8698 38.4559L53.8883 42.4744L49.8698 46.4929L45.8513 50.5115L49.8698 54.53L53.8883 58.5485L57.9068 54.53L61.9253 50.5115L57.9068 46.4929L61.9253 42.4744L65.9439 38.4559L61.9253 34.4374L65.9439 30.4189L69.9624 26.4004L65.9439 22.3819L69.9624 18.3634L65.9439 14.3449L61.9253 10.3263Z"/>
