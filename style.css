@@ -713,6 +713,9 @@ button:hover{
             }
         
         }
+    nav{
+             background-image: linear-gradient(to bottom, var(--background-gradient), var(--background),var(--background));
+        }
     footer{
         display: none;
     }
