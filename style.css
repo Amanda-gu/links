@@ -630,7 +630,7 @@ button:hover{
                     max-width: 60vw;
                 }
                 
-                color: var(--color);
+                /* color: var(--color); */
                 align-items: left;
                 gap: var(--space-bar-0);
                 display: flex;
@@ -646,10 +646,6 @@ button:hover{
                 
                 div::before, a::before, figure::before{
                     content: "";
-                    position: fixed;
-                    inset: 0;
-                    background-color: var(--color);
-                    z-index: 1;
                     opacity: 0;
                 }
             }
