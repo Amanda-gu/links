@@ -28,10 +28,11 @@
 body{
 /*  want to add a grid pattern to the bg */
 /* how to make a grid pattern: https://stackoverflow.com/questions/3540194/how-to-make-a-grid-like-graph-paper-grid-with-just-css */
+
 /* bg size is the size of the individual grid squares */
     background-size: 4rem 4rem;
-    /* using radial-gradient here to 'remove' the lines */
-    /* inside radial-gradient, circle shape, center of the circle gradient, start of the outer color of the circle */
+/* using radial-gradient here to 'remove' the lines */
+/* inside radial-gradient, circle shape, center of the circle gradient, start of the outer color of the circle */
     background-image: radial-gradient(circle, var(--tertiary-color) 1px, var(--background) 1px);
 
     animation-name: movinggrid;
@@ -67,9 +68,10 @@ hgroup, footer{
 }
 
 hgroup{
-    /* background-image: linear-gradient(to bottom, var(--background), var(--background), var(--background), var(--background),var(--background-gradient)); */
+    background-image: linear-gradient(to bottom, var(--background), var(--background), var(--background), var(--background),var(--background-gradient));
     top: 0;
     height: 3rem;
+    z-index: 3;
     
     ul{
         display: flex;
@@ -112,8 +114,8 @@ hgroup{
                 color: var(--color);
                 opacity: 1;
             }
-            #channel-link{       
-                #channel-description{
+            .channel-link{       
+                .channel-description{
                     display: none;
                     white-space: wrap;
                     width: 60ch;
@@ -124,10 +126,9 @@ hgroup{
                 }
             }
             
-            #channel-link:hover #channel-description {
+            .channel-link:hover .channel-description {
                 display: block;
                 background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background-gradient));
-    
                 }
         }
             
@@ -393,44 +394,6 @@ main{
    
 }
 
-#channel-blocks.seekview-channel{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            animation: none;
-            row-gap: var(--space-bar-3); 
-             
-            
-            li{ 
-                opacity: 0;
-                grid-column: span 1;
-                animation:none;
-                transition: none;
-                translate: 0% 0%;
-                scale: 100%;
-                flex-direction: column;
-                gap: var(--space-bar-1);
-                max-height: max-content;
-
-                div::before, a::before, figure::before{
-                    content: none;
-                }
-
-                section p{
-                    display: block;
-                    opacity: 1;
-                    }
-/* 
-
-                picture, img, iframe, video, audio{
-                    height: auto;
-                } */
-
-            }
-
-            li:hover{
-                opacity: 1;
-            }
-        }
 
 
 #channel-blocks.indexview-channel{
@@ -596,7 +559,8 @@ button:hover{
                         color: var(--color);
                         opacity: 1;
                         
-                        #channel-description{
+                        .channel-description{
+                            display: block;
                             text-wrap: wrap;
                             width: 80vw;
                             top: var(--space-bar-1);
@@ -739,10 +703,10 @@ button:hover{
             
             }
         
-            footer{
-                display:none;
-            }
         }
+    footer{
+        display: none;
+    }
 }
 
 @keyframes fontchange {
