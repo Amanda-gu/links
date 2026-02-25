@@ -261,6 +261,7 @@ main{
         filter: grayscale(100%);
         align-self: center;
 
+
         section {
             a, p a{
                 display: none;
@@ -286,9 +287,9 @@ main{
             align-items: center;
             align-self: center;
             gap: var(--space-bar-0);
-
             background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background-gradient));
-            
+            /* i saw riya's code for the transparent gradient thing, i like it */
+            mask-image: radial-gradient(circle, black 0%, rgba(0, 0, 0, 0) 90%);
             /* all description texts */
             
             section p, section a{
@@ -330,9 +331,13 @@ main{
                 }    
             }
 
-            picture, img, iframe, video, audio{
+            picture, img, video, audio{
                 /*need the inline width to make small ones hoverable */
-                max-width: 22vw;
+                max-width: 25vw;
+                height: auto;
+            }
+            iframe{
+                width: fit-content;
             }
 
             audio {
@@ -341,20 +346,10 @@ main{
             }
         }
 
-        div::before, a::before, figure::before{
-            content: "";
-            position: fixed;
-            inset: 0;
-            background-color: var(--color);
-            box-shadow: inset 0rem 0rem 0.4rem 0.4rem var(--background);
-            z-index: 1;
-            opacity: 1;
-            transition: 1200ms;
-        }
         
         /* this is for hover animation */
         scale: 28%;
-        transition: 800ms;
+        transition: 1200ms;
         transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
         /*values from https://easings.net/#easeInQuartic */
 
@@ -384,10 +379,10 @@ main{
         z-index: 2;
         animation-play-state: paused;
 
-        div::before, a::before, figure::before{                         
-            content: "";
-            opacity: 0;
+        div, a, figure{
+             mask-image: radial-gradient(circle, black 90%, rgba(0, 0, 0, 0) 100%);
         }
+
     }
    
 }
@@ -422,6 +417,7 @@ main{
                     grid-template-columns: repeat(5, minmax(0, 1fr)); 
                     align-items: flex-start;
                     column-gap: var(--space-bar-3);
+                    mask-image: none;
                     
                     *{
                         justify-content: flex-start;
@@ -455,10 +451,6 @@ main{
                          grid-column: 4 / span 2;
                     }
     
-                }
-                div::before, a::before, figure::before{
-                    content: none;
-                    transition: none;
                 }
             }
             
@@ -645,9 +637,8 @@ button:hover{
                 opacity: 1;
                 animation-play-state: paused;
                 translate: 0% 0%;
-                div::before, a::before, figure::before{
-                    content: "";
-                    opacity: 0;
+                div, a, figure{
+                    mask-image: none;
                 }
             }
 
