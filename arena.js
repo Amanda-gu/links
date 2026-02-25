@@ -7,12 +7,11 @@ let myUsername = 'amanda-guo' // For linking to your profile.
 let placeChannelInfo = (channelData) => {
 
 	
-//need to get the array from querySelectorAll because it is a NodeList which does not have innerHTML.
+//help from copilot: need to get the array from querySelectorAll because it is a NodeList which does not have innerHTML.
 
-	let channelTitle = document.querySelectorAll('.channel-title')// use a class
+	let channelTitle = document.querySelectorAll('.channel-title')// use a class instead of id
 	channelTitle.forEach(el => { el.innerHTML = channelData.title})
-	//after call every class items, use loop to append content to every class item/element, 
-	//el is for element
+	//after call every class items, use loop to append content to every class item/element(el), 
 
 	let channelDescription = document.querySelectorAll('.channel-description')
 	channelDescription.forEach(el => { el.innerHTML = channelData.description?.html || ''})
@@ -23,7 +22,6 @@ let placeChannelInfo = (channelData) => {
 	let channelUsers = document.querySelectorAll('.channel-users')
 	channelUsers.forEach(el => { el.innerHTML = channelData.owner.name})
 	
-
 	console.log()
 }
 
@@ -39,7 +37,6 @@ let renderBlock = (blockData) => {
 	let blockDescription = blockData.description?.html || ''
 	let blockTitle = blockData.title || 'Untitled'
 								
-
 	// Links!
 	if (blockData.type == 'Link') {
 		// Declares a “template literal” of the dynamic HTML we want.
@@ -327,7 +324,7 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 
 
 
-//LLM told me to delay the function and put it in the last fetchJson so that it runs after the blocks are rendered. I also added some error handling and logging to make sure it works.
+//copilot told me to delay the function and put it in the last fetchJson so that it runs after the blocks are rendered. I also added some error handling and logging to make sure it works.
 
 	let container = document.querySelector('#channel-blocks')		
 		if (!container) {
@@ -360,7 +357,6 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 			
 			rootMargin: '-45% 0% -40% 0%', // CSS-ish: top/right/bottom/left.
 		})
-
 		sectionObserver.observe(block) // Watch each one!
 	})
 

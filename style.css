@@ -480,7 +480,7 @@ button:hover{
     width: 0.2rem;
     height: 0.2rem;
     animation-name: fade;
-    animation-duration: 100s;
+    animation-duration: 40s;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
