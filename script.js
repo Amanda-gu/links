@@ -15,17 +15,6 @@ let closeButton = document.querySelector('#close')
 let randomButton = document.querySelector('#randomize')
 
 
-// seekButton.addEventListener('click', () => { 
-// 	channelBlocks.classList.remove(indexClass) //switch to field view
-// 	// channelBlocks.classList.add(seekClass)
-
-
-// 	fieldButton.classList.remove('button-clicked')
-// 	fieldButton.classList.add('button-remove')
-// 	indexButton.classList.remove('button-clicked') 
-// 	// seekButton.classList.add('button-clicked')
-// })
-
 fieldButton.addEventListener('click', () => { // “Listen” for clicks.
 	channelBlocks.classList.remove(indexClass)
 	// channelBlocks.classList.remove(seekClass) 
@@ -83,23 +72,23 @@ randomButton.addEventListener('click', () => {
 
 
 
-//i want to add a trail for the cursor . used google gemini here
+//i want to add a trail for the cursor . used google gemini here.
 
 //mousemove eventlistener. https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event
 window.addEventListener('mousemove', (e) => {
-  // 1.Create the element that the trace graphic is goign to be
-  	let particle = document.createElement('div');
-  //class in css
-	particle.className = 'trail-particle';
-  
+  // 1.Create a new div everytime it moves
+  	let particle = document.createElement('div')
+  //assign them class in css
+	particle.className = 'trail-particle'
+
   // 2.Position it at the mouse coordinates
   // target the mouse position. ${e.screenX}  https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientX
   //note: Use e.clientX/Y if you want viewport coordinates (no page scroll); e.pageX/Y includes scroll.
   //px as the units here since it gets coordinates from the user's device
   //add css left and top properties to the particle
-  	particle.style.left = `${e.pageX}px`;
-  	particle.style.top = `${e.pageY}px`;
+  	particle.style.left = `${e.pageX}px`
+  	particle.style.top = `${e.pageY}px`
   
-  	document.body.appendChild(particle);
+  	document.body.appendChild(particle)
 
 });
