@@ -626,8 +626,8 @@ button:hover{
                 p{
                     display: none;
                 }
-                picture, figure, img, iframe, video, audio{
-                    max-width: 30vw;
+                picture, img, iframe, video, audio{
+                    max-width: 40vw;
                 }
                 
                 align-items: left;
@@ -658,9 +658,11 @@ button:hover{
 @media(width<700px){
     #channel-blocks{
         li { 
-            picture, figure, img, iframe, video, audio{
-            max-width: 70vw;
-        }
+            div, a, figure {
+                picture, img, iframe, video, audio{
+                    max-width: 60vw;
+                }   
+            }
         }
     }
     #channel-blocks.indexview-channel{
