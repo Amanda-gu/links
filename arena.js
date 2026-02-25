@@ -5,17 +5,32 @@ let myUsername = 'amanda-guo' // For linking to your profile.
 
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (channelData) => {
-	// Target some elements in your HTML:
-	let channelTitle = document.querySelector('#channel-title')
-	let channelDescription = document.querySelector('#channel-description')
-	let channelLink = document.querySelector('#channel-link')
-	let channelUsers = document.querySelector('#channel-users')
+
+	
+//need to get the array from querySelectorAll because it is a NodeList which does not have innerHTML.
+
+	let channelTitle = document.querySelectorAll('.channel-title')// use a class
+	channelTitle.forEach(el => { el.innerHTML = channelData.title})
+
+	let channelDescription = document.querySelectorAll('.channel-description')
+	channelDescription.forEach(el => { el.innerHTML = channelData.description?.html || ''})
+
+	let channelLink = document.querySelectorAll('.channel-link')
+	channelLink.forEach(el => { el.href = `https://www.are.na/channel/${channelSlug}` })
+
+	let channelUsers = document.querySelectorAll('.channel-users')
+	channelUsers.forEach(el => { el.innerHTML = channelData.owner.name})
+	
+	// let channelDescription = document.querySelector('#channel-description')
+	// let channelLink = document.querySelector('#channel-link')
+	// let channelUsers = document.querySelector('#channel-users')
 
 	// Then set their content/attributes to our data (only if elements exist):
-	if (channelTitle) channelTitle.innerHTML = channelData.title
-	if (channelDescription) channelDescription.innerHTML = channelData.description?.html || ''
-	if (channelLink) channelLink.href = `https://www.are.na/channel/${channelSlug}`
-	if (channelUsers) channelUsers.innerHTML = channelData.owner.name // Clear any existing content.
+	// if (channelTitle) channelTitle.innerHTML = channelData.title
+	// if (channelDescription) channelDescription.innerHTML = channelData.description?.html || ''
+	// if (channelLink) channelLink.href = `https://www.are.na/channel/${channelSlug}`
+	// if (channelUsers) channelUsers.innerHTML = channelData.owner.name 
+	// Clear any existing content.
 
 	console.log()
 }
