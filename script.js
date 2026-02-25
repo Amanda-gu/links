@@ -80,3 +80,27 @@ randomButton.addEventListener('click', () => {
 		
 		console.log('Shuffled!', myCards)
 }) 
+
+
+
+//i want to create a trace for the cursor.
+//using mousemove eventlistener. https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event
+window.addEventListener('mousemove', (e) => {
+  // 1. Create the element that the trace graphic is goign to be
+  	let particle = document.createElement('div');
+  //class in css
+	particle.className = 'trail-particle';
+  
+  // 2. Position it at the mouse coordinates
+  // target the mouse position. ${e.screenX}  https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientX
+  	particle.style.left = `${e.pageX}`;
+  	particle.style.top = `${e.pageY}`;
+  
+  	document.body.appendChild(particle);
+  
+  // remove the trace after set time
+  	setTimeout(() => {
+		particle.remove();
+	}, 3000);
+
+});

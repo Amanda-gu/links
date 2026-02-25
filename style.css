@@ -479,6 +479,28 @@ button:hover{
         }
 
 
+.trail-particle {
+    pointer-events: none;
+    position: absolute;
+    background:var(--color);
+    border-radius: 50%;
+    width: 0.2rem;
+    height: 0.2rem;
+  /* The animation makes it disappear after 1 second */
+    animation: fade 10s forwards;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
 
 
 @media(width<1000px){
