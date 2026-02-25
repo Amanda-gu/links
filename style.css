@@ -629,6 +629,9 @@ button:hover{
                 picture, img, iframe, video, audio{
                     max-width: 40vw;
                 }
+                h2{
+                    max-width: 70vw;
+                }
                 
                 align-items: left;
                 gap: var(--space-bar-0);
@@ -642,7 +645,7 @@ button:hover{
                 scale: 100%;
                 opacity: 1;
                 animation-play-state: paused;
-                
+                translate: 0% 0%;
                 div::before, a::before, figure::before{
                     content: "";
                     opacity: 0;
