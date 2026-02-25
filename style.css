@@ -235,10 +235,8 @@ footer{
 
 main{
     width: 100vw;
-    /* adding height here so i can scroll for sketch purposes */
     height: 100%;
     overflow-x:hidden;
-
 }
 
 #channel-blocks{
@@ -281,7 +279,7 @@ main{
                 fill: var(--secondary-color);   
             }    
         }
-        
+    /*cover all media types */
         div, a, figure{
             display: flex;
             flex-direction: column;
@@ -354,10 +352,11 @@ main{
         /* this is for hover animation */
         scale: 28%;
         transition: 800ms;
-
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
         /*values from https://easings.net/#easeInQuartic */
+
         animation-timing-function: linear;
-        animation-duration: 40s;
+        animation-duration: 30s;
         animation-iteration-count: infinite;
 
     }
@@ -393,8 +392,6 @@ main{
     }
    
 }
-
-
 
 #channel-blocks.indexview-channel{
             display: grid;
@@ -521,82 +518,82 @@ button:hover{
             }
         }     
         
-    }
-
-    dialog{
- 
-        width: 100vw;
-        /* When JS adds the `open` attribute… */
-        &[open] { 
-
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                row-gap: calc(var(--space-bar-3) * 0.6);
-
-                background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background-gradient));
-                border-radius: var(--space-bar-0);
-                filter: drop-shadow(0 0.5rem 1rem rgb(0 0 0 / 50%)); /* Some depth. */
-              
-                padding: var(--space-bar-2);
-                padding-block:calc( var(--space-bar-3)*2);
-    
-                /* Defaults to `position: absolute;`, this centers it: */
-                inset-block-start: 50%;
-                inset-inline-start: 50%;
-                position: fixed; /* In the viewport. */
-                translate: -50% -50%;
-
-                li{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    row-gap: var(--space-bar-0);
-
-                    a{
-                        font-family: var(--heading-font);
-                        color: var(--color);
-                        opacity: 1;
-                        
-                        .channel-description{
-                            display: block;
-                            text-wrap: wrap;
-                            width: 80vw;
-                            top: var(--space-bar-1);
-                            color: var(--secondary-color);
-                            font-family: var(--body-font)
-                        }
-                        svg{
-                            width: 1rem;
-                            height: auto;
-                            align-items: baseline;
-                                    
-                            path{
-                                color: var(--secondary-color);
-                                }
-                        }
-                    }
-
-
-                }
-                 
-            } /* `block` is default, but we can override. */
-
-            #close { 
-                font-family: "Jacquard 12 Charted", system-ui;
-                cursor: pointer; 
-                width: 1.5rem;
-                height: auto;
-                fill: var(--color);
-            } /* Always have a clear “close” `button`! */
-
-            &::backdrop {
-                background-color: rgb(0 0 0 / 66%); /* A dark overlay. */
-                pointer-events: none; /* Let clicks pass through to our `document` listener. */
-            }
-            
         
+        dialog{
+         
+                width: 100vw;
+                /* When JS adds the `open` attribute… */
+                &[open] { 
+        
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+        
+                        row-gap: calc(var(--space-bar-3) * 0.6);
+        
+                        background-image: linear-gradient(to bottom, var(--background-gradient), var(--background), var(--background), var(--background), var(--background), var(--background), var(--background-gradient));
+                        border-radius: var(--space-bar-0);
+                        filter: drop-shadow(0 0.5rem 1rem rgb(0 0 0 / 50%)); /* Some depth. */
+                      
+                        padding: var(--space-bar-2);
+                        padding-block:calc( var(--space-bar-3)*2);
+            
+                        /* Defaults to `position: absolute;`, this centers it: */
+                        inset-block-start: 50%;
+                        inset-inline-start: 50%;
+                        position: fixed; /* In the viewport. */
+                        translate: -50% -50%;
+        
+                        li{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            row-gap: var(--space-bar-0);
+        
+                            a{
+                                font-family: var(--heading-font);
+                                color: var(--color);
+                                opacity: 1;
+                                
+                                .channel-description{
+                                    display: block;
+                                    text-wrap: wrap;
+                                    width: 80vw;
+                                    top: var(--space-bar-1);
+                                    color: var(--secondary-color);
+                                    font-family: var(--body-font)
+                                }
+                                svg{
+                                    width: 1rem;
+                                    height: auto;
+                                    align-items: baseline;
+                                            
+                                    path{
+                                        color: var(--secondary-color);
+                                        }
+                                }
+                            }
+        
+        
+                        }
+                         
+                    } /* `block` is default, but we can override. */
+        
+                    #close { 
+                        font-family: "Jacquard 12 Charted", system-ui;
+                        cursor: pointer; 
+                        width: 1.5rem;
+                        height: auto;
+                        fill: var(--color);
+                    } /* Always have a clear “close” `button`! */
+        
+                    &::backdrop {
+                        background-color: rgb(0 0 0 / 66%); /* A dark overlay. */
+                        pointer-events: none; /* Let clicks pass through to our `document` listener. */
+                    }
+                    
+                
+        }
     }
 
     #channel-blocks{
@@ -711,14 +708,14 @@ button:hover{
 
 @keyframes fontchange {
   0% {
-    font-family: "Jacquard 24", system-ui;
+    font-family: var(--heading-font);
   }
   20% {
     font-family: "Share Tech Mono", monospace;  
     font-family: "Micro 5", sans-serif;
   }
   40% {
-    font-family: "Jacquard 12 Charted", system-ui;
+    font-family: var(--heading-font-shadow);
   }
   60% {
     font-family: "Micro 5", sans-serif;
@@ -727,7 +724,7 @@ button:hover{
     font-family: "VT323", monospace;
   }
   100% {
-    font-family: "Jacquard 24", system-ui;
+    font-family: var(--heading-font-shadow);
   }
 }
 
