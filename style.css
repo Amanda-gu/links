@@ -486,18 +486,17 @@ button:hover{
     border-radius: 50%;
     width: 0.2rem;
     height: 0.2rem;
-  /* The animation makes it disappear after 1 second */
-    animation: fade 10s forwards;
+    animation-name: fade;
+    animation-duration: 100s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 @keyframes fade {
   from {
     opacity: 1;
-    transform: scale(1);
   }
   to {
     opacity: 0;
-    transform: scale(0);
   }
 }
 

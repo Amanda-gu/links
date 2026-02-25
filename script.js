@@ -83,24 +83,23 @@ randomButton.addEventListener('click', () => {
 
 
 
-//i want to create a trace for the cursor.
-//using mousemove eventlistener. https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event
+//i want to add a trail for the cursor . used google gemini here
+
+//mousemove eventlistener. https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event
 window.addEventListener('mousemove', (e) => {
-  // 1. Create the element that the trace graphic is goign to be
+  // 1.Create the element that the trace graphic is goign to be
   	let particle = document.createElement('div');
   //class in css
 	particle.className = 'trail-particle';
   
-  // 2. Position it at the mouse coordinates
+  // 2.Position it at the mouse coordinates
   // target the mouse position. ${e.screenX}  https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientX
-  	particle.style.left = `${e.pageX}`;
-  	particle.style.top = `${e.pageY}`;
+  //note: Use e.clientX/Y if you want viewport coordinates (no page scroll); e.pageX/Y includes scroll.
+  //px as the units here since it gets coordinates from the user's device
+  //add css left and top properties to the particle
+  	particle.style.left = `${e.pageX}px`;
+  	particle.style.top = `${e.pageY}px`;
   
   	document.body.appendChild(particle);
-  
-  // remove the trace after set time
-  	setTimeout(() => {
-		particle.remove();
-	}, 3000);
 
 });
