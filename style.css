@@ -68,9 +68,8 @@ hgroup, footer{
 }
 
 hgroup{
-    background-image: linear-gradient(to bottom, var(--background), var(--background), var(--background), var(--background),var(--background-gradient));
+    background-image: linear-gradient(to bottom,  var(--background),var(--background),var(--background-gradient));
     top: 0;
-    height: 3rem;
     z-index: 3;
     
     ul{
@@ -96,6 +95,7 @@ hgroup{
 
         li{
             width: min-content;
+            height: 3rem;
         
             h1{
                 color: var(--color);
@@ -514,33 +514,30 @@ button:hover{
         position: fixed;
         inset-block-start: 0rem;
 
-        
-
         ul{
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
             row-gap: 0.6rem;
-            
-            height: max-content;
             text-align: center;
-            
+            li{
+                height: max-content;
+            }
             #about{
                 display: inline;
             }
-            
-  
+
             #desktop-channel{
                 display: none;
             }
             /* h1 */
             li:nth-child(3) {
                 order: -2;
+                height: 2rem;
             }
         }     
-        
-        
+  
         dialog{
          
                 width: 100vw;
@@ -608,6 +605,9 @@ button:hover{
         }
     }
 
+    nav{
+        background-image: linear-gradient(to bottom, var(--background-gradient), var(--background),var(--background));
+    }
     #channel-blocks{
         inset-block-start: 2rem;
         width: 100%;
@@ -707,9 +707,7 @@ button:hover{
             }
         
         }
-    nav{
-             background-image: linear-gradient(to bottom, var(--background-gradient), var(--background),var(--background));
-        }
+
     footer{
         display: none;
     }
