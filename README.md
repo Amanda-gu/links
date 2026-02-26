@@ -18,7 +18,7 @@
 <li>In terms of building on existing knowledge, I got to use some properties in CSS that I had not gotten to use but meant to try out such as mask-image and gradients. I honed in my knowledge in grid and flex by using a lot of them. I also got more farmiliar with nesting.</li> 
 
 <h3>Next Steps</h3>
-<li>There can be a stronger type hierarchy<li>
+<li>There can be a stronger type hierarchy</li>
 <li>More decorations/design within the blocks themselves</li>
 <li>Would love to explore more modes and dark mode.</li>
 <li>Would finesse the animations more with bezier curves</li>
