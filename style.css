@@ -186,7 +186,7 @@ nav{
                 font-family: var(--heading-font);
                 color: var(--color);
                 
-                &.button-remove {
+                &.button-unclicked {
                     font-family: var(--heading-font-shadow);
                 }
                 &.button-clicked {

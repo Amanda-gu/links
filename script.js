@@ -23,8 +23,8 @@ fieldButton.addEventListener('click', () => { // “Listen” for clicks.
 
 indexButton.addEventListener('click', () => { // “Listen” for clicks.
 	channelBlocks.classList.add(indexClass)
-
-	fieldButton.classList.add('button-remove') //active state of the button. the site opens with field being the defualt view hence the ,unclick'
+	fieldButton.classList.remove('button-clicked')
+	fieldButton.classList.add('button-unclicked') 
 	indexButton.classList.add('button-clicked')
 })
 
