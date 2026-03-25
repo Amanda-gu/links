@@ -23,11 +23,8 @@ fieldButton.addEventListener('click', () => { // “Listen” for clicks.
 
 indexButton.addEventListener('click', () => { // “Listen” for clicks.
 	channelBlocks.classList.add(indexClass)
-
 	fieldButton.classList.remove('button-clicked')
 	fieldButton.classList.add('button-unclicked') 
-	//remove clicked then add unclick
-
 	indexButton.classList.add('button-clicked')
 })
 
@@ -85,13 +82,3 @@ window.addEventListener('mousemove', (e) => {
   //add the new shape to page
   	document.body.appendChild(particle)
 });
-
-
-
-
-const dialog = document.querySelector('dialog');
-if (window.innerWidth > 1000) {
-  dialog.showModal(); // Open on desktop
-} else {
-  dialog.close(); // Close on mobile
-}

@@ -55,19 +55,19 @@ body{
 }
 
 
-header, main, footer, nav{
+hgroup, main, footer, nav{
     padding-inline: var(--space-page-margin);
     padding-block: var(--space-bar-0);
 
 }
 
-header, footer{
+hgroup, footer{
     position: fixed;
     width: 100%;
     z-index: 1;
 }
 
-header{
+hgroup{
     background-image: linear-gradient(to bottom,  var(--background),var(--background),var(--background-gradient));
     top: 0;
     z-index: 3;
@@ -502,7 +502,7 @@ button:hover{
          --space-page-margin: 1rem;
     }
 
-    header{
+    hgroup{
 
         padding-block-end: var(--space-bar-2);
         position: fixed;
